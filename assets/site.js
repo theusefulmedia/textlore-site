@@ -29,7 +29,13 @@
     var s = document.createElement('script');
     s.src = GUMROAD;
     s.async = true;
-    s.onload = function () { state = 'ready'; setTimeout(flush, 120); };
+    // gumroad.js adds its real bundle, which binds the Buy links when it loads.
+    s.onload = function () {
+      var bundle = document.querySelector('script[src*="gumroad-bundle"]');
+      var ready = function () { state = 'ready'; setTimeout(flush, 150); };
+      if (bundle) { bundle.addEventListener('load', ready); bundle.addEventListener('error', function () { state = 'failed'; flush(); }); }
+      else setTimeout(ready, 800);
+    };
     s.onerror = function () { state = 'failed'; flush(); };
     document.head.appendChild(s);
   }

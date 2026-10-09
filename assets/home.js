@@ -149,9 +149,8 @@
       loop();
     }, function rest() {
       tokens.textContent = ''; textNode.textContent = phrase;
-      token('from:Jordan'); token('has:photo');
+      render('', {}, false);
       render(phrase, {}, true);
-      render(phrase, { from: 'Jordan', photo: true }, true);
     });
   })();
 

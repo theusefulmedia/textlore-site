@@ -233,7 +233,7 @@ button { font: inherit; color: inherit; }
 }
 @keyframes pop { from { opacity: 0; transform: scale(0.4); } to { opacity: 1; transform: none; } }
 .count { margin-left: auto; font-size: 13px; color: var(--faint); white-space: nowrap; }
-.results { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 2px; min-height: 288px; align-content: start; }
+.results { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 2px; min-height: 216px; align-content: start; }
 .result {
   display: grid; grid-template-columns: 36px minmax(0, 1fr) auto; gap: 2px 12px; align-items: center;
   padding: 8px 10px; border-radius: 14px;
