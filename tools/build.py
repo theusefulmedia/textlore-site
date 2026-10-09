@@ -161,19 +161,19 @@ def footer(home):
         <p>Search, keep and relive your whole iMessage history, privately on your Mac. Made in Chennai, India, by Raja at The Useful Media Co.</p>
         {socials()}
       </div>
-      <div><h4>Textlore</h4><ul>
+      <div><h2 class="footer__h">Textlore</h2><ul>
         <li><a href="{pre}#features">Features</a></li>
         <li><a href="{pre}#relive">Your Lore</a></li>
         <li><a href="{pre}#pricing">Pricing</a></li>
         <li><a class="download" href="{DOWNLOAD}">Download</a></li>
       </ul></div>
-      <div><h4>Help</h4><ul>
+      <div><h2 class="footer__h">Help</h2><ul>
         <li><a href="/help/">Help</a></li>
         <li><a href="/support/">Support</a></li>
         <li><a href="/privacy/">Privacy</a></li>
         <li><a href="/terms/">Terms</a></li>
       </ul></div>
-      <div><h4>Company</h4><ul>
+      <div><h2 class="footer__h">Company</h2><ul>
         <li><a href="/about/">About</a></li>
         <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co</a></li>
         <li><a href="https://theusefultech.com" rel="noopener">The Useful Tech</a></li>
