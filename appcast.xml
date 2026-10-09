@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Textlore</title>
+    <link>https://textlore.app/appcast.xml</link>
+    <description>Textlore updates</description>
+    <language>en</language>
+    <item>
+      <title>Version 1.0</title>
+      <pubDate>Fri, 09 Oct 2026 08:05:53 +0000</pubDate>
+      <sparkle:version>30</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[
+<h2>Textlore 1.0</h2>
+<p>The first version of Textlore: find anything in your iMessage history in seconds.</p>
+<ul>
+  <li>Search every message as you type, by person, date, group or photo.</li>
+  <li>Quick search from any app with Option-Space.</li>
+  <li>Every photo and file people sent you, by person and month.</li>
+  <li>Export conversations to PDF, HTML, text, Markdown, CSV or an image.</li>
+  <li>A local archive that keeps messages and photos after Messages clears them.</li>
+  <li>Your Lore: your messaging life as tree rings, with share cards.</li>
+  <li>Ask AI, answered on your Mac with Apple Intelligence.</li>
+</ul>
+<p>Everything stays on your Mac. Textlore only reads.</p>
+      ]]></description>
+      <enclosure url="https://github.com/theusefulmedia/textlore-site/releases/download/v1.0/Textlore-1.0.dmg" type="application/octet-stream" sparkle:edSignature="cX6KvH/S2VQADe80eFTUjVJQ3q+dv7IZnetbV/MG1R4m37xT80RSP+d4kdtUwWorbxxCgS00xwNsRoQPxRvbDA==" length="8920317" />
+    </item>
+  </channel>
+</rss>
