@@ -9,7 +9,7 @@
   --card: #FFFDF8;
   --ink: #1B1442;
   --ink-2: #4A4566;
-  --ink-3: #6F6A88;
+  --ink-3: #5E5977;
   --line: rgba(27, 20, 66, 0.12);
   --line-2: rgba(27, 20, 66, 0.2);
   --accent: #5145CD;
@@ -190,8 +190,8 @@ mark { color: #1D1D1F; background: linear-gradient(var(--hl), var(--hl)) no-repe
 /* ---------- Statement: words light up as you read ---------- */
 .statement { padding: 110px 0 120px; }
 .statement p { font: 400 clamp(30px, 4.3vw, 60px)/1.16 var(--serif); letter-spacing: -0.02em; max-width: 1100px; }
-.js .statement .w { color: var(--line-2); transition: color .4s; }
-.js .statement .w.is-lit { color: var(--ink); }
+.js .statement .w { color: var(--ink-3); opacity: .62; transition: color .4s, opacity .4s; }
+.js .statement .w.is-lit { color: var(--ink); opacity: 1; }
 .statement .w.is-em { font-style: italic; }
 .js .statement .w.is-em.is-lit { color: var(--accent-ink); }
 
