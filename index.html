@@ -3,29 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Textlore: search every iMessage on your Mac, in under a second</title>
-<meta name="description" content="Textlore searches your whole Messages history as you type, saves every photo before macOS clears it, and turns your years of texting into a story you can share. It all happens on your Mac. $29 once, free for 14 days.">
+<title>Textlore: your whole texting life, on your Mac</title>
+<meta name="description" content="Every iMessage and text from your iPhone, iPad and Mac in one private Mac app. Find any message in under a second, keep every photo, see your years of texting as rings, and ask questions on your Mac. $29 once, free for 14 days.">
 <link rel="canonical" href="https://textlore.app/">
-<meta name="theme-color" content="#2A2185">
+<meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0A1D" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Textlore">
 <meta property="og:url" content="https://textlore.app/">
-<meta property="og:title" content="Textlore: every text you've ever sent on your Mac, found in under a second">
-<meta property="og:description" content="Search your whole Messages history as you type, keep every photo, and see your texting life as tree rings. On your Mac, for $29 once.">
+<meta property="og:title" content="Textlore: your whole texting life, on your Mac">
+<meta property="og:description" content="Find any message in under a second, keep every photo, and see your years of texting as tree rings. Private, on your Mac. $29 once.">
 <meta property="og:image" content="https://textlore.app/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Textlore: indigo tree rings with an amber centre, and the Textlore app window">
+<meta property="og:image:alt" content="Textlore: tree rings, one for every year of texting, with the busiest year in amber">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" as="image" href="/img/shots/main-window-light-1600.avif" type="image/avif" imagesrcset="/img/shots/main-window-light-960.avif 960w, /img/shots/main-window-light-1600.avif 1600w" imagesizes="(max-width: 1112px) calc(100vw - 32px), 1080px" media="(prefers-color-scheme: light)">
-<link rel="preload" as="image" href="/img/shots/main-window-dark-1600.avif" type="image/avif" imagesrcset="/img/shots/main-window-dark-960.avif 960w, /img/shots/main-window-dark-1600.avif 1600w" imagesizes="(max-width: 1112px) calc(100vw - 32px), 1080px" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Textlore","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 26 or later","description":"Search your whole Messages history as you type, keep every photo and file, export chats, and see your texting life as tree rings. Everything stays on your Mac.","url":"https://textlore.app/","downloadUrl":"https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Useful Media Co."}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Textlore","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 26 or later","description":"Every iMessage and text from your iPhone, iPad and Mac in one private Mac app: search, a local archive, Your Lore and Ask AI.","url":"https://textlore.app/","downloadUrl":"https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Useful Media Co."}}
 </script>
 <script src="/assets/site.js" defer></script>
 <script src="/assets/home.js" defer></script>
@@ -34,371 +33,398 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="nav" aria-label="Main">
-  <a class="nav__brand" href="/" aria-label="Textlore home"><img src="/img/icon-96.webp" width="30" height="30" alt="">Textlore</a>
+  <a class="nav__brand" href="/" aria-label="Textlore home"><img src="/img/icon-96.webp" width="28" height="28" alt="">Textlore</a>
   <ul class="nav__links">
-    <li><a href="#search">Features</a></li>
-    <li><a href="#lore">Your Lore</a></li>
-    <li><a href="#privacy">Privacy</a></li>
+    <li><a href="#find">Find</a></li>
+    <li><a href="#keep">Keep</a></li>
+    <li><a href="#relive">Relive</a></li>
+    <li><a href="#ask">Ask</a></li>
     <li><a href="#price">Price</a></li>
     <li><a href="/help/">Help</a></li>
   </ul>
-  <a class="btn buy" href="https://theusefultech.gumroad.com/l/textlore">Buy</a>
+  <a class="btn btn--amber buy" href="https://theusefultech.gumroad.com/l/textlore">Buy</a>
 </header>
 
 <main id="main">
 
+<!-- Hero: the rings are the product, and you can search them -->
 <section class="hero" aria-labelledby="hero-title">
-  <svg class="hero__rings" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">
-    <defs><radialGradient id="dotglow"><stop offset="0" stop-color="#F5A524" stop-opacity=".55"/><stop offset="1" stop-color="#F5A524" stop-opacity="0"/></radialGradient></defs>
-    <g class="rings-breathe">
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="75" stroke="rgba(171,165,255,0.25)" stroke-width="10.7" style="--d:0.15s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="104" stroke="rgba(171,165,255,0.32)" stroke-width="14.2" style="--d:0.27s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="136" stroke="rgba(171,165,255,0.39)" stroke-width="17.9" style="--d:0.39s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="174" stroke="rgba(171,165,255,0.57)" stroke-width="27.2" style="--d:0.51s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="216" stroke="rgba(171,165,255,0.53)" stroke-width="25.2" style="--d:0.63s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="256" stroke="rgba(171,165,255,0.48)" stroke-width="22.5" style="--d:0.75s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="297" stroke="rgba(171,165,255,0.55)" stroke-width="26.4" style="--d:0.87s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="341" stroke="rgba(171,165,255,0.62)" stroke-width="29.9" style="--d:0.99s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="388" stroke="rgba(245,165,36,0.75)" stroke-width="32" style="--d:1.11s" transform="rotate(-90 500 500)"/>
-      <circle class="ring" pathLength="100" cx="500" cy="500" r="432" stroke="rgba(171,165,255,0.52)" stroke-width="24.5" style="--d:1.23s" transform="rotate(-90 500 500)"/>
-    </g>
-    <circle cx="500" cy="500" r="48" fill="url(#dotglow)"/>
-    <circle class="ring-dot" cx="500" cy="500" r="14" fill="#F5A524"/>
-  </svg>
-
-  <div class="wrap hero__copy">
-    <h1 id="hero-title">Every text you've ever sent on your Mac, <span class="glow">found in under a second.</span></h1>
-    <p class="hero__sub">Textlore searches your whole Messages history as you type, saves every photo before macOS clears it, and turns your years of texting into a story you can share. It all happens on your Mac.</p>
-    <div class="btns">
-      <a class="btn btn--amber download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free for 14 days</a>
-      <a class="btn btn--ghost buy" href="https://theusefultech.gumroad.com/l/textlore">Buy for $29</a>
-    </div>
-    <p class="hero__small">For macOS 26 or later. Apple silicon and Intel. No account, no email.</p>
-  </div>
-
-  <div class="hero__shot">
-    <div class="hero__tilt">
-      <picture>
-        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/main-window-dark-960.avif 960w, /img/shots/main-window-dark-1600.avif 1600w" sizes="(max-width: 1112px) calc(100vw - 32px), 1080px">
-        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/main-window-dark-960.webp 960w, /img/shots/main-window-dark-1600.webp 1600w" sizes="(max-width: 1112px) calc(100vw - 32px), 1080px">
-        <source type="image/avif" srcset="/img/shots/main-window-light-960.avif 960w, /img/shots/main-window-light-1600.avif 1600w" sizes="(max-width: 1112px) calc(100vw - 32px), 1080px">
-        <img src="/img/shots/main-window-light-1600.webp" srcset="/img/shots/main-window-light-960.webp 960w, /img/shots/main-window-light-1600.webp 1600w" sizes="(max-width: 1112px) calc(100vw - 32px), 1080px" width="1600" height="1000" fetchpriority="high" alt="The Textlore window: conversations on the left, a search for flight lands, and the matching message lit up in amber in the conversation.">
-      </picture>
-    </div>
-  </div>
-</section>
-
-<section class="band" aria-label="Why Textlore">
-  <div class="wrap"><p class="rise">Messages is built for talking. <strong>Textlore is built for finding.</strong></p></div>
-</section>
-
-<!-- 1. Search -->
-<section class="feature" id="search" aria-labelledby="search-title">
-  <div class="wrap feature__grid">
-    <div class="feature__text rise">
-      <span class="kicker">Search</span>
-      <h2 id="search-title">Type a word, a name or a date, and years of texts narrow down as you type.</h2>
-      <p class="feature__body">Look for "flight lands" and see every message that says it, with the words lit up in amber. Narrow it with <code>from:Jordan</code>, <code>has:photo</code>, <code>during:summer 2024</code> or <code>"an exact phrase"</code>. Press Return and you're in the conversation, at that exact message, with everything around it.</p>
-      <p class="proof">
-        <svg viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="16" fill="var(--accent-soft)"/><path d="M18.5 7 11 19h6l-1.5 8L23 15h-6z" fill="var(--amber)"/></svg>
-        <span><span class="num" data-roll="123580">123,580</span> messages searched in about 17 milliseconds on an M4 Mac mini.</span>
-      </p>
-    </div>
-    <div class="stage rise">
-      <div class="stage__shot">
-        <picture>
-          <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/search-dark-720.avif 720w, /img/shots/search-dark-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/search-dark-720.webp 720w, /img/shots/search-dark-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/avif" srcset="/img/shots/search-light-720.avif 720w, /img/shots/search-light-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <img src="/img/shots/search-light-1280.webp" srcset="/img/shots/search-light-720.webp 720w, /img/shots/search-light-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px" width="1280" height="800" loading="lazy" decoding="async" alt="Textlore search results for a phrase, with the match highlighted in the conversation.">
-        </picture>
+  <div class="wrap hero__grid">
+    <div>
+      <p class="hero__eyebrow mono"><i></i>Textlore for Mac</p>
+      <h1 id="hero-title">Your whole texting life, <em>on your Mac.</em></h1>
+      <p class="hero__sub">Every iMessage and text from your iPhone, iPad and Mac, in one private place. Find any message in under a second, keep every photo from now on, and see your years of texting as rings you can share.</p>
+      <div class="btns">
+        <a class="btn download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free for 14 days</a>
+        <a class="btn btn--line buy" href="https://theusefultech.gumroad.com/l/textlore">Buy for $29</a>
       </div>
-      <div class="stage__demo">
-        <div class="card" id="search-demo" role="img" aria-label="A search capsule types flight lands. The list of results narrows with each letter and the matching words light up in amber. Then the filters from:Jordan and has:photo pop in and leave one message with a photo.">
-          <div class="capsule" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <span class="tokens"></span><span class="capsule__text">flight lands</span><span class="caret"></span>
-            <span class="count"><span class="num">123,580</span> messages</span>
-          </div>
-          <ul class="results" aria-hidden="true"></ul>
+      <p class="hero__small">macOS 26 or later. Apple silicon and Intel. No account, no email.</p>
+    </div>
+
+    <div class="ringsearch" id="ringsearch">
+      <svg class="ringsearch__svg" viewBox="0 0 600 600" aria-hidden="true"></svg>
+      <div class="tip" aria-hidden="true"></div>
+      <div class="search" role="search">
+        <label class="search__field">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr-only">Search Sam's texts, a made-up demo library</span>
+          <input type="search" autocomplete="off" spellcheck="false" placeholder="Try it: search Sam's 10 years">
+          <span class="search__count" aria-hidden="true"></span>
+        </label>
+        <div class="chips" aria-label="Try a search">
+          <button class="chip" type="button">cabin</button>
+          <button class="chip" type="button">flight lands</button>
+          <button class="chip" type="button">from:Mom</button>
+          <button class="chip" type="button">has:photo</button>
+          <button class="chip" type="button">2020</button>
         </div>
+        <ul class="hits" aria-live="polite"></ul>
+        <p class="search__note">Sam is a made-up person from Textlore's demo library. Each dot is a message, on the ring for its year.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 2. Quick search -->
-<section class="feature feature--flip" id="quick" aria-labelledby="quick-title">
-  <div class="wrap feature__grid">
-    <div class="feature__text rise">
-      <span class="kicker">Quick search</span>
-      <h2 id="quick-title">Press Option-Space from any app and ask your texts.</h2>
-      <p class="feature__body">A small search bar floats over whatever you're doing. Type, pick a result, press Return, and Textlore opens at that message. Photos show up right in the results.</p>
+<!-- Every Apple device, one place -->
+<section class="devices" aria-label="Where your texts come from">
+  <div class="wrap devices__row rise">
+    <div class="devices__icons" aria-hidden="true">
+      <svg viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="21" height="37" rx="4.5"/><path d="M9 5h6"/></svg>
+      <svg viewBox="0 0 34 40" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="31" height="37" rx="3.5"/><circle cx="17" cy="35" r=".8" fill="currentColor"/></svg>
+      <svg class="mac" viewBox="0 0 56 46" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1.5" y="1.5" width="53" height="33" rx="3"/><path d="M22 35l-2 9h16l-2-9M16 44h24"/></svg>
     </div>
-    <div class="stage rise">
-      <div class="stage__shot">
-        <picture>
-          <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/quick-search-dark-720.avif 720w, /img/shots/quick-search-dark-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/quick-search-dark-720.webp 720w, /img/shots/quick-search-dark-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/avif" srcset="/img/shots/quick-search-light-720.avif 720w, /img/shots/quick-search-light-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <img src="/img/shots/quick-search-light-1280.webp" srcset="/img/shots/quick-search-light-720.webp 720w, /img/shots/quick-search-light-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px" width="1280" height="800" loading="lazy" decoding="async" alt="The Textlore quick search panel floating over the desktop, with results and photo thumbnails.">
-        </picture>
-      </div>
-      <div class="stage__demo">
-        <div class="card qs" id="qs-demo" role="img" aria-label="The Option and Space keys press themselves, and a floating search panel grows out of them with 3 results, the first one with a photo.">
-          <div class="keys" aria-hidden="true">
-            <span class="key" data-key="opt"><span class="glyph">⌥</span></span>
-            <span class="key key--space" data-key="space">space</span>
-          </div>
-          <div class="panel" aria-hidden="true">
-            <div class="capsule">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-              <span class="capsule__text" data-q="cabin keys">cabin keys</span><span class="caret"></span>
-            </div>
-            <ul>
-              <li><span class="ph" style="background:linear-gradient(135deg,#F2C46D,#B5651D)"></span><span>Jordan: the cabin keys are under the mat</span><small>3 Feb 2024</small></li>
-              <li><span class="ph" style="background:#5145CD"></span><span>Theo: who has the cabin keys?</span><small>16 Mar 2024</small></li>
-              <li><span class="ph" style="background:#C2410C"></span><span>Mom: found your old cabin keys</span><small>2 Jan 2025</small></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <svg class="flow" viewBox="0 0 200 30" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="15" x2="200" y2="15"/><circle cx="0" cy="15" r="3"><animate attributeName="cx" from="0" to="200" dur="2.4s" repeatCount="indefinite"/></circle><circle cx="0" cy="15" r="3"><animate attributeName="cx" from="0" to="200" dur="2.4s" begin="0.8s" repeatCount="indefinite"/></circle><circle cx="0" cy="15" r="3"><animate attributeName="cx" from="0" to="200" dur="2.4s" begin="1.6s" repeatCount="indefinite"/></circle></svg>
+    <div class="devices__end"><img src="/img/icon-96.webp" width="44" height="44" alt=""><span>Textlore</span></div>
+    <p><b>With Messages in iCloud on,</b> everything you send and receive on your iPhone, iPad and Mac is on your Mac too. Textlore reads it there: iMessage and SMS, as far back as your history goes.</p>
   </div>
 </section>
 
-<!-- 3. The archive -->
-<section class="feature" id="archive" aria-labelledby="archive-title">
-  <div class="wrap feature__grid">
-    <div class="feature__text rise">
-      <span class="kicker">The archive</span>
-      <h2 id="archive-title">Messages deletes your photos to save space, and Textlore keeps its own copy.</h2>
-      <p class="feature__body">When your Mac runs low on space, Messages in iCloud removes the copies of photos and files on your Mac. Textlore saves each one into its own folder the moment it lands, along with every message, so a photo from 2019 is still there next year. It skips one-time codes if you've told Messages to delete them.</p>
-    </div>
-    <div class="stage stage--solo rise">
-      <div class="stage__demo">
-        <div class="card archive" id="archive-demo" role="img" aria-label="Photos drop into a tray one after another while a counter of saved photos rolls up. A line underneath says one-time codes are skipped.">
-          <div class="drop-zone" aria-hidden="true"></div>
-          <div class="tray" aria-hidden="true">
-            <span><strong class="num" data-counter>8,412</strong></span>
-            <span>photos and files saved</span>
-          </div>
-          <p class="codes" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>One-time codes skipped</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 4. Every photo and file -->
-<section class="feature feature--flip" id="attachments" aria-labelledby="attachments-title">
-  <div class="wrap feature__grid">
-    <div class="feature__text rise">
-      <span class="kicker">Photos and files</span>
-      <h2 id="attachments-title">Every photo, video and file people sent you, in one place.</h2>
-      <p class="feature__body">Browse them by person and by date, hover to lift one, press Space to see it full size. Files that only live in iCloud show a preview and a button that opens them in Messages.</p>
-    </div>
-    <div class="stage rise">
-      <div class="stage__shot">
-        <picture>
-          <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/attachments-dark-720.avif 720w, /img/shots/attachments-dark-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/attachments-dark-720.webp 720w, /img/shots/attachments-dark-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/avif" srcset="/img/shots/attachments-light-720.avif 720w, /img/shots/attachments-light-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <img src="/img/shots/attachments-light-1280.webp" srcset="/img/shots/attachments-light-720.webp 720w, /img/shots/attachments-light-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px" width="1280" height="800" loading="lazy" decoding="async" alt="The Textlore attachments page: a grid of photos and files grouped by person and month.">
-        </picture>
-      </div>
-      <div class="stage__demo">
-        <div class="card grid-demo" id="grid-demo">
-          <h3><span>Jordan</span><span>March 2024</span></h3>
-          <div class="photos">
-            <button class="photo" type="button" style="background:linear-gradient(135deg,#8FB996,#3F6F55)" aria-label="Photo, 14 March 2024"></button>
-            <button class="photo" type="button" style="background:linear-gradient(135deg,#F2C46D,#B5651D)" aria-label="Photo, 14 March 2024"></button>
-            <button class="photo photo--video" type="button" style="background:linear-gradient(135deg,#7DD3FC,#1D4ED8)" aria-label="Video, 15 March 2024"></button>
-            <button class="photo" type="button" style="background:linear-gradient(135deg,#FDA4AF,#9F1239)" aria-label="Photo, 16 March 2024"></button>
-            <button class="photo" type="button" style="background:linear-gradient(135deg,#C4B5FD,#5145CD)" aria-label="Photo, 18 March 2024"></button>
-            <button class="photo photo--cloud" type="button" aria-label="Photo kept in iCloud, open in Messages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg><span>In iCloud<br><u>Open in Messages</u></span></button>
-            <button class="photo" type="button" style="background:linear-gradient(135deg,#FCD34D,#F59E0B)" aria-label="Photo, 21 March 2024"></button>
-            <button class="photo" type="button" style="background:linear-gradient(135deg,#94A3B8,#334155)" aria-label="Photo, 23 March 2024"></button>
-          </div>
-          <div class="ql" aria-hidden="true"><div></div><kbd>Space</kbd></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5. Export -->
-<section class="feature" id="export" aria-labelledby="export-title">
-  <div class="wrap feature__grid">
-    <div class="feature__text rise">
-      <span class="kicker">Export</span>
-      <h2 id="export-title">Save a whole chat, or just 3 messages, as a PDF you can print.</h2>
-      <p class="feature__body">Export to PDF, HTML, plain text, Markdown, CSV or an image of the snippet. Phone numbers and emails are hidden unless you switch them on, and a live preview shows exactly what you'll get. Useful for keepsakes, records and proof.</p>
-      <div class="formats" aria-label="Export formats"><span>PDF</span><span>HTML</span><span>Plain text</span><span>Markdown</span><span>CSV</span><span>Image</span></div>
-    </div>
-    <div class="stage rise">
-      <div class="stage__shot">
-        <picture>
-          <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/export-confirmation-dark-560.avif 560w, /img/shots/export-confirmation-dark-1000.avif 1000w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/export-confirmation-dark-560.webp 560w, /img/shots/export-confirmation-dark-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/avif" srcset="/img/shots/export-confirmation-light-560.avif 560w, /img/shots/export-confirmation-light-1000.avif 1000w" sizes="(max-width: 900px) 100vw, 560px">
-          <img src="/img/shots/export-confirmation-light-1000.webp" srcset="/img/shots/export-confirmation-light-560.webp 560w, /img/shots/export-confirmation-light-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 560px" width="1000" height="824" loading="lazy" decoding="async" alt="The Textlore export confirmation: a green check, a preview of the exported PDF and the export details.">
-        </picture>
-      </div>
-      <div class="stage__demo">
-        <div class="card export" id="export-demo" role="img" aria-label="A green check draws itself above 3 messages exported. A PDF page slides out of a stack, tilted, with a badge that reads PDF, 2 pages. A note says phone numbers and emails were left out.">
-          <div class="export__head" aria-hidden="true">
-            <span class="check"><i></i><i></i><svg width="46" height="46" viewBox="0 0 56 56"><circle cx="28" cy="28" r="28" fill="#34C759"/><path d="M17 29l7 7 15-16" fill="none" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/></svg></span>
-            <div><b>3 messages exported</b><span>Saved to Downloads as <strong>Cabin weekend.pdf</strong></span></div>
-          </div>
-          <div class="stack" aria-hidden="true">
-            <div class="page page--back"></div>
-            <div class="page page--front">
-              <b>Cabin weekend</b><small>Saturday, 3 February 2024</small>
-              <i style="width:70px"></i><i class="p" style="width:84px"></i><i class="o" style="width:76px"></i><i style="width:56px"></i>
-              <em>Made with Textlore · textlore.app</em>
-            </div>
-            <span class="badge">PDF · 2 pages</span>
-          </div>
-          <div class="facts" aria-hidden="true">
-            <span class="fact"><small>Date</small><b>3 Feb 2024</b></span>
-            <span class="fact"><small>Contents</small><b>3 messages, 1 photo</b></span>
-            <span class="fact"><small>Style</small><b>Bubbles, light</b></span>
-            <span class="fact"><small>Size</small><b>58 KB</b></span>
-          </div>
-          <span class="shield" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Phone numbers and emails were left out</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. Your Lore -->
-<section class="feature" id="lore" aria-labelledby="lore-title">
+<!-- A statement that lights up as you read it -->
+<section class="statement" aria-label="Why Textlore">
   <div class="wrap">
-    <div class="lore">
+    <p id="statement">Your texts are <span data-em>a journal you already wrote.</span> The first message from someone who became family. The address of your first flat. The photo from that trip. Messages is built for talking. Textlore is built for <span data-em>everything after.</span></p>
+  </div>
+</section>
+
+<!-- 01 Find -->
+<section class="chapter" id="find" aria-labelledby="find-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <p class="chapter__label mono"><svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="13" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="3" fill="#F5A524"/></svg>01 Find</p>
+      <div>
+        <h2 id="find-title" class="rise">That one text from 2019 is <em>a few letters away.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>Search years of conversations as you type, by word, person, date or photo. Matches light up in amber, and Return opens the conversation at <strong>that exact message</strong>, with everything around it.</p>
+        <p>No scrolling back through years. Narrow it with <code>from:Jordan</code>, <code>has:photo</code>, <code>during:summer 2024</code> or <code>"an exact phrase"</code>.</p>
+        <p class="aside">123,580 messages searched in about 17 milliseconds on an M4 Mac mini.</p>
+      </div>
+    </div>
+
+    <figure class="fig fig--shot rise">
+      <div class="fig__frame">
+        <div class="shot">
+          <picture>
+            <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/search-dark-720.avif 720w, /img/shots/search-dark-1280.avif 1280w" sizes="(max-width: 1240px) 90vw, 1130px">
+            <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/search-dark-720.webp 720w, /img/shots/search-dark-1280.webp 1280w" sizes="(max-width: 1240px) 90vw, 1130px">
+            <source type="image/avif" srcset="/img/shots/search-light-720.avif 720w, /img/shots/search-light-1280.avif 1280w" sizes="(max-width: 1240px) 90vw, 1130px">
+            <img src="/img/shots/search-light-1280.webp" srcset="/img/shots/search-light-720.webp 720w, /img/shots/search-light-1280.webp 1280w" sizes="(max-width: 1240px) 90vw, 1130px" width="1280" height="800" loading="lazy" decoding="async" alt="Textlore search: results for a phrase on the left, and the matching message lit up in amber in the conversation.">
+          </picture>
+        </div>
+      </div>
+      <figcaption class="mono"><b>Fig. 1</b>Search, with the match lit up in its conversation</figcaption>
+    </figure>
+
+    <div class="trio">
+      <figure class="fig rise">
+        <div class="fig__frame">
+          <div class="qs" id="qs-demo" aria-hidden="true">
+            <div class="keys"><span class="key" data-key="opt">⌥</span><span class="key key--space" data-key="space">space</span></div>
+            <div class="panel">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="q-text">cabin</span></div>
+              <ul>
+                <li><i style="background:linear-gradient(135deg,#8FB996,#3F6F55)"></i>I booked the cabin for August</li>
+                <li><i style="background:#C2410C"></i>Packed! See you at the cabin</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <h3>From any app, press Option-Space.</h3>
+        <p>A small search bar floats over whatever you're doing. Pick a result, press Return, and Textlore opens at that message.</p>
+      </figure>
+      <figure class="fig rise">
+        <div class="fig__frame"><div class="tokens" id="tokens-demo" aria-hidden="true"></div></div>
+        <h3>Narrow it as you type.</h3>
+        <p>Every filter turns into a token you can see and remove: <code>from:</code>, <code>in:</code>, <code>before:</code>, <code>after:</code>, <code>has:video</code>, <code>is:sent</code> and more.</p>
+      </figure>
+      <figure class="fig rise">
+        <div class="fig__frame">
+          <div class="photos" id="photos-demo">
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#8FB996,#3F6F55)" aria-label="Photo from Jordan"></button>
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#F2C46D,#B5651D)" aria-label="Photo from Mom"></button>
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#7DD3FC,#1D4ED8)" aria-label="Video from Theo"></button>
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#FDA4AF,#9F1239)" aria-label="Photo from Priya"></button>
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#C4B5FD,#5145CD)" aria-label="Photo from Ana"></button>
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#FCD34D,#F59E0B)" aria-label="Photo from Jordan"></button>
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#94A3B8,#334155)" aria-label="Photo from Mom"></button>
+            <button class="photo" type="button" style="background:linear-gradient(135deg,#86EFAC,#15803D)" aria-label="Photo from Theo"></button>
+          </div>
+        </div>
+        <h3>Every photo, video and file.</h3>
+        <p>Browse what people sent you by person and by date, hover to lift one, and press Space to see it full size.</p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 02 Keep -->
+<section class="chapter" id="keep" aria-labelledby="keep-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <p class="chapter__label mono"><svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="13" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="3" fill="#F5A524"/></svg>02 Keep</p>
+      <div>
+        <h2 id="keep-title" class="rise">Messages lets old photos go. <em>Textlore keeps its own copy.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>When your Mac runs low on space, Messages in iCloud removes the copies of photos and files on your Mac. Textlore saves every message and photo into its own folder <strong>the moment it arrives</strong>, so a photo from today is still here in 10 years.</p>
+        <p class="aside">The archive starts the day you install Textlore. Photos already removed show their preview and an Open in Messages button. One-time codes are skipped if you've told Messages to delete them.</p>
+      </div>
+    </div>
+
+    <div class="keep rise" id="keep-demo" role="img" aria-label="Two sets of the same 8 photos. In Messages, 5 of them turn into Kept in iCloud placeholders when the Mac clears space. In Textlore, all 8 stay, each with a green tick.">
+      <div class="keep__col" aria-hidden="true">
+        <header><h3>Messages</h3><span class="mono">after it clears space</span></header>
+        <div class="keep__grid" data-side="messages"></div>
+        <p class="keep__foot"><span><b data-left>8</b> of 8 photos on this Mac</span><span class="mono">iCloud only</span></p>
+      </div>
+      <div class="keep__col" aria-hidden="true">
+        <header><h3>Textlore</h3><span class="mono">its own copy</span></header>
+        <div class="keep__grid" data-side="textlore"></div>
+        <p class="keep__foot"><span><b data-kept>0</b> of 8 photos kept</span><span class="mono">on your Mac</span></p>
+      </div>
+    </div>
+
+    <div class="export">
+      <div class="rise">
+        <h3>Need it on paper? Save a whole chat, or just 3 messages, as a PDF.</h3>
+        <p>Or as HTML, plain text, Markdown, CSV or an image of the snippet. Phone numbers and emails are hidden unless you switch them on, and a live preview shows exactly what you'll get. For keepsakes, records and proof.</p>
+        <div class="formats" aria-label="Export formats"><span>PDF</span><span>HTML</span><span>Plain text</span><span>Markdown</span><span>CSV</span><span>Image</span></div>
+      </div>
+      <div class="stack rise" aria-hidden="true">
+        <span class="shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Phone numbers and emails left out</span>
+        <div class="page page--back"></div>
+        <div class="page page--front">
+          <b>Jordan</b><small>Saturday, 3 February 2024</small>
+          <i style="width:110px"></i><i class="p" style="width:130px"></i><i class="o" style="width:120px"></i><i style="width:80px"></i>
+          <em>Made with Textlore · textlore.app</em>
+        </div>
+        <span class="badge">PDF · 2 pages</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Relive: the night chapter -->
+<section class="chapter night" id="relive" aria-labelledby="relive-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <p class="chapter__label mono"><svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="13" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="9.5" stroke="#F5A524" stroke-width="1.5"/><circle cx="15" cy="15" r="6" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="2.5" fill="#F5A524"/></svg>03 Relive</p>
+      <div>
+        <h2 id="relive-title" class="rise">Every year of texting, <em>drawn as a ring.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>Your Lore reads your history back to you as tree rings, one for every year, the busiest year in amber. Then it tells the story: your busiest day, your longest streak with one person, the hour you text most, your laughs and your emoji.</p>
+        <p class="aside">Every number is counted on your Mac. Bank codes, delivery alerts and other business texts are left out of every people stat.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lore-scroll" id="lore-scroll">
+    <div class="lore-stage">
+      <svg class="lore-rings" viewBox="0 0 600 600" aria-hidden="true"></svg>
+      <div class="lore-total" aria-hidden="true"><b class="num" data-total>114,100</b><span>messages since 2017</span></div>
+      <p class="callout callout--a"><span class="mono">Busiest day</span><b>14 March 2020</b><span>1,206 messages in one day</span></p>
+      <p class="callout callout--b"><span class="mono">Longest streak</span><b>412 days in a row</b><span>with Person 1, every single day</span></p>
+      <p class="callout callout--c"><span class="mono">Peak hour</span><b>10 PM</b><span>a certified night owl</span></p>
+      <p class="callout callout--d"><span class="mono">Laugh count</span><b>9,842 laughs</b><span>every haha, lol and 😂</span></p>
+      <p class="lore-note mono">Sam's demo library · 2017 to 2026</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="share">
       <div class="phone rise" id="lore-demo">
-        <div class="screen" aria-live="off">
+        <div class="screen">
           <div class="lore-cards"></div>
           <div class="lore-dots" aria-hidden="true"></div>
         </div>
       </div>
-      <div class="feature__text rise">
-        <span class="kicker">Your Lore</span>
-        <h2 id="lore-title">See your texting life as tree rings, one ring for every year.</h2>
-        <p class="feature__body">Your Lore turns your history into a short story: your busiest day, your longest streak with one person, the hour you text most, your laugh count and your emoji. Play it full screen, or export it as an image, a carousel or a video for Instagram, TikTok or X.</p>
-        <div class="lore-controls">
-          <fieldset class="looks">
-            <legend>Pick a look</legend>
-            <label class="look"><input type="radio" name="look" value="indigo" checked><i style="--sw:#2A2185"></i><span>Indigo</span></label>
-            <label class="look"><input type="radio" name="look" value="amber"><i style="--sw:#F5A524"></i><span>Amber</span></label>
-            <label class="look"><input type="radio" name="look" value="midnight"><i style="--sw:#0E0F14"></i><span>Midnight</span></label>
-            <label class="look"><input type="radio" name="look" value="paper"><i style="--sw:#F7F6FB"></i><span>Paper</span></label>
-            <label class="look"><input type="radio" name="look" value="glass"><i style="--sw:linear-gradient(135deg,#F5A524 0%,#8B83FF 50%,#3B2FC4 100%)"></i><span>Glass</span></label>
-          </fieldset>
-          <div class="player">
-            <button class="icon-btn" type="button" data-lore="prev" aria-label="Previous card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <button class="icon-btn" type="button" data-lore="play" aria-label="Pause the cards"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
-            <button class="icon-btn" type="button" data-lore="next" aria-label="Next card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
+      <div class="rise">
+        <h3>Play it full screen, or share it.</h3>
+        <p>Export your story as an image, a carousel or a video for Instagram, TikTok or X, in 5 looks and 4 sizes. Pick a year to tell just that one.</p>
+        <fieldset class="looks">
+          <legend class="mono">Pick a look</legend>
+          <label class="look"><input type="radio" name="look" value="indigo" checked><i style="--sw:#2A2185"></i><span>Indigo</span></label>
+          <label class="look"><input type="radio" name="look" value="amber"><i style="--sw:#F5A524"></i><span>Amber</span></label>
+          <label class="look"><input type="radio" name="look" value="midnight"><i style="--sw:#0E0F14"></i><span>Midnight</span></label>
+          <label class="look"><input type="radio" name="look" value="paper"><i style="--sw:#F7F6FB"></i><span>Paper</span></label>
+          <label class="look"><input type="radio" name="look" value="glass"><i style="--sw:linear-gradient(135deg,#F5A524 0%,#8B83FF 50%,#3B2FC4 100%)"></i><span>Glass</span></label>
+        </fieldset>
+        <div class="player">
+          <button class="icon-btn" type="button" data-lore="prev" aria-label="Previous card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button class="icon-btn" type="button" data-lore="play" aria-label="Pause the cards"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
+          <button class="icon-btn" type="button" data-lore="next" aria-label="Next card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
-        <p class="lore-privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>No message text, names, numbers or emails ever appear on a card unless you choose to show first names.</span></p>
-      </div>
-    </div>
-    <div class="lore-shot rise">
-      <picture>
-        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/lore-dark-720.avif 720w, /img/shots/lore-dark-1280.avif 1280w" sizes="(max-width: 1192px) calc(100vw - 32px), 1160px">
-        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/lore-dark-720.webp 720w, /img/shots/lore-dark-1280.webp 1280w" sizes="(max-width: 1192px) calc(100vw - 32px), 1160px">
-        <source type="image/avif" srcset="/img/shots/lore-light-720.avif 720w, /img/shots/lore-light-1280.avif 1280w" sizes="(max-width: 1192px) calc(100vw - 32px), 1160px">
-        <img src="/img/shots/lore-light-1280.webp" srcset="/img/shots/lore-light-720.webp 720w, /img/shots/lore-light-1280.webp 1280w" sizes="(max-width: 1192px) calc(100vw - 32px), 1160px" width="1280" height="800" loading="lazy" decoding="async" alt="The Your Lore page in Textlore: tree rings for 10 years of messages, with the busiest year in amber, and 3 moments from the demo library.">
-      </picture>
-    </div>
-  </div>
-</section>
-
-<!-- 7. Ask AI -->
-<section class="feature feature--flip" id="ask" aria-labelledby="ask-title">
-  <div class="wrap feature__grid">
-    <div class="feature__text rise">
-      <span class="kicker">Ask AI</span>
-      <h2 id="ask-title">Ask "When did we book the cabin?" and get the answer with the texts it came from.</h2>
-      <p class="feature__body">Ask AI reads your messages with Apple Intelligence, on your Mac. Every answer lists the messages it used, and one click takes you to them. It needs a Mac with Apple Intelligence; everything else works on any Mac running macOS 26.</p>
-    </div>
-    <div class="stage rise">
-      <div class="stage__shot">
-        <picture>
-          <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/ask-ai-dark-720.avif 720w, /img/shots/ask-ai-dark-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/ask-ai-dark-720.webp 720w, /img/shots/ask-ai-dark-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <source type="image/avif" srcset="/img/shots/ask-ai-light-720.avif 720w, /img/shots/ask-ai-light-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 560px">
-          <img src="/img/shots/ask-ai-light-1280.webp" srcset="/img/shots/ask-ai-light-720.webp 720w, /img/shots/ask-ai-light-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 560px" width="1280" height="800" loading="lazy" decoding="async" alt="Ask AI in Textlore: a question, an answer and the messages it came from.">
-        </picture>
-      </div>
-      <div class="stage__demo">
-        <div class="card ask" id="ask-demo" role="img" aria-label="A question bubble asks when did we book the cabin. Pulsing rings show Searching messages, then an answer appears: you booked it on 3 February 2024, with 2 source messages from Jordan and Theo.">
-          <p class="bubble bubble--me" aria-hidden="true"><span class="q">When did we book the cabin?</span></p>
-          <div class="thinking" aria-hidden="true" hidden>
-            <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" stroke-width="2.5"/><circle cx="20" cy="20" r="11.5" stroke-width="2.5"/><circle cx="20" cy="20" r="6" stroke-width="2.5"/><circle cx="20" cy="20" r="2.4"/></svg>
-            <span class="step">Searching messages…</span>
-          </div>
-          <div class="answer" aria-hidden="true">
-            <p>You booked it on <strong>3 February 2024</strong>. Jordan sent the confirmation that evening, and Theo split the cost the next day.</p>
-            <div class="sources">
-              <button class="source" type="button" tabindex="-1"><small>3 Feb 2024 · 8:42 PM</small><b>Jordan</b><span>Booked! The cabin is ours for 14 to 16 March</span></button>
-              <button class="source" type="button" tabindex="-1"><small>4 Feb 2024 · 9:15 AM</small><b>Theo</b><span>Sent you my third for the cabin</span></button>
-            </div>
-            <div class="chips"><span>What happened next?</span><span>Show more from 2024</span></div>
-          </div>
-        </div>
+        <p class="cardnote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>No message text, names, numbers or emails ever appear on a card unless you choose to show first names.</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 8. Privacy -->
-<section class="privacy" id="privacy" aria-labelledby="privacy-title">
-  <div class="wrap privacy__grid">
-    <div class="rise">
-      <svg class="lock" viewBox="0 0 132 132" aria-hidden="true"><path pathLength="100" d="M40 58V42a26 26 0 0 1 52 0v16"/><rect pathLength="100" x="26" y="58" width="80" height="58" rx="16"/><circle cx="66" cy="86" r="8"/></svg>
-      <h2 id="privacy-title">Textlore only reads.</h2>
-    </div>
-    <ul class="points rise">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4 3v-3h.5A2.5 2.5 0 0 1 4 14.5z"/><path d="M9 10.5h6"/></svg>It never sends, edits or deletes a message.</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Your messages, photos and stats never leave your Mac.</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.7 5.7l12.6 12.6"/></svg>No account, no email, no tracking, no analytics.</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12.5l2.5 2.5L16 9.5"/><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/></svg>It goes online for 2 things only: checking your licence and checking for updates.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- 9. Price -->
-<section class="price" id="price" aria-labelledby="price-title">
+<!-- 04 Ask -->
+<section class="chapter" id="ask" aria-labelledby="ask-title">
   <div class="wrap">
-    <div class="price-card rise">
-      <h2 id="price-title"><span class="num" data-roll="29" data-prefix="$">$29</span><small>once.</small></h2>
-      <p>Try every feature free for 14 days. If you keep it, one licence works on 2 Macs and includes every 1.x update.</p>
-      <div class="btns">
-        <a class="btn download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free for 14 days</a>
-        <a class="btn btn--plain buy" href="https://theusefultech.gumroad.com/l/textlore">Buy for $29</a>
+    <div class="chapter__head">
+      <p class="chapter__label mono"><svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><circle cx="15" cy="15" r="13" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 3"/><circle cx="15" cy="15" r="3" fill="#F5A524"/></svg>04 Ask</p>
+      <div>
+        <h2 id="ask-title" class="rise">Ask your texts a question. <em>Get the answer and the receipts.</em></h2>
       </div>
-      <p class="note">Prices adjust for your country at checkout.</p>
+      <div class="chapter__body rise">
+        <p>Ask AI reads your messages with Apple Intelligence, right on your Mac. Every answer lists the messages it used, and one click takes you to them.</p>
+        <p class="aside">Ask AI needs a Mac with Apple Intelligence. Everything else works on any Mac running macOS 26.</p>
+      </div>
+    </div>
+
+    <div class="ask">
+      <div class="ask__qs rise" role="group" aria-label="Ask a question">
+        <p class="mono">Ask Sam's texts</p>
+        <button class="q" type="button" aria-pressed="false">When did I book the cabin?</button>
+        <button class="q" type="button" aria-pressed="false">When does Theo's flight land?</button>
+        <button class="q" type="button" aria-pressed="false">What did Mom say about dinner?</button>
+      </div>
+      <div class="chat rise" id="chat" aria-live="polite">
+        <p class="bubble"></p>
+        <div class="thinking" hidden><svg viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="19" r="16" stroke-width="2.4"/><circle cx="19" cy="19" r="11" stroke-width="2.4"/><circle cx="19" cy="19" r="6" stroke-width="2.4"/><circle cx="19" cy="19" r="2.4"/></svg><span class="step">Searching messages…</span></div>
+        <p class="answer"></p>
+        <div class="sources"></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- The real app -->
+<section class="gallery" id="app" aria-labelledby="app-title">
+  <div class="wrap gallery__head">
+    <h2 id="app-title" class="rise">The real app, <em>in light and dark.</em></h2>
+    <div class="gallery__nav">
+      <button class="icon-btn" type="button" data-gal="-1" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="icon-btn" type="button" data-gal="1" aria-label="Next screenshot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+  <div class="gallery__track" tabindex="0" role="region" aria-label="Screenshots of Textlore">
+    <figure>
+      <div class="shot"><picture>
+        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/main-window-dark-960.avif 960w, /img/shots/main-window-dark-1600.avif 1600w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/main-window-dark-960.webp 960w, /img/shots/main-window-dark-1600.webp 1600w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/avif" srcset="/img/shots/main-window-light-960.avif 960w, /img/shots/main-window-light-1600.avif 1600w" sizes="(max-width: 930px) 84vw, 780px">
+        <img src="/img/shots/main-window-light-1600.webp" srcset="/img/shots/main-window-light-960.webp 960w, /img/shots/main-window-light-1600.webp 1600w" sizes="(max-width: 930px) 84vw, 780px" width="1600" height="1000" loading="lazy" decoding="async" alt="The Textlore window: conversations, and a conversation open at a message.">
+      </picture></div>
+      <figcaption class="mono"><b>Fig. 2</b>Conversations</figcaption>
+    </figure>
+    <figure>
+      <div class="shot"><picture>
+        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/quick-search-dark-720.avif 720w, /img/shots/quick-search-dark-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/quick-search-dark-720.webp 720w, /img/shots/quick-search-dark-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/avif" srcset="/img/shots/quick-search-light-720.avif 720w, /img/shots/quick-search-light-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <img src="/img/shots/quick-search-light-1280.webp" srcset="/img/shots/quick-search-light-720.webp 720w, /img/shots/quick-search-light-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px" width="1280" height="800" loading="lazy" decoding="async" alt="Quick search floating over the desktop, with results and photo thumbnails.">
+      </picture></div>
+      <figcaption class="mono"><b>Fig. 3</b>Quick search, Option-Space</figcaption>
+    </figure>
+    <figure>
+      <div class="shot"><picture>
+        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/attachments-dark-720.avif 720w, /img/shots/attachments-dark-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/attachments-dark-720.webp 720w, /img/shots/attachments-dark-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/avif" srcset="/img/shots/attachments-light-720.avif 720w, /img/shots/attachments-light-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <img src="/img/shots/attachments-light-1280.webp" srcset="/img/shots/attachments-light-720.webp 720w, /img/shots/attachments-light-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px" width="1280" height="800" loading="lazy" decoding="async" alt="Every photo and file people sent, grouped by person and month.">
+      </picture></div>
+      <figcaption class="mono"><b>Fig. 4</b>Photos and files</figcaption>
+    </figure>
+    <figure>
+      <div class="shot"><picture>
+        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/export-confirmation-dark-560.avif 560w, /img/shots/export-confirmation-dark-1000.avif 1000w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/export-confirmation-dark-560.webp 560w, /img/shots/export-confirmation-dark-1000.webp 1000w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/avif" srcset="/img/shots/export-confirmation-light-560.avif 560w, /img/shots/export-confirmation-light-1000.avif 1000w" sizes="(max-width: 930px) 84vw, 780px">
+        <img src="/img/shots/export-confirmation-light-1000.webp" srcset="/img/shots/export-confirmation-light-560.webp 560w, /img/shots/export-confirmation-light-1000.webp 1000w" sizes="(max-width: 930px) 84vw, 780px" width="1000" height="824" loading="lazy" decoding="async" alt="The export confirmation: a green check, a preview of the PDF and its details.">
+      </picture></div>
+      <figcaption class="mono"><b>Fig. 5</b>Export</figcaption>
+    </figure>
+    <figure>
+      <div class="shot"><picture>
+        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/lore-dark-720.avif 720w, /img/shots/lore-dark-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/lore-dark-720.webp 720w, /img/shots/lore-dark-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/avif" srcset="/img/shots/lore-light-720.avif 720w, /img/shots/lore-light-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <img src="/img/shots/lore-light-1280.webp" srcset="/img/shots/lore-light-720.webp 720w, /img/shots/lore-light-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px" width="1280" height="800" loading="lazy" decoding="async" alt="Your Lore: tree rings for 10 years of messages, the busiest year in amber.">
+      </picture></div>
+      <figcaption class="mono"><b>Fig. 6</b>Your Lore</figcaption>
+    </figure>
+    <figure>
+      <div class="shot"><picture>
+        <source type="image/avif" media="(prefers-color-scheme: dark)" srcset="/img/shots/ask-ai-dark-720.avif 720w, /img/shots/ask-ai-dark-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/webp" media="(prefers-color-scheme: dark)" srcset="/img/shots/ask-ai-dark-720.webp 720w, /img/shots/ask-ai-dark-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <source type="image/avif" srcset="/img/shots/ask-ai-light-720.avif 720w, /img/shots/ask-ai-light-1280.avif 1280w" sizes="(max-width: 930px) 84vw, 780px">
+        <img src="/img/shots/ask-ai-light-1280.webp" srcset="/img/shots/ask-ai-light-720.webp 720w, /img/shots/ask-ai-light-1280.webp 1280w" sizes="(max-width: 930px) 84vw, 780px" width="1280" height="800" loading="lazy" decoding="async" alt="Ask AI: a question, the answer and the messages it came from.">
+      </picture></div>
+      <figcaption class="mono"><b>Fig. 7</b>Ask AI</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- What Textlore will never do -->
+<section class="never" id="privacy" aria-labelledby="never-title">
+  <div class="wrap">
+    <p class="mono" style="color:var(--ink-3)">Privacy</p>
+    <h2 id="never-title" class="rise" style="margin-top:14px;font-size:clamp(22px,2.4vw,30px);line-height:1.3;color:var(--ink-2)">What Textlore will never do:</h2>
+    <ul>
+      <li>Send, edit or delete a message.</li>
+      <li>Upload your texts anywhere.</li>
+      <li>Ask you for an account.</li>
+      <li>Track you or show you ads.</li>
+      <li>Charge you every month.</li>
+    </ul>
+    <div class="never__foot rise">
+      <p><strong>Textlore only reads.</strong> Your messages, photos and stats stay on your Mac, and Ask AI uses Apple's on-device model.</p>
+      <p>It goes online for 2 things only: checking your licence and checking for updates. It asks for Full Disk Access because macOS keeps your Messages history in a protected folder.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Price: one sentence -->
+<section class="price" id="price" aria-labelledby="price-title">
+  <svg class="price__rings" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="price-title" class="rise">$29, <em>once.</em></h2>
+    <p class="rise">Try every feature free for 14 days. If you keep it, one licence works on 2 Macs and includes every 1.x update.</p>
+    <div class="btns rise">
+      <a class="btn download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free for 14 days</a>
+      <a class="btn btn--amber buy" href="https://theusefultech.gumroad.com/l/textlore">Buy for $29</a>
+    </div>
+    <p class="small">Prices adjust for your country at checkout.</p>
+  </div>
+</section>
+
+<!-- Questions -->
 <section class="faq" id="faq" aria-labelledby="faq-title">
   <div class="wrap">
     <h2 id="faq-title" class="rise">Questions</h2>
-    <div class="faq__list rise">
-      <details><summary>Does it work with WhatsApp?</summary><div><p>Not yet. Textlore reads Apple's Messages app: iMessage and SMS.</p></div></details>
-      <details><summary>Do I need my iPhone?</summary><div><p>No. Textlore reads the Messages history on your Mac. Turn on Messages in iCloud on your iPhone and Mac to have your full history there.</p></div></details>
-      <details><summary>Why does it ask for Full Disk Access?</summary><div><p>macOS keeps your Messages history in a protected folder and only opens it to apps you switch on. Textlore only reads it.</p></div></details>
-      <details><summary>Why isn't it on the Mac App Store?</summary><div><p>Apple doesn't let Mac App Store apps read the Messages history, so every app like this is sold directly.</p></div></details>
-      <details><summary>Can it show photos that are only in iCloud?</summary><div><p>It shows the preview Messages keeps on your Mac, and a button that opens the photo in Messages. From now on, the archive saves each photo while it's on your Mac.</p></div></details>
-      <details><summary>What happens after 14 days?</summary><div><p>Textlore asks for a licence. Your archive keeps saving in the background while you decide, so nothing is lost.</p></div></details>
-      <details><summary>Can I use it on my MacBook and my iMac?</summary><div><p>Yes. One licence works on 2 Macs.</p></div></details>
-    </div>
+    <dl>
+      <div class="faq__row rise"><dt>Does it include texts from my iPhone?</dt><dd>Yes, with Messages in iCloud switched on on your iPhone and your Mac. Textlore reads the Messages history on your Mac, which then includes your iPhone and iPad conversations. You never need to plug your iPhone in.</dd></div>
+      <div class="faq__row rise"><dt>Does it work with WhatsApp?</dt><dd>Not yet. Textlore reads Apple's Messages app: iMessage and SMS.</dd></div>
+      <div class="faq__row rise"><dt>Why does it ask for Full Disk Access?</dt><dd>macOS keeps your Messages history in a protected folder and only opens it to apps you switch on. Textlore only reads it.</dd></div>
+      <div class="faq__row rise"><dt>Why isn't it on the Mac App Store?</dt><dd>Apple doesn't let Mac App Store apps read the Messages history, so every app like this is sold directly.</dd></div>
+      <div class="faq__row rise"><dt>Can it show photos that are only in iCloud?</dt><dd>It shows the preview Messages keeps on your Mac, and a button that opens the photo in Messages. From now on, the archive saves each photo while it's on your Mac.</dd></div>
+      <div class="faq__row rise"><dt>What happens after 14 days?</dt><dd>Textlore asks for a licence. Your archive keeps saving in the background while you decide, so nothing is lost.</dd></div>
+      <div class="faq__row rise"><dt>Can I use it on my MacBook and my iMac?</dt><dd>Yes. One licence works on 2 Macs.</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -407,10 +433,10 @@
 <footer class="footer">
   <div class="wrap">
     <div class="footer__grid">
-      <div class="footer__brand"><img src="/img/icon-96.webp" width="40" height="40" alt="" loading="lazy"><div><b>Textlore</b>Made in Chennai by Raja at The Useful Media Co.</div></div>
+      <div><p>Made in Chennai by Raja at The Useful Media Co.</p><p>Support: <a href="https://discord.gg/WjfenUSZp4" rel="noopener">The Useful Tech Club on Discord</a>, or <a href="mailto:raja@theusefultech.com">raja@theusefultech.com</a></p></div>
       <nav aria-label="Footer"><ul><li><a href="/help/">Help</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/support/">Support</a></li></ul></nav>
     </div>
-    <p class="footer__support">Support: <a href="https://discord.gg/WjfenUSZp4" rel="noopener">The Useful Tech Club on Discord</a>, or <a href="mailto:raja@theusefultech.com">raja@theusefultech.com</a></p>
+    <p class="footer__mark" aria-hidden="true">Textlore<span>.</span></p>
   </div>
 </footer>
 </body>
