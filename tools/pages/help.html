@@ -1,0 +1,267 @@
+<!--
+path: help/index.html
+title: Help: install, search, archive, export and more in Textlore
+description: How to install Textlore, search your Messages history, use quick search, the archive, export, Your Lore, Ask AI, your licence and every keyboard shortcut.
+nav: help
+-->
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow">Help</p>
+      <h1>How can we <em>help?</em></h1>
+      <p class="lede">Everything Textlore does, in short answers. Start typing to filter.</p>
+      <label class="helpsearch">{{icon:search}}<span class="sr-only">Search help</span><input id="helpsearch" type="search" placeholder="Search help, for example licence or has:photo" autocomplete="off"><kbd aria-hidden="true">/</kbd></label>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<section aria-label="Help topics">
+  <div class="wrap">
+    <div class="topic-grid">
+      <a class="topic glow" href="#install">{{icon:install}}<b>Install and first run</b><span>Drag to Applications and switch on Full Disk Access.</span></a>
+      <a class="topic glow" href="#searching">{{icon:search}}<b>Searching</b><span>Search words like from:, has:photo and dates.</span></a>
+      <a class="topic glow" href="#quick-search">{{icon:keyboard}}<b>Quick search</b><span>Option-Space from any app.</span></a>
+      <a class="topic glow" href="#archive">{{icon:keep}}<b>Archive</b><span>What Textlore keeps, and where.</span></a>
+      <a class="topic glow" href="#icloud">{{icon:cloud}}<b>Photos in iCloud</b><span>Why some photos show a preview.</span></a>
+      <a class="topic glow" href="#export">{{icon:export}}<b>Export</b><span>PDF, HTML, text, Markdown, CSV and images.</span></a>
+      <a class="topic glow" href="#your-lore">{{icon:rings}}<b>Your Lore</b><span>Your story, share cards and video.</span></a>
+      <a class="topic glow" href="#ask-ai">{{icon:spark}}<b>Ask AI</b><span>What it needs and what to ask.</span></a>
+      <a class="topic glow" href="#licence">{{icon:key}}<b>Licence</b><span>Keys, 2 Macs and the free trial.</span></a>
+      <a class="topic glow" href="#updates">{{icon:refresh}}<b>Updates</b><span>How Textlore stays up to date.</span></a>
+      <a class="topic glow" href="#fixes">{{icon:wrench}}<b>Fixes</b><span>Full Disk Access, syncing, space.</span></a>
+      <a class="topic glow" href="#shortcuts">{{icon:keyboard}}<b>Keyboard shortcuts</b><span>Every shortcut on one page.</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#install">Install and first run</a>
+      <a href="#searching">Searching</a>
+      <a href="#quick-search">Quick search</a>
+      <a href="#archive">Archive</a>
+      <a href="#icloud">Photos in iCloud</a>
+      <a href="#export">Export</a>
+      <a href="#your-lore">Your Lore</a>
+      <a href="#ask-ai">Ask AI</a>
+      <a href="#licence">Licence</a>
+      <a href="#updates">Updates</a>
+      <a href="#fixes">Fixes</a>
+      <a href="#shortcuts">Keyboard shortcuts</a>
+    </nav>
+    <div class="prose">
+
+<section id="install">
+  <h2><span class="ic">{{icon:install}}</span>Install and first run</h2>
+  <ol>
+    <li>Open <strong>Textlore.dmg</strong> and drag Textlore to your Applications folder.</li>
+    <li>Open Textlore from Applications. The welcome screen shows what it does; click <strong>Continue</strong>.</li>
+    <li>Switch on Full Disk Access, so Textlore can read your Messages history:
+      <ol>
+        <li>Click <strong>Open Settings</strong> below.</li>
+        <li>Switch on Textlore in the Full Disk Access list.</li>
+        <li>Come back here. Textlore notices on its own, no restart needed.</li>
+      </ol>
+    </li>
+    <li>Wait for the first import. A ring forms for each year of your history while the count rolls up. About 100,000 messages take under a minute.</li>
+  </ol>
+  <p>Your 14 free days start when the first import finishes. There is no account and no email.</p>
+  <p><strong>Texts from your iPhone and iPad:</strong> Textlore reads the Messages history on your Mac. Switch on Messages in iCloud on your iPhone, iPad and Mac (on the Mac: Messages &gt; Settings &gt; iMessage &gt; Enable Messages in iCloud), and their conversations are on your Mac too. You never need to plug your iPhone in.</p>
+</section>
+
+<section id="searching">
+  <h2><span class="ic">{{icon:search}}</span>Searching</h2>
+  <p>Press <kbd>⌘F</kbd> and start typing. Results narrow with every letter, and the words you typed are lit up in amber. Use <kbd>↑</kbd> and <kbd>↓</kbd> to move through the results and <kbd>Return</kbd> to open the conversation at that message. Inside a conversation, <kbd>⌘G</kbd> goes to the next match and <kbd>⇧⌘G</kbd> to the one before.</p>
+  <p>Add search words to narrow it down. Each one turns into a token in the search bar.</p>
+  <table class="table">
+    <thead><tr><th scope="col">Search word</th><th scope="col">Example and what it finds</th></tr></thead>
+    <tbody>
+      <tr><td><code>from:</code></td><td><code>from:Jordan</code> messages Jordan sent you. <code>from:me</code> finds yours.</td></tr>
+      <tr><td><code>in:</code></td><td><code>in:Family</code> messages in one conversation or group.</td></tr>
+      <tr><td><code>before:</code></td><td><code>before:2023</code> messages sent before 2023.</td></tr>
+      <tr><td><code>after:</code></td><td><code>after:march 2021</code> messages sent after March 2021.</td></tr>
+      <tr><td><code>during:</code></td><td><code>during:summer 2024</code> messages from that summer. Plain dates work too: last week, christmas 2022, diwali.</td></tr>
+      <tr><td><code>has:photo</code></td><td><code>beach has:photo</code> messages about the beach that came with a photo.</td></tr>
+      <tr><td><code>has:video</code></td><td><code>birthday has:video</code> messages with a video.</td></tr>
+      <tr><td><code>has:link</code></td><td><code>recipe has:link</code> messages with a link.</td></tr>
+      <tr><td><code>has:file</code></td><td><code>lease has:file</code> messages with a file such as a PDF.</td></tr>
+      <tr><td><code>is:sent</code></td><td><code>sorry is:sent</code> messages you sent.</td></tr>
+      <tr><td><code>is:received</code></td><td><code>congrats is:received</code> messages people sent you.</td></tr>
+      <tr><td><code>"exact phrase"</code></td><td><code>"see you soon"</code> those words, together, in that order.</td></tr>
+      <tr><td><code>-word</code></td><td><code>flight -delayed</code> flight, but not messages that say delayed.</td></tr>
+    </tbody>
+  </table>
+  <p>If nothing matches, Textlore suggests a spelling it did find.</p>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:search|(max-width: 960px) calc(100vw - 32px), 760px|Search in Textlore, with the match lit up in amber in its conversation.}}</div></div>
+</section>
+
+<section id="quick-search">
+  <h2><span class="ic">{{icon:keyboard}}</span>Quick search</h2>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:quick-search|(max-width: 960px) calc(100vw - 32px), 760px|Quick search floating over Textlore, with results for cabin.}}</div></div>
+  <p>Press <kbd>⌥Space</kbd> in any app. A small search bar floats over whatever you're doing. Type, use the arrow keys to pick a result, and press <kbd>Return</kbd>: Textlore opens at that message. Photos show as small thumbnails in the results.</p>
+  <p>To use a different shortcut, open <strong>Textlore &gt; Settings &gt; Quick Search</strong> and record a new one. If another app already uses it, Textlore tells you so you can pick another.</p>
+</section>
+
+<section id="archive">
+  <h2><span class="ic">{{icon:keep}}</span>Archive</h2>
+  <p>Textlore keeps its own copy of every message, and of every photo, video and file the moment it is on your Mac. When your Mac runs low on space, Messages in iCloud removes its local copies, but Textlore's copies stay.</p>
+  <ul>
+    <li><strong>Where:</strong> <code>~/Library/Application Support/Textlore</code>. Settings &gt; Archive shows its size, a running count and a Show in Finder button.</li>
+    <li><strong>Turning it off:</strong> switch off <strong>Keep a local archive</strong> in Settings &gt; Archive. Messages already saved stay in Textlore.</li>
+    <li><strong>Low on space:</strong> when your Mac is short of space, a banner in Settings &gt; Archive and on the Attachments page shows how much is free and how many attachments are only in iCloud.</li>
+    <li><strong>One-time codes:</strong> if Messages is set to delete verification codes after use, Textlore never archives those messages, and they leave Textlore when Messages deletes them.</li>
+  </ul>
+  <p>Files that were already gone from your Mac and from iCloud before you installed Textlore can't be brought back.</p>
+</section>
+
+<section id="icloud">
+  <h2><span class="ic">{{icon:cloud}}</span>Photos and files kept in iCloud</h2>
+  <p>With Messages in iCloud switched on, macOS removes the copies of older photos and files from your Mac when it needs space. The originals stay in iCloud, and Messages keeps a small preview on your Mac.</p>
+  <p>For those, Textlore shows the preview with <strong>Kept in iCloud. Open in Messages to view it.</strong> The <strong>Open in Messages</strong> button opens that conversation in Messages, which can download the original. Textlore never downloads from iCloud itself. From the day you install it, the archive saves each new photo while it is on your Mac.</p>
+</section>
+
+<section id="export">
+  <h2><span class="ic">{{icon:export}}</span>Export</h2>
+  <p>Export a whole conversation with <kbd>⇧⌘E</kbd>, or click <strong>Select</strong>, pick messages (Shift-click picks everything in between, or use <strong>Select this day</strong>) and press <kbd>⌘E</kbd>. You can also export a date range.</p>
+  <p><strong>Formats:</strong> PDF, HTML, plain text, Markdown, CSV, and an image of the selected snippet.</p>
+  <p><strong>Options:</strong></p>
+  <ul>
+    <li>Timestamps on or off, and date headings on or off.</li>
+    <li>Names in full, as initials, or hidden.</li>
+    <li>Phone numbers and emails hidden, unless you switch them on.</li>
+    <li>Photos full size, small, or left out.</li>
+    <li>Tapbacks on or off.</li>
+    <li>Bubbles or a plain transcript, light or dark.</li>
+  </ul>
+  <p>A live preview shows exactly what you'll get. When it's done, Textlore shows the file with buttons to Share, Show in Finder or Open it.</p>
+</section>
+
+<section id="your-lore">
+  <h2><span class="ic">{{icon:rings}}</span>Your Lore</h2>
+  <p>Your Lore shows your texting life as tree rings, one ring for every year, with the thickest year in amber. Hover a ring to see its count, or click a ring or a year to see just that year. <strong>Play my story</strong> (<kbd>Return</kbd>) plays it full screen; <kbd>←</kbd> and <kbd>→</kbd> step through it and <kbd>Esc</kbd> closes it.</p>
+  <p><strong>Make share cards</strong> (<kbd>⇧⌘L</kbd>) opens the share studio:</p>
+  <ul>
+    <li><strong>Years:</strong> all time, or one year, such as "Your 2024".</li>
+    <li><strong>Looks:</strong> Indigo, Amber, Midnight, Paper and Glass.</li>
+    <li><strong>Sizes:</strong> 9:16 for Stories, Reels and TikTok, 4:5 for Instagram feed and carousels, 1:1 for square posts, 16:9 for X, LinkedIn and YouTube.</li>
+    <li><strong>Names:</strong> hidden by default, so people show as Person 1 to 5. You can show initials or first names.</li>
+    <li><strong>Export:</strong> one image, a carousel of images, or a silent video (add your own music in Instagram or TikTok).</li>
+  </ul>
+  <p>No message text, phone numbers, emails or file names ever appear on a card. Bank codes, delivery alerts and other business texts are left out of every people stat.</p>
+</section>
+
+<section id="ask-ai">
+  <h2><span class="ic">{{icon:spark}}</span>Ask AI</h2>
+  <p>Ask AI answers questions about your messages with Apple Intelligence, on your Mac. Nothing is sent anywhere.</p>
+  <p><strong>What it needs:</strong> a Mac with Apple silicon and Apple Intelligence switched on in System Settings. On other Macs, Ask AI is hidden and everything else works. The first time, Textlore builds an index of your messages in the background; Settings &gt; AI shows its progress.</p>
+  <p><strong>Try asking:</strong></p>
+  <ul>
+    <li>When did we book the cabin?</li>
+    <li>What did Mom say about the wedding?</li>
+    <li>Where did Jordan want to eat last summer?</li>
+    <li>Who sent me the wifi password?</li>
+  </ul>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:ask-ai|(max-width: 960px) calc(100vw - 32px), 760px|Ask AI answering a question with 4 source messages.}}</div></div>
+  <p>Every answer lists the messages it used; click one to open it. Follow-up chips such as "What happened next?" ask the next question for you.</p>
+  <p><strong>Why it can say it couldn't find something:</strong> Ask AI only answers from messages it finds, so it would rather say so than guess. Very short messages (under 3 words) aren't in its index, and while the index is still building it can't see everything yet. Try other words, a name or a date, or use search.</p>
+</section>
+
+<section id="licence">
+  <h2><span class="ic">{{icon:key}}</span>Licence</h2>
+  <ul>
+    <li><strong>Entering a key:</strong> after you buy, click the link in your Gumroad receipt on your Mac and Textlore fills in the key for you; press Activate. Or choose <strong>Textlore &gt; Enter Licence Key…</strong> and paste the key.</li>
+    <li><strong>2 Macs:</strong> one licence works on 2 Macs, such as a MacBook and an iMac. Every 1.x update is included.</li>
+    <li><strong>Moving to a new Mac:</strong> on the old Mac, choose <strong>Settings &gt; Licence &gt; Deactivate This Mac</strong>. If both places are taken, <a href="/support/">ask support</a> and Raja frees one.</li>
+    <li><strong>After the trial:</strong> Textlore asks for a licence and opens to a calm locked screen with Buy and Enter Licence Key. Your archive keeps saving in the background while you decide, so nothing is lost.</li>
+  </ul>
+  <p>Textlore checks your licence with Gumroad about once a month, and keeps working offline in between.</p>
+</section>
+
+<section id="updates">
+  <h2><span class="ic">{{icon:refresh}}</span>Updates</h2>
+  <p>Textlore checks for updates once a day and asks before installing one. It sends nothing but its version number. To check now, choose <strong>Textlore &gt; Check for Updates…</strong>. You can always download the latest version from <a href="/">textlore.app</a>.</p>
+</section>
+
+<section id="fixes">
+  <h2><span class="ic">{{icon:wrench}}</span>Fixes</h2>
+  <h3>Full Disk Access was switched off</h3>
+  <p>Textlore shows "Full Disk Access was switched off." Open System Settings &gt; Privacy &amp; Security &gt; Full Disk Access and switch Textlore back on. It notices within a few seconds.</p>
+  <h3>New messages aren't showing</h3>
+  <p>Textlore shows what Messages has on this Mac and updates within a few seconds of a change. If Messages itself is missing messages, open Messages &gt; Settings &gt; iMessage, check that <strong>Enable Messages in iCloud</strong> is on, and click <strong>Sync Now</strong>. Do the same on your iPhone in Settings &gt; Apps &gt; Messages.</p>
+  <h3>Low disk space</h3>
+  <p>When your Mac is low on space, macOS removes Messages' copies of photos and files, and the archive needs room to save new ones. Free some space; the banner in Settings &gt; Archive shows how much is free.</p>
+  <h3>Removing Textlore and its data</h3>
+  <ol>
+    <li>Open <strong>Settings &gt; Privacy</strong> and click <strong>Delete All App Data</strong>. This removes Textlore's archive, index and settings from this Mac.</li>
+    <li>Quit Textlore and move it from Applications to the Bin.</li>
+  </ol>
+  <p>Your licence and trial dates are kept in your keychain, so reinstalling picks up where you left off. Your Messages history is never touched.</p>
+</section>
+
+<section id="shortcuts">
+  <h2><span class="ic">{{icon:keyboard}}</span>Keyboard shortcuts</h2>
+  <p>In the app, press <kbd>⌘/</kbd> to see this list.</p>
+  <table class="table">
+    <thead><tr><th scope="col">Keys</th><th scope="col">Find</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>⌘F</kbd></td><td>Search every message</td></tr>
+      <tr><td><kbd>⌘G</kbd></td><td>Next match in the conversation</td></tr>
+      <tr><td><kbd>⇧⌘G</kbd></td><td>Previous match in the conversation</td></tr>
+      <tr><td><kbd>⌘J</kbd></td><td>Jump to a date</td></tr>
+    </tbody>
+  </table>
+  <table class="table">
+    <thead><tr><th scope="col">Keys</th><th scope="col">Move around</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>⌘1</kbd></td><td>Conversations</td></tr>
+      <tr><td><kbd>⌘2</kbd></td><td>Business and alerts</td></tr>
+      <tr><td><kbd>⌘3</kbd></td><td>Attachments</td></tr>
+      <tr><td><kbd>⌘4</kbd></td><td>Your Lore</td></tr>
+      <tr><td><kbd>⌘5</kbd></td><td>Ask AI</td></tr>
+      <tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Previous or next conversation</td></tr>
+    </tbody>
+  </table>
+  <table class="table">
+    <thead><tr><th scope="col">Keys</th><th scope="col">Select and export</th></tr></thead>
+    <tbody>
+      <tr><td>Click</td><td>Select a message (after Select)</td></tr>
+      <tr><td>⇧ Click</td><td>Select every message in between</td></tr>
+      <tr><td><kbd>⌘C</kbd></td><td>Copy the selected messages</td></tr>
+      <tr><td><kbd>⌘E</kbd></td><td>Export the selected messages</td></tr>
+      <tr><td><kbd>⇧⌘E</kbd></td><td>Export this conversation</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Stop selecting</td></tr>
+    </tbody>
+  </table>
+  <table class="table">
+    <thead><tr><th scope="col">Keys</th><th scope="col">Your Lore and Ask AI</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Return</kbd></td><td>Play my story (on Your Lore)</td></tr>
+      <tr><td><kbd>⇧⌘L</kbd></td><td>Make share cards</td></tr>
+      <tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Step through the story; Esc closes it</td></tr>
+      <tr><td><kbd>Return</kbd></td><td>Ask the question (in Ask AI)</td></tr>
+      <tr><td><kbd>⌘N</kbd></td><td>New question (in Ask AI)</td></tr>
+    </tbody>
+  </table>
+  <table class="table">
+    <thead><tr><th scope="col">Keys</th><th scope="col">Quick search, photos and Textlore</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>⌥Space</kbd></td><td>Search from any app (change it in Settings)</td></tr>
+      <tr><td><kbd>Space</kbd></td><td>Quick Look the photo under the pointer</td></tr>
+      <tr><td>Double-click</td><td>Quick Look a photo</td></tr>
+      <tr><td><kbd>⌘,</kbd></td><td>Settings</td></tr>
+      <tr><td><kbd>⌘/</kbd></td><td>This list of shortcuts</td></tr>
+    </tbody>
+  </table>
+  <p>Still stuck? <a href="/support/">Ask for help</a>.</p>
+</section>
+      <p class="no-match">No help topic matches that. Try other words, or <a href="/support/">ask for help</a>.</p>
+    </div>
+  </div>
+</div>
+
+</main>

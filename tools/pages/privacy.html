@@ -1,0 +1,61 @@
+<!--
+path: privacy/index.html
+title: Privacy: your messages never leave your Mac | Textlore
+description: Textlore reads your Messages on your Mac and nothing leaves it. No account, no analytics, no tracking. It only contacts Gumroad for your licence and textlore.app for updates.
+-->
+<main id="main">
+
+<section class="page-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow">Privacy</p>
+      <h1>Your messages <em>never leave your Mac.</em></h1>
+      <p class="lede">The short version: Textlore only reads, keeps everything on your Mac, and goes online for 2 things only. The details are below, in plain words.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc" style="padding-top:0">
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact glow rise"><b class="num">0</b><span>Accounts. You never sign up or sign in.</span></div>
+      <div class="fact glow rise" style="--rd:.06s"><b class="num">0</b><span>Analytics, trackers or cookies, in the app and on this website.</span></div>
+      <div class="fact glow rise" style="--rd:.12s"><b class="num">2</b><span>Things it goes online for: your licence and updates.</span></div>
+      <div class="fact glow rise" style="--rd:.18s">{{icon:lock}}<span>Ask AI runs on Apple's on-device model.</span></div>
+    </div>
+
+    <div class="flowmap rise" aria-label="What stays on your Mac and what is sent">
+      <div class="flowmap__mac">
+        <b>{{icon:laptop}}Stays on your Mac</b>
+        <ul><li>Every message</li><li>Photos and files</li><li>Your Lore stats</li><li>Ask AI questions and answers</li><li>Searches</li><li>The archive</li></ul>
+      </div>
+      <div class="flowmap__arrows" aria-hidden="true">
+        <svg viewBox="0 0 90 16"><line x1="0" y1="8" x2="90" y2="8"/></svg>
+        <svg viewBox="0 0 90 16"><line x1="0" y1="8" x2="90" y2="8"/></svg>
+      </div>
+      <div class="flowmap__out">
+        <div><b>{{icon:key}}Gumroad</b><small>Your licence key and the product ID, to check your licence.</small></div>
+        <div><b>{{icon:refresh}}textlore.app</b><small>The app version, to check for updates.</small></div>
+      </div>
+    </div>
+
+    <div class="doc__grid">
+      <nav class="toc" aria-label="On this page">
+        <p>On this page</p>
+        <a href="#on-your-mac">On your Mac</a><a href="#no-tracking">No tracking</a><a href="#online">What goes online</a><a href="#ask-ai">Ask AI</a><a href="#payment">Payment</a><a href="#remove">Removing everything</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="prose">
+        <section id="on-your-mac"><h2><span class="ic">{{icon:laptop}}</span>Your messages stay on your Mac</h2><p>Textlore reads your Messages history on your Mac and keeps its own copy in <code>~/Library/Application Support/Textlore</code>. That data never leaves your Mac. Textlore never sends, edits or deletes a message.</p></section>
+        <section id="no-tracking"><h2><span class="ic">{{icon:eye-off}}</span>No account, no tracking</h2><p>Textlore has no account, no analytics and no tracking. This website has none either: no cookies, no analytics and no trackers.</p></section>
+        <section id="online"><h2><span class="ic">{{icon:globe}}</span>The 2 services it contacts</h2><ul><li><strong>Gumroad</strong>, to check your licence key. It sends the key and the product ID.</li><li><strong>textlore.app</strong>, to check for updates. It sends the app version.</li></ul><p>Nothing else is sent.</p></section>
+        <section id="ask-ai"><h2><span class="ic">{{icon:spark}}</span>Ask AI</h2><p>Ask AI uses Apple's on-device model. Your questions and messages are not sent anywhere.</p></section>
+        <section id="payment"><h2><span class="ic">{{icon:key}}</span>Payment</h2><p>Gumroad handles payment and keeps the details you give at checkout, under <a href="https://gumroad.com/privacy" rel="noopener">Gumroad's own privacy policy</a>. Gumroad's checkout loads on this website only when you reach for a Buy button.</p></section>
+        <section id="remove"><h2><span class="ic">{{icon:wrench}}</span>Removing everything</h2><p>To remove everything, use <strong>Settings &gt; Privacy &gt; Delete All App Data</strong>, then move Textlore to the Bin.</p></section>
+        <section id="contact"><h2><span class="ic">{{icon:mail}}</span>Contact</h2><p>Questions about privacy? Email <a href="mailto:raja@theusefultech.com">raja@theusefultech.com</a>.</p></section>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>

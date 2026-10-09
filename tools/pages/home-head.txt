@@ -1,0 +1,5 @@
+<meta property="og:url" content="https://textlore.app/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Textlore","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 26 or later","description":"Search, keep and relive your whole iMessage history, privately on your Mac. Instant search, an archive that keeps every photo, Your Lore and Ask AI.","url":"https://textlore.app/","downloadUrl":"https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg","softwareVersion":"1.0","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"},"author":{"@type":"Person","name":"Raja"},"publisher":{"@type":"Organization","name":"The Useful Media Co.","url":"https://theusefulmedia.com"}}
+</script>

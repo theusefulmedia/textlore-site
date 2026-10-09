@@ -12,8 +12,9 @@
   var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function svgEl(tag, attrs) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  var R = window.TextloreRings, YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026], COUNTS = R.COUNTS, MAXC = R.MAXC;
 
-  // A demo plays while it is on screen and rests in its finished state otherwise.
+  // A demo plays while on screen and rests in its finished state otherwise.
   function demo(root, play, rest, threshold) {
     if (!root) return;
     var timers = [];
@@ -28,73 +29,66 @@
     }, { threshold: threshold || 0.35 }).observe(root);
   }
 
-  // Scroll progress, read once per frame.
-  var scrollers = [];
+  // Scroll-linked work, once per frame.
+  var scrollers = [], ticking = false;
   function onScroll(fn) { scrollers.push(fn); }
-  var ticking = false;
   function frame() { ticking = false; var vh = window.innerHeight; scrollers.forEach(function (fn) { fn(vh); }); }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
   window.addEventListener('resize', function () { requestAnimationFrame(frame); });
 
-  var YEARS = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
-  var COUNTS = [3120, 5480, 7940, 14210, 12860, 11030, 13670, 15980, 17420, 12390];
-  var MAXC = 17420;
-
-  function ringGeometry(inner, outer, gap) {
-    var widths = COUNTS.map(function (c) { return 4 + 14 * c / MAXC; });
-    var total = widths.reduce(function (a, b) { return a + b; }, 0) + gap * (COUNTS.length - 1);
-    var scale = (outer - inner) / total, r = inner, out = [];
-    widths.forEach(function (w) { w *= scale; r += w / 2; out.push({ r: r, w: w }); r += w / 2 + gap * scale; });
-    return out;
+  // ---------- Photos: the same made-up landscapes the app's demo library paints (sky, sun, 3 hills) ----------
+  var SKIES = [['#7EC8F2', '#F9E1C0'], ['#F7A072', '#FCE3B6'], ['#3B4A8C', '#E88B6E'], ['#9BD1E8', '#E9F5F9'], ['#C9A7EB', '#FFD6A5'], ['#5E7CE2', '#B8E1FF']];
+  var LANDS = ['#3E7C59', '#5B8C3A', '#2F5D62', '#7A5C3E', '#4B6B8A', '#8A6D9E'];
+  var uid = 0;
+  function rng(seed) { var a = (seed * 2654435761) >>> 0; return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function shade(hex, s) {
+    var n = parseInt(hex.slice(1), 16);
+    var c = [n >> 16 & 255, n >> 8 & 255, n & 255].map(function (v) { return Math.min(255, Math.round(v * s)); });
+    return 'rgb(' + c.join(',') + ')';
   }
+  function landscape(seed, w, h) {
+    var r = rng(seed + 7), id = 'sky' + (++uid);
+    var rand = function (a, b) { return a + (b - a) * r(); };
+    var sky = SKIES[Math.floor(r() * SKIES.length)], land = LANDS[Math.floor(r() * LANDS.length)];
+    var s = '<svg viewBox="0 0 ' + w + ' ' + h + '" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + sky[0] + '"/><stop offset="1" stop-color="' + sky[1] + '"/></linearGradient></defs>';
+    s += '<rect width="' + w + '" height="' + h + '" fill="url(#' + id + ')"/>';
+    var sunR = rand(28, 60) * w / 640;
+    s += '<circle cx="' + rand(60 + sunR, w - 60 - sunR).toFixed(1) + '" cy="' + (h - h * rand(0.55, 0.8) - sunR).toFixed(1) + '" r="' + sunR.toFixed(1) + '" fill="#FFEDBF" fill-opacity=".95"/>';
+    for (var layer = 0; layer < 3; layer++) {
+      var base = h * (0.5 - layer * 0.14), amp = rand(18, 46) * h / 480, freq = rand(1.2, 2.6), phase = rand(0, 6.28), d = 'M0 ' + h;
+      for (var x = 0; x <= w; x += 8) { var t = x / w; d += ' L' + x + ' ' + (h - (base + amp * Math.sin(t * Math.PI * freq + phase))).toFixed(1); }
+      d += ' L' + w + ' ' + h + 'Z';
+      s += '<path d="' + d + '" fill="' + shade(land, 1.15 - layer * 0.25) + '"/>';
+    }
+    return s + '</svg>';
+  }
+  $$('[data-photo]').forEach(function (n) { n.innerHTML = landscape(+n.getAttribute('data-photo'), 480, 480); });
 
   // ---------- Hero: search Sam's texts, plotted on the rings ----------
   // [who, date, text, flags] flags: m sent by Sam, p photo, v video
   var WALL = [
-    ['Jordan', '14 Mar 2020', 'Can you believe it has been a year already?', ''],
-    ['Mom', '2 Aug 2023', 'Mom says dinner is at seven', ''],
-    ['Jordan', '3 Feb 2024', 'I booked the cabin for August', 'm'],
-    ['Theo', '19 Dec 2022', 'The flight lands at 6:40, terminal 1', ''],
-    ['Priya', '7 May 2021', 'Look what I found in the old photo box', 'p'],
-    ['Ana', '28 Jan 2020', 'Happy birthday! Hope today is wonderful', ''],
-    ['Mom', '12 Jun 2019', 'The kids loved the park today', 'p'],
-    ['Jordan', '22 Oct 2017', 'Still awake?', 'm'],
-    ['Theo', '9 Apr 2018', 'Did you finish the playlist for the road trip?', ''],
-    ['Jordan', '5 Jul 2025', 'Our flight lands early, skip the cab', 'm'],
-    ['Priya', '30 Nov 2019', 'That place was so good, we have to go back', ''],
-    ['Mom', '25 Dec 2021', 'Look at this view', 'p'],
-    ['Ana', '16 Sep 2024', 'Text me when you get home safe', ''],
-    ['Jordan', '1 Jan 2026', 'Best day', 'p'],
-    ['Theo', '11 Mar 2020', 'Just landed, see you at baggage claim', 'm'],
-    ['Mom', '4 May 2018', 'I need your recipe for that soup', 'm'],
-    ['Jordan', '21 Aug 2024', 'This place looks great, the cabin is right on the lake', ''],
-    ['Priya', '8 Feb 2022', 'Thank you so much for tonight', ''],
-    ['Ana', '19 Jun 2023', 'Throwback', 'p'],
-    ['Jordan', '14 Mar 2020', 'haha I cannot believe you did that', 'm'],
-    ['Theo', '2 Oct 2026', 'Saving you a seat', ''],
-    ['Mom', '17 Apr 2017', 'Call me when you get a chance', ''],
-    ['Jordan', '6 Dec 2018', 'Can’t stop thinking about that pasta', 'm'],
-    ['Priya', '23 Jul 2025', 'Sunday morning', 'v'],
-    ['Ana', '12 Nov 2021', 'Tell your sister I said hi', ''],
-    ['Jordan', '9 Sep 2022', 'Flight lands at 11, call you after', ''],
-    ['Mom', '3 Mar 2024', 'The cake turned out great', 'p'],
-    ['Theo', '29 May 2019', 'We should plan something for the long weekend', 'm'],
-    ['Jordan', '13 Feb 2023', 'I owe you one', ''],
-    ['Priya', '15 Jan 2018', 'Want to grab coffee tomorrow morning?', 'm'],
-    ['Ana', '7 Oct 2026', 'Still awake? On my way now', ''],
-    ['Jordan', '18 Aug 2021', 'Remember to bring the charger', ''],
-    ['Mom', '10 Oct 2020', 'Happy birthday! Hope today is wonderful', ''],
-    ['Theo', '27 Jun 2024', 'Booked the 3:15 flight on Friday', 'm'],
-    ['Jordan', '31 Dec 2019', 'Good morning! Big day today', 'm'],
-    ['Priya', '4 Apr 2026', 'For you', 'p'],
-    ['Ana', '20 Mar 2017', 'Did you see the game last night?', ''],
-    ['Jordan', '6 Aug 2024', 'Packed! See you at the cabin', 'm'],
-    ['Mom', '14 Feb 2022', 'Text me when you get home safe', ''],
-    ['Theo', '1 Sep 2025', 'That is the best news all week', ''],
-    ['Mom', '8 Nov 2017', 'Did the package come?', ''],
-    ['Ana', '2 Jun 2018', 'Look at this view', 'p'],
-    ['Priya', '18 Apr 2023', 'Running ten minutes late, sorry', 'm'],
-    ['Theo', '30 Jan 2021', 'This weather is unreal', '']
+    ['Jordan', '14 Mar 2020', 'Can you believe it has been a year already?', ''], ['Mom', '2 Aug 2023', 'Mom says dinner is at seven', ''],
+    ['Jordan', '3 Feb 2024', 'I booked the cabin for August', 'm'], ['Theo', '19 Dec 2022', 'The flight lands at 6:40, terminal 1', ''],
+    ['Priya', '7 May 2021', 'Look what I found in the old photo box', 'p'], ['Ana', '28 Jan 2020', 'Happy birthday! Hope today is wonderful', ''],
+    ['Mom', '12 Jun 2019', 'The kids loved the park today', 'p'], ['Jordan', '22 Oct 2017', 'Still awake?', 'm'],
+    ['Theo', '9 Apr 2018', 'Did you finish the playlist for the road trip?', ''], ['Jordan', '5 Jul 2025', 'Our flight lands early, skip the cab', 'm'],
+    ['Priya', '30 Nov 2019', 'That place was so good, we have to go back', ''], ['Mom', '25 Dec 2021', 'Look at this view', 'p'],
+    ['Ana', '16 Sep 2024', 'Text me when you get home safe', ''], ['Jordan', '1 Jan 2026', 'Best day', 'p'],
+    ['Theo', '11 Mar 2020', 'Just landed, see you at baggage claim', 'm'], ['Mom', '4 May 2018', 'I need your recipe for that soup', 'm'],
+    ['Jordan', '21 Aug 2024', 'This place looks great, the cabin is right on the lake', 'p'], ['Priya', '8 Feb 2022', 'Thank you so much for tonight', ''],
+    ['Ana', '19 Jun 2023', 'Throwback', 'p'], ['Jordan', '14 Mar 2020', 'haha I cannot believe you did that', 'm'],
+    ['Theo', '2 Oct 2026', 'Saving you a seat', ''], ['Mom', '17 Apr 2017', 'Call me when you get a chance', ''],
+    ['Jordan', '6 Dec 2018', 'Can’t stop thinking about that pasta', 'm'], ['Priya', '23 Jul 2025', 'Sunday morning', 'v'],
+    ['Ana', '12 Nov 2021', 'Tell your sister I said hi', ''], ['Jordan', '9 Sep 2022', 'Flight lands at 11, call you after', ''],
+    ['Mom', '3 Mar 2024', 'The cake turned out great', 'p'], ['Theo', '29 May 2019', 'We should plan something for the long weekend', 'm'],
+    ['Jordan', '13 Feb 2023', 'I owe you one', ''], ['Priya', '15 Jan 2018', 'Want to grab coffee tomorrow morning?', 'm'],
+    ['Ana', '7 Oct 2026', 'Still awake? On my way now', ''], ['Jordan', '18 Aug 2021', 'Remember to bring the charger', ''],
+    ['Mom', '10 Oct 2020', 'Happy birthday! Hope today is wonderful', ''], ['Theo', '27 Jun 2024', 'Booked the 3:15 flight on Friday', 'm'],
+    ['Jordan', '31 Dec 2019', 'Good morning! Big day today', 'm'], ['Priya', '4 Apr 2026', 'For you', 'p'],
+    ['Ana', '20 Mar 2017', 'Did you see the game last night?', ''], ['Jordan', '6 Aug 2024', 'Packed! See you at the cabin', 'm'],
+    ['Mom', '14 Feb 2022', 'Text me when you get home safe', ''], ['Theo', '1 Sep 2025', 'That is the best news all week', ''],
+    ['Mom', '8 Nov 2017', 'Did the package come?', ''], ['Ana', '2 Jun 2018', 'Look at this view', 'p'],
+    ['Priya', '18 Apr 2023', 'Running ten minutes late, sorry', 'm'], ['Theo', '30 Jan 2021', 'This weather is unreal', '']
   ];
   var MONTHS = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
 
@@ -103,43 +97,41 @@
     if (!root) return;
     var svg = $('.ringsearch__svg', root), input = $('input', root), list = $('.hits', root), count = $('.search__count', root), tip = $('.tip', root);
     var chips = $$('.chip', root);
-    var rings = ringGeometry(44, 286, 9);
-    var labels = [];
+    var rings = R.geometry(44, 286, 9), labels = [];
     rings.forEach(function (g, i) {
       var busiest = COUNTS[i] === MAXC;
-      svg.appendChild(svgEl('circle', { class: 'yr draw', pathLength: 100, cx: 300, cy: 300, r: g.r.toFixed(1), 'stroke-width': (g.w * 0.5).toFixed(1), transform: 'rotate(-90 300 300)',
+      svg.appendChild(svgEl('circle', { class: 'draw', fill: 'none', pathLength: 100, cx: 300, cy: 300, r: g.r.toFixed(1), 'stroke-width': (g.w * 0.5).toFixed(1), transform: 'rotate(-90 300 300)',
         style: '--d:' + (i * 0.09).toFixed(2) + 's;stroke:' + (busiest ? 'var(--amber)' : 'var(--ink)') + ';stroke-opacity:' + (busiest ? 0.7 : (0.06 + 0.14 * COUNTS[i] / MAXC).toFixed(2)) }));
     });
-    svg.appendChild(svgEl('circle', { class: 'core', cx: 300, cy: 300, r: 9 }));
+    svg.appendChild(svgEl('circle', { cx: 300, cy: 300, r: 9, fill: '#F5A524' }));
     rings.forEach(function (g, i) {
       if (i % 3 !== 0 && i !== 9) return;
       var t = svgEl('text', { class: 'ylab', x: 300, y: (300 - g.r + 3.5).toFixed(1), 'text-anchor': 'middle', 'paint-order': 'stroke', stroke: 'var(--paper)', 'stroke-width': 5 });
       t.textContent = YEARS[i]; svg.appendChild(t); labels[i] = t;
     });
-    var msgs = WALL.map(function (m) {
+    var msgs = WALL.map(function (m, k) {
       var p = m[1].split(' '), date = new Date(+p[2], MONTHS[p[1]], +p[0]);
-      var yi = YEARS.indexOf(+p[2]), g = rings[yi];
+      var g = rings[YEARS.indexOf(+p[2])];
       var doy = (date - new Date(+p[2], 0, 1)) / 864e5;
       var a = (16 + doy / 365 * 328) * Math.PI / 180 - Math.PI / 2; // keeps the 12 o'clock labels clear
       var x = 300 + g.r * Math.cos(a), y = 300 + g.r * Math.sin(a);
       var halo = svgEl('circle', { class: 'halo', cx: x.toFixed(1), cy: y.toFixed(1), r: 4.6 });
       var dot = svgEl('circle', { class: 'dot', cx: x.toFixed(1), cy: y.toFixed(1), r: 4.6 });
       svg.appendChild(halo); svg.appendChild(dot);
-      var msg = { who: m[0], date: m[1], text: m[2], me: m[3].indexOf('m') !== -1, photo: /[pv]/.test(m[3]), year: +p[2], t: +date, dot: dot, halo: halo, x: x, y: y };
+      var msg = { k: k, who: m[0], date: m[1], text: m[2], me: m[3].indexOf('m') !== -1, photo: /[pv]/.test(m[3]), year: +p[2], t: +date, dot: dot, halo: halo, x: x, y: y };
       dot.addEventListener('pointerenter', function () { showTip(msg); });
       dot.addEventListener('pointerleave', function () { tip.classList.remove('is-on'); });
       return msg;
     });
     function showTip(m) {
       tip.textContent = '';
-      tip.appendChild(el('small', '', (m.me ? 'You to ' : '') + m.who + ' · ' + m.date));
+      tip.appendChild(el('small', '', (m.me ? 'You to ' : '') + m.who + ', ' + m.date));
       tip.appendChild(document.createTextNode(m.text));
       var box = svg.getBoundingClientRect(), host = root.getBoundingClientRect();
       tip.style.left = (box.left - host.left + m.x / 600 * box.width) + 'px';
       tip.style.top = (box.top - host.top + m.y / 600 * box.height) + 'px';
       tip.classList.add('is-on');
     }
-
     function parse(q) {
       var f = { text: [] };
       q.toLowerCase().split(/\s+/).forEach(function (w) {
@@ -171,15 +163,15 @@
       });
       labels.forEach(function (t, i) { if (t) t.classList.toggle('is-hit', !!years[YEARS[i]]); });
       var ny = Object.keys(years).length;
-      count.textContent = active ? hits.length + (hits.length === 1 ? ' message' : ' messages') + ', ' + ny + (ny === 1 ? ' year' : ' years') : '';
+      count.textContent = active ? hits.length + (hits.length === 1 ? ' text' : ' texts') + ', ' + ny + (ny === 1 ? ' year' : ' years') : '';
       list.textContent = '';
-      if (!active) return;
-      if (!hits.length) { list.appendChild(el('li', 'hits__empty', 'Nothing in this sample. Try cabin, birthday or from:Jordan.')); return; }
+      if (!active) { list.appendChild(el('li', 'hits__note', 'Type a word, or tap a suggestion above.')); return; }
+      if (!hits.length) { list.appendChild(el('li', 'hits__note', 'Nothing in this sample. Try cabin, birthday or from:Jordan.')); return; }
       hits.slice(0, 4).forEach(function (m, i) {
         var li = el('li', 'hit'); li.style.setProperty('--i', i);
         li.appendChild(el('b', '', m.me ? 'You' : m.who));
         var span = el('span');
-        if (m.photo) span.appendChild(el('i', 'ph'));
+        if (m.photo) { var ph = el('i', 'ph'); ph.innerHTML = landscape(m.k, 120, 120); span.appendChild(ph); }
         var at = f.phrase ? m.text.toLowerCase().indexOf(f.phrase) : -1;
         if (at !== -1) {
           span.appendChild(document.createTextNode(m.text.slice(0, at)));
@@ -203,14 +195,13 @@
       (function step() {
         if (!auto) return;
         input.value = q.slice(0, i); render(input.value); setChips(i === q.length ? q : '');
-        if (i++ < q.length) later(step, 85 + Math.random() * 60);
-        else later(function () { input.value = ''; render(''); setChips(''); later(typeNext, 450); }, 3300);
+        if (i++ < q.length) later(step, 90 + Math.random() * 60);
+        else later(function () { input.value = ''; render(''); setChips(''); later(typeNext, 500); }, 3300);
       })();
     }
     ['pointerdown', 'focusin', 'keydown'].forEach(function (t) { root.addEventListener(t, function (e) { if (e.target.closest && e.target.closest('.search')) stopAuto(); }); });
     input.addEventListener('input', function () { render(input.value); setChips(input.value.trim()); });
     chips.forEach(function (c) { c.addEventListener('click', function () { input.value = c.textContent; render(input.value); setChips(c.textContent); }); });
-
     if (reduce || !hasIO) { input.value = 'cabin'; render('cabin'); setChips('cabin'); return; }
     render('');
     var heroIO = new IntersectionObserver(function (e) {
@@ -239,8 +230,7 @@
     if (reduce) { words.forEach(function (w) { w.classList.add('is-lit'); }); return; }
     onScroll(function (vh) {
       var r = p.getBoundingClientRect();
-      var t = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.3), 0, 1);
-      var n = Math.round(t * words.length);
+      var n = Math.round(clamp((vh * 0.85 - r.top) / (r.height + vh * 0.3), 0, 1) * words.length);
       words.forEach(function (w, i) { w.classList.toggle('is-lit', i < n); });
     });
     requestAnimationFrame(frame);
@@ -279,9 +269,28 @@
   })();
 
   (function () {
-    var root = $('#photos-demo');
+    var root = $('#photowall'), ql = $('.ql');
     if (!root) return;
-    var photos = $$('.photo', root), here = false;
+    var people = ['Jordan', 'Mom', 'Theo', 'Priya', 'Ana', 'Jordan', 'Mom', 'Theo'];
+    var days = ['3 Feb 2024', '25 Dec 2021', '11 Mar 2020', '7 May 2021', '19 Jun 2023', '21 Aug 2024', '12 Jun 2019', '27 Jun 2024'];
+    var photos = people.map(function (p, i) {
+      var b = el('button', 'photo'); b.type = 'button';
+      b.setAttribute('aria-label', 'Photo from ' + p + ', ' + days[i]);
+      b.innerHTML = landscape(20 + i, 240, 240);
+      b.addEventListener('click', function () { open(i); });
+      root.appendChild(b); return b;
+    });
+    var lastFocus = null;
+    function open(i) {
+      lastFocus = document.activeElement;
+      $('figure > div', ql).innerHTML = landscape(20 + i, 640, 480);
+      $('figcaption', ql).textContent = 'From ' + people[i] + ', ' + days[i] + '. Click anywhere or press Esc to close.';
+      ql.hidden = false; void ql.offsetWidth; ql.classList.add('is-open'); ql.tabIndex = -1; ql.focus();
+    }
+    function close() { ql.classList.remove('is-open'); setTimeout(function () { ql.hidden = true; }, 260); if (lastFocus) lastFocus.focus(); }
+    ql.addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !ql.hidden) close(); });
+    var here = false;
     root.addEventListener('pointerenter', function () { here = true; photos.forEach(function (p) { p.classList.remove('is-up'); }); });
     root.addEventListener('pointerleave', function () { here = false; });
     demo(root, function play(t) {
@@ -298,16 +307,15 @@
   (function () {
     var root = $('#keep-demo');
     if (!root) return;
-    var colours = [['#8FB996', '#3F6F55'], ['#F2C46D', '#B5651D'], ['#7DD3FC', '#1D4ED8'], ['#FDA4AF', '#9F1239'], ['#C4B5FD', '#5145CD'], ['#FCD34D', '#F59E0B'], ['#94A3B8', '#334155'], ['#86EFAC', '#15803D']];
     var goes = [0, 2, 3, 5, 6];
     var cloud = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9z"/></svg>';
     var tick = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
     var sides = {};
     $$('.keep__grid', root).forEach(function (g) {
       var side = g.getAttribute('data-side');
-      sides[side] = colours.map(function (c) {
+      sides[side] = [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) {
         var kp = el('div', 'kp');
-        kp.innerHTML = '<i style="background:linear-gradient(135deg,' + c[0] + ',' + c[1] + ')"></i>' + (side === 'messages' ? '<em>' + cloud + 'Kept in<br>iCloud</em>' : '<span class="tick">' + tick + '</span>');
+        kp.innerHTML = landscape(40 + i, 200, 200) + (side === 'messages' ? '<em>' + cloud + 'Kept in<br>iCloud</em>' : '<span class="tick">' + tick + '</span>');
         g.appendChild(kp); return kp;
       });
     });
@@ -332,18 +340,18 @@
     var wrap = $('#lore-scroll');
     if (!wrap) return;
     var svg = $('.lore-rings', wrap), total = $('[data-total]', wrap), callouts = $$('.callout', wrap);
-    var rings = ringGeometry(118, 290, 8), circles = [], texts = [];
+    var rings = R.geometry(118, 290, 8), circles = [], texts = [];
     rings.forEach(function (g, i) {
       var busiest = COUNTS[i] === MAXC;
       svg.appendChild(svgEl('circle', { cx: 300, cy: 300, r: g.r.toFixed(1), fill: 'none', stroke: 'rgba(243,240,255,0.05)', 'stroke-width': (g.w * 0.55).toFixed(1) }));
-      var c = svgEl('circle', { class: 'r', pathLength: 100, cx: 300, cy: 300, r: g.r.toFixed(1), 'stroke-width': (g.w * 0.55).toFixed(1), transform: 'rotate(-90 300 300)',
+      var c = svgEl('circle', { pathLength: 100, cx: 300, cy: 300, r: g.r.toFixed(1), fill: 'none', 'stroke-width': (g.w * 0.55).toFixed(1), transform: 'rotate(-90 300 300)',
         stroke: busiest ? '#F5A524' : 'rgba(171,165,255,' + (0.18 + 0.42 * COUNTS[i] / MAXC).toFixed(2) + ')', 'stroke-dasharray': 101, 'stroke-dashoffset': 101 });
       svg.appendChild(c); circles.push(c);
     });
     rings.forEach(function (g, i) {
-      var show = i === 0 || i === 3 || i === 8 || i === 9;
       var t = svgEl('text', { x: 300, y: (300 - g.r - 6).toFixed(1), 'text-anchor': 'middle', opacity: 0 });
-      t.textContent = show ? YEARS[i] : ''; if (COUNTS[i] === MAXC) t.setAttribute('style', 'fill:#F5A524');
+      t.textContent = (i === 0 || i === 3 || i === 8) ? YEARS[i] : '';
+      if (COUNTS[i] === MAXC) t.setAttribute('style', 'fill:#F5A524');
       svg.appendChild(t); texts.push(t);
     });
     function paint(p) {
@@ -421,7 +429,7 @@
       card.setAttribute('role', 'group'); card.setAttribute('aria-roledescription', 'card');
       card.setAttribute('aria-label', (i + 1) + ' of ' + chapters.length + ': ' + c[0] + '. ' + c[1] + '. ' + c[2]);
       card.innerHTML = '<div class="lore-card__top" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3.5" stroke-width="1.6" style="stroke:' + I + '"/><circle cx="10" cy="10" r="7.5" stroke-width="1.6" style="stroke:' + I + ';stroke-opacity:.5"/><circle cx="10" cy="10" r="1.6" style="fill:' + A + '"/></svg><span>Your Lore</span><span>2017 to 2026</span></div>' +
-        '<div class="lore-card__kick" aria-hidden="true">' + c[0] + '</div><h4 aria-hidden="true">' + c[1] + '</h4><p aria-hidden="true">' + c[2] + '</p>' + svg(c[3]) + '<footer aria-hidden="true">Made with Textlore · textlore.app</footer>';
+        '<div class="lore-card__kick" aria-hidden="true">' + c[0] + '</div><h4 aria-hidden="true">' + c[1] + '</h4><p aria-hidden="true">' + c[2] + '</p>' + svg(c[3]) + '<footer aria-hidden="true">Made with Textlore, textlore.app</footer>';
       stack.appendChild(card); dots.appendChild(el('i'));
       return card;
     });
@@ -440,16 +448,17 @@
       input.addEventListener('change', function () { var l = looks[input.value]; ['--bg', '--c-ink', '--c-sub', '--acc', '--soft'].forEach(function (p, i) { screen.style.setProperty(p, l[i]); }); });
     });
     var playBtn = $('[data-lore="play"]'), paused = reduce, visible = false, timer = null;
+    var PLAY = '<path d="M7 4l13 8-13 8z" fill="currentColor" stroke="none"/>', PAUSE = '<path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor" stroke="none"/>';
     function tick() { clearTimeout(timer); if (!paused && visible) timer = setTimeout(function () { show(at + 1); tick(); }, 2800); }
-    function setPaused(p) {
-      paused = p; playBtn.setAttribute('aria-label', p ? 'Play the cards' : 'Pause the cards');
-      $('svg', playBtn).innerHTML = p ? '<path d="M7 4l13 8-13 8z"/>' : '<path d="M6 5h4v14H6zM14 5h4v14h-4z"/>';
-      tick();
-    }
+    function setPaused(p) { paused = p; playBtn.setAttribute('aria-label', p ? 'Play the cards' : 'Pause the cards'); $('svg', playBtn).innerHTML = p ? PLAY : PAUSE; tick(); }
     setPaused(paused);
     playBtn.addEventListener('click', function () { setPaused(!paused); });
     $('[data-lore="prev"]').addEventListener('click', function () { show(at - 1); tick(); });
     $('[data-lore="next"]').addEventListener('click', function () { show(at + 1); tick(); });
+    // Swipe on the phone to change cards.
+    var x0 = null;
+    root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { show(at + (dx < 0 ? 1 : -1)); tick(); } x0 = null; });
     if (hasIO) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; tick(); }, { threshold: 0.4 }).observe(root);
   })();
 
@@ -494,14 +503,24 @@
     }
   })();
 
-  // ---------- Gallery arrows ----------
+  // ---------- Gallery: arrows and dots ----------
   (function () {
-    var track = $('.gallery__track');
+    var track = $('.gallery__track'), dots = $('.gallery__dots');
     if (!track) return;
+    var figs = $$('figure', track);
+    var dotEls = figs.map(function (f, i) {
+      var b = el('button'); b.type = 'button'; b.tabIndex = -1;
+      b.addEventListener('click', function () { track.scrollTo({ left: f.offsetLeft - figs[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' }); });
+      dots.appendChild(b); return b;
+    });
+    function current() { var x = track.scrollLeft, best = 0; figs.forEach(function (f, i) { if (Math.abs(f.offsetLeft - figs[0].offsetLeft - x) < Math.abs(figs[best].offsetLeft - figs[0].offsetLeft - x)) best = i; }); return best; }
+    function mark() { var c = current(); dotEls.forEach(function (d, i) { d.setAttribute('aria-current', i === c ? 'true' : 'false'); }); }
+    track.addEventListener('scroll', function () { requestAnimationFrame(mark); }, { passive: true });
+    mark();
     $$('[data-gal]').forEach(function (b) {
       b.addEventListener('click', function () {
-        var fig = $('figure', track);
-        track.scrollBy({ left: (+b.getAttribute('data-gal')) * (fig.offsetWidth + 24), behavior: reduce ? 'auto' : 'smooth' });
+        var c = clamp(current() + (+b.getAttribute('data-gal')), 0, figs.length - 1);
+        track.scrollTo({ left: figs[c].offsetLeft - figs[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
       });
     });
   })();
@@ -513,17 +532,7 @@
     if (reduce || !hasIO) { items.forEach(function (li) { li.classList.add('is-struck'); }); return; }
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-struck'); io.unobserve(e.target); } });
-    }, { rootMargin: '0px 0px -38% 0px' });
+    }, { rootMargin: '0px 0px -30% 0px', threshold: 0.5 });
     items.forEach(function (li) { io.observe(li); });
-  })();
-
-  // ---------- Price: quiet rings behind the number ----------
-  (function () {
-    var svg = $('.price__rings');
-    if (!svg) return;
-    ringGeometry(40, 292, 10).forEach(function (g, i) {
-      var busiest = COUNTS[i] === MAXC;
-      svg.appendChild(svgEl('circle', { cx: 300, cy: 300, r: g.r.toFixed(1), fill: 'none', 'stroke-width': (g.w * 0.5).toFixed(1), style: 'stroke:' + (busiest ? 'var(--amber)' : 'var(--ink)') + ';stroke-opacity:' + (busiest ? 0.35 : 0.05) }));
-    });
   })();
 })();

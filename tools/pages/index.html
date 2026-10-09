@@ -1,0 +1,427 @@
+<!--
+path: index.html
+title: Textlore: search, keep and relive your iMessages on Mac
+description: Find any iMessage or text in under a second, keep every photo, relive your years of texting as rings you can share, and ask your texts anything. Private, on your Mac. Free for 14 days, then $29 once.
+scripts: home
+dlbar: yes
+head: home-head.txt
+-->
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div>
+        <a class="badge-new" href="#features"><b>New</b>Textlore 1.0 for Mac is here</a>
+        <h1 id="hero-title">Your whole texting life, <em>on your Mac.</em></h1>
+        <p class="hero__sub">Find any text in under a second, keep every photo from now on, relive your years as rings you can share, and ask your texts anything. Private, and all on your Mac.</p>
+        <div class="btns">
+          <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+          <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">Buy Textlore, $29<small>Once, for 2 Macs</small></span></a>
+        </div>
+        <ul class="reqs">
+          <li>{{icon:check}}macOS 26 or later</li>
+          <li>{{icon:check}}Apple silicon and Intel</li>
+          <li>{{icon:check}}Notarized by Apple</li>
+          <li>{{icon:check}}9 MB download</li>
+        </ul>
+      </div>
+
+      <div class="ringsearch" id="ringsearch">
+        <svg class="ringsearch__svg" viewBox="0 0 600 600" aria-hidden="true"></svg>
+        <div class="tip" aria-hidden="true"></div>
+        <div class="search" role="search">
+          <label class="search__field">
+            {{icon:search}}
+            <span class="sr-only">Try search on Sam's texts, a made-up demo library</span>
+            <input type="search" autocomplete="off" spellcheck="false" placeholder="Try it: search Sam's 10 years">
+            <span class="search__count" aria-hidden="true"></span>
+          </label>
+          <div class="chips" aria-label="Try a search">
+            <button class="chip" type="button">cabin</button>
+            <button class="chip" type="button">flight lands</button>
+            <button class="chip" type="button">from:Mom</button>
+            <button class="chip" type="button">has:photo</button>
+            <button class="chip" type="button">2020</button>
+          </div>
+          <ul class="hits" aria-live="polite"></ul>
+          <p class="search__note">Sam is a made-up person from Textlore's demo library. Each dot is a message, on the ring for its year.</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="pillars" id="features" aria-label="What Textlore does">
+      <a class="pillar glow rise" href="#find"><span>{{icon:search}}</span><b>Find</b><span>Any text from any year, in under a second.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#keep" style="--rd:.06s"><span>{{icon:keep}}</span><b>Keep</b><span>Every message and photo, saved on your Mac.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#relive" style="--rd:.12s"><span>{{icon:rings}}</span><b>Relive</b><span>Your years of texting, drawn as rings.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#ask" style="--rd:.18s"><span>{{icon:spark}}</span><b>Ask</b><span>Questions answered on your Mac, with sources.</span><i aria-hidden="true">&#8599;</i></a>
+    </nav>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="trust" aria-label="Why you can trust Textlore">
+  <div class="wrap trust__row">
+    <div class="trust__item">{{icon:shield}}<div><b>Notarized</b>Signed and checked by Apple</div></div>
+    <div class="trust__item">{{icon:bolt}}<div><b><span data-count="17">17</span> ms</b>to search 123,580 messages</div></div>
+    <div class="trust__item">{{icon:eye-off}}<div><b>0</b>accounts, trackers or uploads</div></div>
+    <div class="trust__item">{{icon:person}}<div><b><span data-count="78">78</span>K+</b>readers follow the maker on Medium</div></div>
+  </div>
+</section>
+
+<!-- The real app -->
+<section class="showcase" data-scheme="auto" aria-labelledby="showcase-title">
+  <div class="wrap">
+    <div class="showcase__head">
+      <div>
+        <p class="eyebrow">The app</p>
+        <h2 id="showcase-title" class="section-title" style="margin-top:16px">Made for macOS, <em>in light and dark.</em></h2>
+      </div>
+      <div class="scheme" role="group" aria-label="Show the app in">
+        <button type="button" data-set="light" aria-pressed="false">{{icon:sun}}Light</button>
+        <button type="button" data-set="dark" aria-pressed="false">{{icon:moon}}Dark</button>
+      </div>
+    </div>
+    <div class="frame tilt rise">
+      <div class="frame__glow" aria-hidden="true"></div>
+      <div class="frame__win">{{shot:main-window|(max-width: 1272px) calc(100vw - 32px), 1240px|The Textlore window: the sidebar, a list of conversations, and a conversation with Jordan open, with photos and messages.}}</div>
+    </div>
+    <div class="callouts">
+      <div class="rise"><b>Every conversation, newest first</b><span>People first, with bank codes and delivery alerts tucked into their own place.</span></div>
+      <div class="rise" style="--rd:.08s"><b>Jump to any day</b><span>Open a conversation at an exact message or date, with everything around it.</span></div>
+      <div class="rise" style="--rd:.16s"><b>Read only, always</b><span>Textlore never sends, edits or deletes a message.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Statement -->
+<section class="statement" aria-label="Why Textlore">
+  <div class="wrap">
+    <p id="statement">Your texts are <span data-em>a journal you already wrote.</span> The first message from someone who became family. The address of your first flat. The photo from that trip. Messages is built for talking. Textlore is built for <span data-em>everything after.</span></p>
+  </div>
+</section>
+
+<!-- Find -->
+<section class="chapter" id="find" aria-labelledby="find-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <div>
+        <p class="eyebrow">Find</p>
+        <h2 id="find-title" class="rise">That one text from 2019 is <em>a few letters away.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>Search years of conversations as you type, by word, person, date or photo. Matches light up in amber, and Return opens the conversation at <strong>that exact message</strong>.</p>
+        <p>Narrow it with <code>from:Jordan</code>, <code>has:photo</code>, <code>during:summer 2024</code> or <code>"an exact phrase"</code>.</p>
+      </div>
+    </div>
+
+    <div class="shot-wide showcase" data-scheme="auto">
+      <div class="frame tilt rise"><div class="frame__win">{{shot:search|(max-width: 1272px) calc(100vw - 32px), 1240px|Textlore search for flight lands: 376 messages in 128 conversations, with the match lit up in amber in the Trip Planning conversation.}}</div></div>
+      <p class="shot-cap"><span><b>376 messages</b> in 128 conversations, in about 17 milliseconds</span><span>Up and down arrows move through every match</span></p>
+    </div>
+
+    <div class="trio">
+      <article class="tile glow rise">
+        <div class="tile__art">
+          <div class="qs" id="qs-demo" aria-hidden="true">
+            <div class="keys"><span class="key" data-key="opt">&#8997;</span><span class="key key--space" data-key="space">space</span></div>
+            <div class="panel">
+              <div>{{icon:search}}<span class="q-text">cabin</span></div>
+              <ul>
+                <li><span class="ph" data-photo="3"></span>I booked the cabin for August</li>
+                <li><span class="ph" data-photo="11"></span>Packed! See you at the cabin</li>
+                <li><span class="ph" data-photo="7"></span>The cabin is right on the lake</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tile__text"><h3>Option-Space, from any app.</h3><p>A search bar floats over whatever you're doing. Pick a result, press Return, and Textlore opens at that message.</p></div>
+      </article>
+      <article class="tile glow rise" style="--rd:.08s">
+        <div class="tile__art"><div class="tokens" id="tokens-demo" aria-hidden="true"></div></div>
+        <div class="tile__text"><h3>Narrow it as you type.</h3><p>Every filter becomes a token you can see and remove: <code>from:</code>, <code>in:</code>, <code>before:</code>, <code>has:video</code>, <code>is:sent</code> and more.</p></div>
+      </article>
+      <article class="tile glow rise" style="--rd:.16s">
+        <div class="tile__art"><div class="photowall" id="photowall"></div></div>
+        <div class="tile__text"><h3>Every photo, video and file.</h3><p>Browse what people sent you by person and by date. Click a photo here to open it, just like pressing Space in the app.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Keep -->
+<section class="chapter" id="keep" aria-labelledby="keep-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <div>
+        <p class="eyebrow">Keep</p>
+        <h2 id="keep-title" class="rise">Messages lets old photos go. <em>Textlore keeps its own copy.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>When your Mac runs low on space, Messages removes its copies of photos and files and leaves them only in iCloud. Textlore saves every message and photo into its own folder <strong>the moment it arrives</strong>, so a photo from today is still here in 10 years.</p>
+        <p class="aside">The archive starts the day you install Textlore. One-time codes are skipped if you've told Messages to delete them.</p>
+      </div>
+    </div>
+
+    <div class="keep rise" id="keep-demo" role="img" aria-label="The same 8 photos in Messages and in Textlore. When the Mac needs space, 5 of them in Messages turn into Kept in iCloud placeholders. In Textlore, all 8 stay, each with a green tick.">
+      <div class="keep__col" aria-hidden="true">
+        <header><h3>Messages</h3><span>After it clears space</span></header>
+        <div class="keep__grid" data-side="messages"></div>
+        <p class="keep__foot"><span><b data-left>8</b> of 8 photos on this Mac</span></p>
+      </div>
+      <div class="keep__col keep__col--good" aria-hidden="true">
+        <header><h3><img src="/img/icon-96.webp" width="30" height="30" alt="">Textlore</h3><span>Its own copy</span></header>
+        <div class="keep__grid" data-side="textlore"></div>
+        <p class="keep__foot"><span><b data-kept>0</b> of 8 photos kept</span></p>
+      </div>
+    </div>
+
+    <div class="export">
+      <div class="rise">
+        <h3>Need it on paper? Save a whole chat, or just 3 messages, as a PDF.</h3>
+        <p>Or as HTML, plain text, Markdown, CSV or an image. Phone numbers and emails are hidden unless you switch them on, and the preview shows exactly what you'll get. For keepsakes, records and proof.</p>
+        <div class="formats" aria-label="Export formats"><span>PDF</span><span>HTML</span><span>Plain text</span><span>Markdown</span><span>CSV</span><span>Image</span></div>
+      </div>
+      <div class="layered showcase rise" data-scheme="auto">
+        <div class="frame__win">{{shot:export-options|(max-width: 860px) 84vw, 560px|The export sheet: format, what to include, names and photos on the left, and a live preview of the PDF on the right.}}</div>
+        <div class="frame__win">{{shot:export-confirmation|(max-width: 860px) 66vw, 440px|Export finished: 3 messages exported, saved as a PDF, with phone numbers and emails left out.}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Relive -->
+<section class="chapter night" id="relive" aria-labelledby="relive-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <div>
+        <p class="eyebrow">Relive: Your Lore</p>
+        <h2 id="relive-title" class="rise">Every year of texting, <em>drawn as a ring.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>Your Lore reads your history back to you as tree rings, one for every year, the busiest year in amber. Then it tells the story: your busiest day, your longest streak with one person, the hour you text most, your laughs and your emoji.</p>
+        <p class="aside">Counted on your Mac. Bank codes, delivery alerts and other business texts are left out of every people stat.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="lore-scroll" id="lore-scroll">
+    <div class="lore-stage">
+      <svg class="lore-rings" viewBox="0 0 600 600" aria-hidden="true"></svg>
+      <div class="lore-total" aria-hidden="true"><b class="num" data-total>114,100</b><span>messages since 2017</span></div>
+      <p class="callout callout--a"><small>Busiest day</small><b>14 March 2020</b><span>1,206 messages in one day</span></p>
+      <p class="callout callout--b"><small>Longest streak</small><b>412 days in a row</b><span>with Person 1, every single day</span></p>
+      <p class="callout callout--c"><small>Peak hour</small><b>10 PM</b><span>a certified night owl</span></p>
+      <p class="callout callout--d"><small>Laugh count</small><b>9,842 laughs</b><span>every haha, lol and &#128514;</span></p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="share">
+      <div class="phone rise" id="lore-demo">
+        <div class="screen">
+          <div class="lore-cards"></div>
+          <div class="lore-dots" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="rise">
+        <h3>Play it full screen, or share it.</h3>
+        <p>Export your story as an image, a carousel or a video for Instagram, TikTok or X, in 5 looks and 4 sizes. Pick a year to tell just that one.</p>
+        <fieldset class="looks">
+          <legend>Pick a look</legend>
+          <label class="look"><input type="radio" name="look" value="indigo" checked><i style="--sw:#2A2185"></i><span>Indigo</span></label>
+          <label class="look"><input type="radio" name="look" value="amber"><i style="--sw:#F5A524"></i><span>Amber</span></label>
+          <label class="look"><input type="radio" name="look" value="midnight"><i style="--sw:#0E0F14"></i><span>Midnight</span></label>
+          <label class="look"><input type="radio" name="look" value="paper"><i style="--sw:#F7F6FB"></i><span>Paper</span></label>
+          <label class="look"><input type="radio" name="look" value="glass"><i style="--sw:linear-gradient(135deg,#F5A524 0%,#8B83FF 50%,#3B2FC4 100%)"></i><span>Glass</span></label>
+        </fieldset>
+        <div class="player">
+          <button class="icon-btn" type="button" data-lore="prev" aria-label="Previous card">{{icon:left}}</button>
+          <button class="icon-btn" type="button" data-lore="play" aria-label="Pause the cards">{{icon:pause}}</button>
+          <button class="icon-btn" type="button" data-lore="next" aria-label="Next card">{{icon:right}}</button>
+        </div>
+        <p class="cardnote">{{icon:lock}}<span>No message text, names, numbers or emails ever appear on a card unless you choose to show first names.</span></p>
+      </div>
+    </div>
+
+    <div class="shot-wide">
+      <div class="frame tilt rise"><div class="frame__win">{{shotdark:lore|(max-width: 1272px) calc(100vw - 32px), 1240px|Your Lore in Textlore: tree rings for 10 years of messages with the busiest year in amber, 114,100 messages, and 3 moments.}}</div></div>
+      <p class="shot-cap"><span><b>Your Lore</b> in the app: hover a ring for its year, click it to see just that year</span><span>Sam's demo library</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- Ask -->
+<section class="chapter" id="ask" aria-labelledby="ask-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <div>
+        <p class="eyebrow">Ask AI</p>
+        <h2 id="ask-title" class="rise">Ask your texts a question. <em>Get the answer and the receipts.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>Ask AI reads your messages with Apple Intelligence, right on your Mac. Every answer lists the messages it used, and one click takes you to them.</p>
+        <p class="aside">Ask AI needs a Mac with Apple Intelligence. Everything else works on any Mac running macOS 26.</p>
+      </div>
+    </div>
+    <div class="ask">
+      <div class="ask__qs rise" role="group" aria-label="Ask a question">
+        <p>Try it on Sam's texts</p>
+        <button class="q" type="button" aria-pressed="false">When did I book the cabin?</button>
+        <button class="q" type="button" aria-pressed="false">When does Theo's flight land?</button>
+        <button class="q" type="button" aria-pressed="false">What did Mom say about dinner?</button>
+      </div>
+      <div class="chat rise" id="chat" aria-live="polite">
+        <p class="bubble"></p>
+        <div class="thinking" hidden><svg viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="19" r="16" stroke-width="2.4"/><circle cx="19" cy="19" r="11" stroke-width="2.4"/><circle cx="19" cy="19" r="6" stroke-width="2.4"/><circle cx="19" cy="19" r="2.4"/></svg><span class="step">Searching messages&#8230;</span></div>
+        <p class="answer"></p>
+        <div class="sources"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compare -->
+<section class="compare" aria-labelledby="compare-title">
+  <div class="wrap">
+    <p class="eyebrow">Why Textlore</p>
+    <h2 id="compare-title" class="section-title rise" style="margin-top:16px">Everything your messages need, <em>in one app.</em></h2>
+    <div class="compare__scroll rise">
+      <table class="compare__table">
+        <thead>
+          <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col" class="us"><img src="/img/icon-96.webp" width="40" height="40" alt="">Textlore</th><th scope="col">Messages search</th><th scope="col">Backup and export tools</th><th scope="col">Wrapped scripts</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Search every year as you type, with filters</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span><small>Often misses old texts</small></td><td><span class="no">{{icon:x}}</span></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>Keeps photos after Messages clears space</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td><td><span class="no">{{icon:x}}</span><small>Only when you back up</small></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>Export to PDF with phone numbers hidden</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td><td><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>Your texting story, as cards and video</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td><td><span class="no">{{icon:x}}</span></td><td><span class="yes">{{icon:check}}</span><small>Once a year, in Terminal</small></td></tr>
+          <tr><td>Ask questions, with the source texts</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td><td><span class="no">{{icon:x}}</span></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>No account, nothing uploaded</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span><small>Varies</small></td><td><span class="yes">{{icon:check}}</span></td></tr>
+          <tr><td>Price</td><td class="us">$29 once</td><td>Built in</td><td>Often a yearly subscription</td><td>Free</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section class="gallery showcase" data-scheme="auto" aria-labelledby="gallery-title">
+  <div class="wrap gallery__head">
+    <div>
+      <p class="eyebrow">Tour</p>
+      <h2 id="gallery-title" class="section-title" style="margin-top:16px">Every screen, <em>up close.</em></h2>
+    </div>
+    <div class="gallery__controls">
+      <div class="scheme" role="group" aria-label="Show the app in">
+        <button type="button" data-set="light" aria-pressed="false">{{icon:sun}}Light</button>
+        <button type="button" data-set="dark" aria-pressed="false">{{icon:moon}}Dark</button>
+      </div>
+      <button class="icon-btn" type="button" data-gal="-1" aria-label="Previous screen">{{icon:left}}</button>
+      <button class="icon-btn" type="button" data-gal="1" aria-label="Next screen">{{icon:right}}</button>
+    </div>
+  </div>
+  <div class="gallery__track" tabindex="0" role="region" aria-label="Screens of Textlore">
+    <figure><div class="frame__win">{{shot:quick-search|(max-width: 1070px) 86vw, 920px|Quick search floating over Your Lore, with results for cabin.}}</div><figcaption><b>Quick search</b><span>Option-Space from any app, with results as you type.</span></figcaption></figure>
+    <figure><div class="frame__win">{{shot:attachments|(max-width: 1070px) 86vw, 920px|The Attachments page: 20,000 photos, videos and files, by person and by month.}}</div><figcaption><b>Photos and files</b><span>Everything people sent you, by person and by month.</span></figcaption></figure>
+    <figure><div class="frame__win">{{shot:selecting|(max-width: 1070px) 86vw, 920px|Selecting 3 messages in a conversation, with Copy and Export at the bottom.}}</div><figcaption><b>Select a few messages</b><span>Click to pick, Shift-click for a range, or select a whole day.</span></figcaption></figure>
+    <figure><div class="frame__win">{{shot:export-options|(max-width: 1070px) 86vw, 920px|The export sheet with a live preview of the PDF.}}</div><figcaption><b>Export with a live preview</b><span>Choose the format, names, photos and look, and see the result first.</span></figcaption></figure>
+    <figure><div class="frame__win">{{shot:lore|(max-width: 1070px) 86vw, 920px|Your Lore: 10 years of rings and 3 moments.}}</div><figcaption><b>Your Lore</b><span>Your years as rings, your type, and the moments that stand out.</span></figcaption></figure>
+    <figure><div class="frame__win">{{shot:ask-ai|(max-width: 1070px) 86vw, 920px|Ask AI answering when did I book the cabin, with 4 source messages and follow-up questions.}}</div><figcaption><b>Ask AI</b><span>Answered on your Mac, with the messages it used.</span></figcaption></figure>
+  </div>
+  <div class="gallery__dots" aria-hidden="true"></div>
+</section>
+
+<!-- Never -->
+<section class="never" id="privacy" aria-labelledby="never-title">
+  <div class="wrap">
+    <p class="eyebrow">Privacy</p>
+    <h2 id="never-title" class="section-title rise" style="margin-top:16px">What Textlore will never do.</h2>
+    <ul>
+      <li><span>Send, edit or delete a message.</span></li>
+      <li><span>Upload your texts anywhere.</span></li>
+      <li><span>Ask you for an account.</span></li>
+      <li><span>Track you or show you ads.</span></li>
+      <li><span>Charge you every month.</span></li>
+    </ul>
+    <div class="never__foot rise">
+      <p><strong>Textlore only reads.</strong> Your messages, photos and stats stay on your Mac, and Ask AI uses Apple's on-device model. <a href="/privacy/">Read the privacy policy</a></p>
+      <p>It goes online for 2 things only: checking your licence and checking for updates. It asks for Full Disk Access because macOS keeps your Messages history in a protected folder.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap pricing__grid">
+    <div>
+      <p class="eyebrow">Pricing</p>
+      <h2 id="pricing-title" class="section-title rise" style="margin-top:16px">Try it free. <em>Keep it for $29.</em></h2>
+      <ol class="steps rise">
+        <li><div><b>Download</b><span>A 9 MB download, notarized by Apple.</span></div></li>
+        <li><div><b>Try every feature for 14 days</b><span>No account, no email, no card.</span></div></li>
+        <li><div><b>Buy once, if you keep it</b><span>Your archive keeps saving while you decide.</span></div></li>
+      </ol>
+    </div>
+    <div class="pricecard glow rise">
+      <svg class="pricecard__rings" data-rings="card" viewBox="0 0 600 600" aria-hidden="true"></svg>
+      <div class="pricecard__top"><img src="/img/icon-192.webp" width="56" height="56" alt=""><div><b>Textlore for Mac</b><span>Version 1.0, macOS 26 or later</span></div></div>
+      <p class="price"><sup>$</sup><strong class="num">29</strong><span>once</span></p>
+      <ul class="includes">
+        <li>{{icon:check}}Search with filters</li>
+        <li>{{icon:check}}Option-Space quick search</li>
+        <li>{{icon:check}}An archive that keeps photos</li>
+        <li>{{icon:check}}Every photo and file</li>
+        <li>{{icon:check}}Export to PDF and more</li>
+        <li>{{icon:check}}Your Lore and share cards</li>
+        <li>{{icon:check}}Ask AI, on your Mac</li>
+        <li>{{icon:check}}2 Macs, every 1.x update</li>
+      </ul>
+      <div class="btns">
+        <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}">Buy Textlore, $29</a>
+        <a class="btn btn--big btn--ghost download" href="{{DOWNLOAD}}">{{icon:download}}Try it free</a>
+      </div>
+      <p class="pricecard__note">Secure checkout by Gumroad. Prices adjust for your country at checkout.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Questions -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap faq__grid">
+    <div>
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-title" class="section-title" style="margin-top:16px">Good to know.</h2>
+      <p>Still wondering? Ask in <a href="https://discord.gg/WjfenUSZp4" rel="noopener">The Useful Tech Club</a> or read <a href="/help/">Help</a>.</p>
+    </div>
+    <div class="faq__list">
+      <details><summary>Does it work with WhatsApp?</summary><div><p>Not yet. Textlore reads Apple's Messages app: iMessage and SMS.</p></div></details>
+      <details><summary>Do I need my iPhone?</summary><div><p>No. Textlore reads the Messages history on your Mac. Turn on Messages in iCloud on your iPhone and Mac to have your full history there.</p></div></details>
+      <details><summary>Why does it ask for Full Disk Access?</summary><div><p>macOS keeps your Messages history in a protected folder and only opens it to apps you switch on. Textlore only reads it.</p></div></details>
+      <details><summary>Why isn't it on the Mac App Store?</summary><div><p>Apple doesn't let Mac App Store apps read the Messages history, so every app like this is sold directly.</p></div></details>
+      <details><summary>Can it show photos that are only in iCloud?</summary><div><p>It shows the preview Messages keeps on your Mac, and a button that opens the photo in Messages. From now on, the archive saves each photo while it's on your Mac.</p></div></details>
+      <details><summary>What happens after 14 days?</summary><div><p>Textlore asks for a licence. Your archive keeps saving in the background while you decide, so nothing is lost.</p></div></details>
+      <details><summary>Can I use it on my MacBook and my iMac?</summary><div><p>Yes. One licence works on 2 Macs.</p></div></details>
+    </div>
+  </div>
+</section>
+
+<!-- Final call -->
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Your texts are waiting <em>to be found.</em></h2>
+    <p class="rise">Download Textlore and see your own rings in about a minute. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}Download for Mac</a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">Buy $29</a>
+    </div>
+  </div>
+</section>
+
+<div class="ql" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+  <figure><div></div><figcaption></figcaption></figure>
+</div>
+
+</main>
