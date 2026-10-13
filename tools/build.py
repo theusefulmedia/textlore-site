@@ -118,7 +118,7 @@ NAV_ITEMS = [("features", "/#features", "Features"), ("lore", "/#relive", "Your 
              ("pricing", "/#pricing", "Pricing"), ("help", "/help/", "Help"), ("about", "/about/", "About")]
 
 
-LAUNCH_ENDS = "2026-10-28T23:59:59+05:30"  # the LAUNCH code on Gumroad ends at the same moment
+LAUNCH_ENDS = "2026-10-29T06:59:00Z"  # the LAUNCH code on Gumroad ends at the same moment (28 Oct 23:59 Pacific, Gumroad account time)
 
 
 def lp(during, after):
