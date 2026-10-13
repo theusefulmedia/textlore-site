@@ -26,7 +26,7 @@ PAGES = ROOT / "tools" / "pages"
 SHOTS = ROOT / "img" / "shots"
 
 DOWNLOAD = "https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"
-BUY = "https://theusefultech.gumroad.com/l/textlore"
+BUY = "https://theusefultech.gumroad.com/l/textlore?wanted=true"
 
 ICONS = {
     "download": '<path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/>',
@@ -141,7 +141,7 @@ SOCIALS = [
     ("youtube", "https://www.youtube.com/@theusefultech9850", "The Useful Tech on YouTube"),
     ("medium", "https://theusefultech.com", "The Useful Tech on Medium"),
     ("discord", "https://discord.gg/WjfenUSZp4", "The Useful Tech Club on Discord"),
-    ("newsletter", "https://newsletter.theusefultech.com", "The Useful Tech newsletter"),
+    ("newsletter", "https://theusefulmedia.com/tech/", "The Useful Tech newsletter"),
 ]
 
 
@@ -177,7 +177,7 @@ def footer(home):
         <li><a href="/about/">About</a></li>
         <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co</a></li>
         <li><a href="https://theusefultech.com" rel="noopener">The Useful Tech</a></li>
-        <li><a href="https://newsletter.theusefultech.com" rel="noopener">Newsletter</a></li>
+        <li><a href="https://theusefulmedia.com/tech/" rel="noopener">Newsletter</a></li>
       </ul></div>
     </div>
     <div class="footer__cta">
@@ -226,6 +226,7 @@ HEAD = '''<!doctype html>
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js')</script>
 {extra_head}<script src="/assets/site.js" defer></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="15ada41b-1c57-4ce8-a23f-406f5de351a5" data-domains="textlore.app" data-do-not-track="true"></script>
 {scripts}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>

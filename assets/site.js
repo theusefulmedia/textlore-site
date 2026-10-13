@@ -179,35 +179,53 @@
     ends.forEach(function (e) { eio.observe(e); });
   }
 
-  // ---------- Buy: Gumroad's overlay checkout, loaded only when a visitor reaches for Buy ----------
-  var GUMROAD = 'https://gumroad.com/js/gumroad.js';
-  var state = 'idle', waiting = [];
-  function flush() { var w = waiting; waiting = []; w.forEach(function (f) { f(); }); }
-  function loadGumroad(done) {
-    if (done) waiting.push(done);
-    if (state === 'ready' || state === 'failed') { flush(); return; }
-    if (state === 'loading') return;
-    state = 'loading';
-    var s = document.createElement('script');
-    s.src = GUMROAD; s.async = true;
-    // gumroad.js adds its real bundle, which binds the Buy links when it loads.
-    s.onload = function () {
-      var bundle = $('script[src*="gumroad-bundle"]');
-      var ready = function () { state = 'ready'; setTimeout(flush, 150); };
-      if (bundle) { bundle.addEventListener('load', ready); bundle.addEventListener('error', function () { state = 'failed'; flush(); }); }
-      else setTimeout(ready, 800);
-    };
-    s.onerror = function () { state = 'failed'; flush(); };
-    document.head.appendChild(s);
+  // ---------- Where visitors came from: carried onto every Buy link, so each Gumroad sale shows its source ----------
+  // Only the campaign tags (utm_*) or the referring site's name, kept for this visit in this tab. No cookies.
+  var src = null;
+  try {
+    var q = new URLSearchParams(location.search), tags = {};
+    ['utm_source', 'utm_medium', 'utm_campaign'].forEach(function (k) { if (q.get(k)) tags[k] = q.get(k).toLowerCase().slice(0, 60); });
+    if (tags.utm_source) src = tags;
+    else {
+      var saved = sessionStorage.getItem('tl_src');
+      if (saved) src = JSON.parse(saved);
+      else if (document.referrer) {
+        var host = new URL(document.referrer).hostname.replace(/^www\./, '');
+        if (host && host !== location.hostname) src = { utm_source: host, utm_medium: 'referral' };
+      }
+    }
+    if (src) sessionStorage.setItem('tl_src', JSON.stringify(src));
+  } catch (err) { src = null; }
+
+  // Which button: the nav, the floating bar, the footer, or the page section it sits in.
+  function placement(a) {
+    if (a.closest('.nav')) return 'nav';
+    if (a.closest('.dlbar')) return 'bar';
+    if (a.closest('.footer')) return 'footer';
+    var sec = a.closest('section[id], section');
+    return (sec && (sec.id || sec.className.split(' ')[0])) || 'page';
   }
+  function track(name, a) {
+    try { if (window.umami && umami.track) umami.track(name, { placement: placement(a) }); } catch (err) {}
+  }
+
   $$('a.buy').forEach(function (a) {
-    ['pointerenter', 'focus', 'touchstart'].forEach(function (type) { a.addEventListener(type, function () { loadGumroad(); }, { passive: true, once: true }); });
+    try {
+      var url = new URL(a.href);
+      var s2 = src || { utm_source: 'textlore.app', utm_medium: 'direct' };
+      Object.keys(s2).forEach(function (k) { url.searchParams.set(k, s2[k]); });
+      url.searchParams.set('utm_content', placement(a));
+      a.href = url.toString();
+    } catch (err) {}
     a.addEventListener('click', function (e) {
-      if (state === 'ready' || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) { track('buy_click', a); return; }
       e.preventDefault();
-      var fallback = setTimeout(function () { window.location.href = a.href; }, 4000);
-      loadGumroad(function () { clearTimeout(fallback); if (state === 'ready') a.click(); else window.location.href = a.href; });
+      track('buy_click', a);
+      setTimeout(function () { window.location.href = a.href; }, 200);
     });
+  });
+  $$('a.download').forEach(function (a) {
+    a.addEventListener('click', function () { track('download', a); });
   });
 
   // ---------- Inner pages: table of contents follows the reader ----------
