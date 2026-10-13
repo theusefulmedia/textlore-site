@@ -260,6 +260,21 @@ def build(src):
     print("built", path)
 
 
+def sitemap():
+    """sitemap.xml and robots.txt, so search engines find every page."""
+    urls = []
+    for src in sorted(PAGES.glob("*.html")):
+        m = re.search(r"^path:\s*(\S+)", src.read_text(), re.M)
+        if m and m.group(1) != "404.html":
+            urls.append("https://textlore.app/" + m.group(1).replace("index.html", ""))
+    urls.sort(key=lambda u: (u.count("/"), u))
+    body = "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls)
+    (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n")
+    (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /stats/\nDisallow: /tools/\n\nSitemap: https://textlore.app/sitemap.xml\n")
+    print("built sitemap.xml and robots.txt,", len(urls), "pages")
+
+
 if __name__ == "__main__":
     for src in sorted(PAGES.glob("*.html")):
         build(src)
+    sitemap()

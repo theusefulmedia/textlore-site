@@ -224,8 +224,43 @@
       setTimeout(function () { window.location.href = a.href; }, 200);
     });
   });
+  // ---------- Phones and iPads can't run a Mac app: Download becomes "Send to my Mac" ----------
+  var ua = navigator.userAgent || '';
+  var notMac = /iPhone|iPod|iPad|Android/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  var SHARE_URL = 'https://textlore.app/?utm_source=share&utm_medium=phone';
+  var toast = null;
+  function showToast(html) {
+    if (!toast) { toast = document.createElement('div'); toast.className = 'sendtoast'; toast.setAttribute('role', 'status'); document.body.appendChild(toast); }
+    toast.innerHTML = html; toast.classList.add('is-on');
+    clearTimeout(toast._t); toast._t = setTimeout(function () { toast.classList.remove('is-on'); }, 6000);
+  }
+  function sendToMac(a) {
+    track('send_to_mac', a);
+    var fallback = function () {
+      var copied = function () { showToast('<b>Link copied.</b>Paste it in a note or a message to yourself, then open it on your Mac.'); };
+      var shown = function () { showToast('<b>Open this link on your Mac:</b><code>textlore.app</code>'); };
+      try { navigator.clipboard.writeText(SHARE_URL).then(copied, shown); } catch (err) { shown(); }
+    };
+    if (navigator.share) {
+      navigator.share({ title: 'Textlore for Mac', text: 'Textlore finds any text in my Messages history on my Mac. Free for 14 days.', url: SHARE_URL })
+        .catch(function (err) { if (!err || err.name !== 'AbortError') fallback(); });
+    } else fallback();
+  }
   $$('a.download').forEach(function (a) {
-    a.addEventListener('click', function () { track('download', a); });
+    if (notMac) {
+      document.documentElement.classList.add('not-mac');
+      var two = a.querySelector('.btn__two');
+      if (two) two.innerHTML = 'Send to my Mac<small>Try it free there for 14 days</small>';
+      else {
+        var svg = a.querySelector('svg');
+        a.textContent = '';
+        if (svg) a.appendChild(svg);
+        a.appendChild(document.createTextNode('Send to my Mac'));
+      }
+      a.addEventListener('click', function (e) { e.preventDefault(); sendToMac(a); });
+    } else {
+      a.addEventListener('click', function () { track('download', a); });
+    }
   });
 
   // ---------- Inner pages: table of contents follows the reader ----------
