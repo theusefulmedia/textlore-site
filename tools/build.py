@@ -118,6 +118,14 @@ NAV_ITEMS = [("features", "/#features", "Features"), ("lore", "/#relive", "Your 
              ("pricing", "/#pricing", "Pricing"), ("help", "/help/", "Help"), ("about", "/about/", "About")]
 
 
+LAUNCH_ENDS = "2026-10-28T23:59:59+05:30"  # the LAUNCH code on Gumroad ends at the same moment
+
+
+def lp(during, after):
+    """Text shown during the launch price, and the text that takes over when it ends (no rebuild needed)."""
+    return f'<span class="l-on">{during}</span><span class="l-off">{after}</span>'
+
+
 def nav(current, home):
     links = []
     for key, href, label in NAV_ITEMS:
@@ -130,7 +138,7 @@ def nav(current, home):
   <ul class="nav__links"><li class="nav__pill" aria-hidden="true"></li>{"".join(links)}</ul>
   <div class="nav__cta">
     <a class="btn btn--ghost download" href="{DOWNLOAD}">{icon("download")}Download</a>
-    <a class="btn btn--amber btn--shine buy magnet" href="{BUY}">Buy $29</a>
+    <a class="btn btn--amber btn--shine buy magnet" href="{BUY}">{lp("Buy $20", "Buy $29")}</a>
   </div>
   <button class="nav__menu" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </header>'''
@@ -181,8 +189,8 @@ def footer(home):
       </ul></div>
     </div>
     <div class="footer__cta">
-      <div><b>Try every feature free for 14 days.</b><span>No account, no email. $29 once if you keep it.</span></div>
-      <div class="btns"><a class="btn download magnet" href="{DOWNLOAD}">{icon("download")}Download free</a><a class="btn btn--amber buy magnet" href="{BUY}">Buy $29</a></div>
+      <div><b>Try every feature free for 14 days.</b><span>No account, no email. {lp("$20 until 28 October", "$29 once")} if you keep it.</span></div>
+      <div class="btns"><a class="btn download magnet" href="{DOWNLOAD}">{icon("download")}Download free</a><a class="btn btn--amber buy magnet" href="{BUY}">{lp("Buy $20", "Buy $29")}</a></div>
     </div>
     <div class="footer__bottom">
       <span>&copy; 2026 The Useful Media Co. Chennai, India.</span>
@@ -196,8 +204,8 @@ def footer(home):
 def dlbar():
     return f'''<div class="dlbar" aria-hidden="true">
   <img src="/img/icon-96.webp" width="38" height="38" alt="">
-  <div><b>Textlore for Mac</b><span>Free for 14 days, then $29 once</span></div>
-  <a class="btn btn--ghost buy" href="{BUY}" tabindex="-1">Buy $29</a>
+  <div><b>Textlore for Mac</b><span>Free for 14 days, then {lp("$20 until 28 Oct", "$29 once")}</span></div>
+  <a class="btn btn--ghost buy" href="{BUY}" tabindex="-1">{lp("Buy $20", "Buy $29")}</a>
   <a class="btn download" href="{DOWNLOAD}" tabindex="-1">{icon("download")}Download</a>
 </div>'''
 
@@ -224,7 +232,7 @@ HEAD = '''<!doctype html>
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js');if(Date.now()>Date.parse('{launch_ends}'))document.documentElement.classList.add('launch-over')</script>
 {extra_head}<script src="/assets/site.js" defer></script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="15ada41b-1c57-4ce8-a23f-406f5de351a5" data-domains="textlore.app" data-do-not-track="true"></script>
 {scripts}</head>
@@ -243,13 +251,14 @@ def build(src):
     body = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: icon(m.group(1)), body)
     body = re.sub(r"\{\{shot:([^}]+)\}\}", shot, body)
     body = re.sub(r"\{\{shotdark:([^}]+)\}\}", shotdark, body)
+    body = re.sub(r"\{\{lp:(.*?)\|(.*?)\}\}", lambda m: lp(m.group(1), m.group(2)), body)
     body = body.replace("{{DOWNLOAD}}", DOWNLOAD).replace("{{BUY}}", BUY).replace("{{SOCIALS}}", socials())
     path = meta["path"]
     url = "https://textlore.app/" + path.replace("index.html", "")
     canonical = '<meta name="robots" content="noindex">' if path == "404.html" else f'<link rel="canonical" href="{url}">'
     scripts = "".join(f'<script src="/assets/{s.strip()}.js" defer></script>\n' for s in meta.get("scripts", "").split(",") if s.strip())
     extra = (ROOT / "tools" / "pages" / meta["head"]).read_text() if meta.get("head") else ""
-    html = HEAD.format(title=meta["title"], description=meta["description"], canonical=canonical, scripts=scripts, extra_head=extra)
+    html = HEAD.format(launch_ends=LAUNCH_ENDS, title=meta["title"], description=meta["description"], canonical=canonical, scripts=scripts, extra_head=extra)
     html += nav(meta.get("nav", ""), home) + "\n\n" + body.strip() + "\n\n" + footer(home) + "\n"
     if meta.get("dlbar") == "yes":
         html += dlbar() + "\n"

@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>document.documentElement.classList.add('js');if(Date.now()>Date.parse('2026-10-28T23:59:59+05:30'))document.documentElement.classList.add('launch-over')</script>
 <meta property="og:url" content="https://textlore.app/">
 <meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
 <script type="application/ld+json">
@@ -37,7 +37,7 @@
   <ul class="nav__links"><li class="nav__pill" aria-hidden="true"></li><li><a href="#features">Features</a></li><li><a href="#relive">Your Lore</a></li><li><a href="#pricing">Pricing</a></li><li><a href="/help/">Help</a></li><li><a href="/about/">About</a></li></ul>
   <div class="nav__cta">
     <a class="btn btn--ghost download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</a>
-    <a class="btn btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true">Buy $29</a>
+    <a class="btn btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a>
   </div>
   <button class="nav__menu" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </header>
@@ -49,12 +49,12 @@
   <div class="wrap">
     <div class="hero__grid">
       <div>
-        <a class="badge-new" href="#features"><b>New</b>Textlore 1.0 for Mac is here</a>
+        <a class="badge-new" href="#pricing"><b><span class="l-on">Launch price</span><span class="l-off">New</span></b><span class="l-on">$20 until 28 October</span><span class="l-off">Textlore 1.0 for Mac is here</span></a>
         <h1 id="hero-title">Your whole texting life, <em>on your Mac.</em></h1>
         <p class="hero__sub">Find any text in under a second, keep every photo from now on, relive your years as rings you can share, and ask your texts anything. Private, and all on your Mac.</p>
         <div class="btns">
           <a class="btn btn--big download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z" fill="currentColor" stroke="none"/></svg><span class="btn__two">Download free<small>14 days, no account</small></span></a>
-          <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="btn__two">Buy Textlore, $29<small>Once, for 2 Macs</small></span></a>
+          <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="btn__two"><span class="l-on">Buy Textlore, <s>$29</s> $20</span><span class="l-off">Buy Textlore, $29</span><small><span class="l-on">Launch price until 28 October</span><span class="l-off">Once, for 2 Macs</span></small></span></a>
         </div>
         <ul class="reqs">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>macOS 26 or later</li>
@@ -393,7 +393,7 @@
   <div class="wrap pricing__grid">
     <div>
       <p class="eyebrow">Pricing</p>
-      <h2 id="pricing-title" class="section-title rise" style="margin-top:16px">Try it free for 14 days, <em>then keep it for $29.</em></h2>
+      <h2 id="pricing-title" class="section-title rise" style="margin-top:16px">Try it free for 14 days, <em>then keep it for <span class="l-on">$20</span><span class="l-off">$29</span>.</em></h2>
       <ol class="steps rise">
         <li><div><b>Download</b><span>A 9 MB download, notarized by Apple.</span></div></li>
         <li><div><b>Try every feature for 14 days</b><span>No account, no email, no card.</span></div></li>
@@ -403,7 +403,9 @@
     <div class="pricecard glow rise">
       <svg class="pricecard__rings" data-rings="card" viewBox="0 0 600 600" aria-hidden="true"></svg>
       <div class="pricecard__top"><img src="/img/icon-192.webp" width="56" height="56" alt=""><div><b>Textlore for Mac</b><span>Version 1.0, macOS 26 or later</span></div></div>
-      <p class="price"><sup>$</sup><strong class="num">29</strong><span>once</span></p>
+      <p class="price l-on"><sup>$</sup><strong class="num">20</strong><span>once <s>$29</s></span></p>
+      <p class="price l-off"><sup>$</sup><strong class="num">29</strong><span>once</span></p>
+      <p class="pricecard__launch l-on">Launch price until 28 October, then $29.</p>
       <ul class="includes">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Search with filters</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Option-Space quick search</li>
@@ -415,7 +417,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2 Macs, every 1.x update</li>
       </ul>
       <div class="btns">
-        <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true">Buy Textlore, $29</a>
+        <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy Textlore, $20</span><span class="l-off">Buy Textlore, $29</span></a>
         <a class="btn btn--big btn--ghost download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Try it free</a>
       </div>
       <p class="pricecard__policy">Try every feature free for 14 days, so every sale is final.</p>
@@ -454,7 +456,7 @@
     <p class="rise">Download Textlore and see your own rings in about a minute. Free for 14 days.</p>
     <div class="btns rise">
       <a class="btn btn--big btn--amber btn--shine download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z" fill="currentColor" stroke="none"/></svg>Download for Mac</a>
-      <a class="btn btn--big btn--ghost buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true">Buy $29</a>
+      <a class="btn btn--big btn--ghost buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a>
     </div>
   </div>
 </section>
@@ -494,8 +496,8 @@
       </ul></div>
     </div>
     <div class="footer__cta">
-      <div><b>Try every feature free for 14 days.</b><span>No account, no email. $29 once if you keep it.</span></div>
-      <div class="btns"><a class="btn download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free</a><a class="btn btn--amber buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true">Buy $29</a></div>
+      <div><b>Try every feature free for 14 days.</b><span>No account, no email. <span class="l-on">$20 until 28 October</span><span class="l-off">$29 once</span> if you keep it.</span></div>
+      <div class="btns"><a class="btn download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free</a><a class="btn btn--amber buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a></div>
     </div>
     <div class="footer__bottom">
       <span>&copy; 2026 The Useful Media Co. Chennai, India.</span>
@@ -506,8 +508,8 @@
 </footer>
 <div class="dlbar" aria-hidden="true">
   <img src="/img/icon-96.webp" width="38" height="38" alt="">
-  <div><b>Textlore for Mac</b><span>Free for 14 days, then $29 once</span></div>
-  <a class="btn btn--ghost buy" href="https://theusefultech.gumroad.com/l/textlore?wanted=true" tabindex="-1">Buy $29</a>
+  <div><b>Textlore for Mac</b><span>Free for 14 days, then <span class="l-on">$20 until 28 Oct</span><span class="l-off">$29 once</span></span></div>
+  <a class="btn btn--ghost buy" href="https://theusefultech.gumroad.com/l/textlore?wanted=true" tabindex="-1"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a>
   <a class="btn download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</a>
 </div>
 </body>

@@ -765,3 +765,9 @@ kbd { display: inline-block; min-width: 26px; padding: 2px 7px; border-radius: 7
   .never li span { background-size: 100% .07em; color: var(--ink-3); }
   .btn--shine::after { display: none; }
 }
+
+/* Launch price: .l-on shows until LAUNCH_ENDS (tools/build.py), then .l-off takes over */
+html:not(.launch-over) .l-off, html.launch-over .l-on { display: none !important; }
+.btn s, .price s { opacity: .55; font-weight: 500; }
+.price s { margin-left: 6px; font-size: .9em; }
+.pricecard__launch { margin-top: -4px; font-size: 14px; font-weight: 600; color: var(--accent-ink); }
