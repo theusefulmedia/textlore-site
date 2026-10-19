@@ -177,6 +177,7 @@ def footer(home):
       </ul></div>
       <div><h2 class="footer__h">Help</h2><ul>
         <li><a href="/help/">Help</a></li>
+        <li><a href="/guides/">Guides</a></li>
         <li><a href="/support/">Support</a></li>
         <li><a href="/privacy/">Privacy</a></li>
         <li><a href="/terms/">Terms</a></li>
