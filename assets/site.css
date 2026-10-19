@@ -771,3 +771,32 @@ html:not(.launch-over) .l-off, html.launch-over .l-on { display: none !important
 .btn s, .price s { opacity: .55; font-weight: 500; }
 .price s { margin-left: 6px; font-size: .9em; }
 .pricecard__launch { margin-top: -4px; font-size: 14px; font-weight: 600; color: var(--accent-ink); }
+
+/* ---------- Guides ---------- */
+.guide-hero h1 { font-size: clamp(42px, 5.6vw, 80px); line-height: 1; }
+.guide-hero .eyebrow a { color: inherit; text-decoration: none; }
+.guide-hero .eyebrow a:hover { text-decoration: underline; }
+.guide-meta { margin-top: 18px; font-size: 14.5px; color: var(--ink-3); }
+.prose .aside { font-size: 17px !important; color: var(--ink-2) !important; }
+.guide-table td:first-child { font-weight: 600; }
+.prose ol[start] { margin-top: 0; }
+.prose .showcase { padding: 0; }
+.prose .showcase .frame__win { margin: 22px 0 26px; }
+.guide-shot-small { max-width: 560px; }
+.guide-cta { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px 20px; align-items: center; margin-top: 36px; padding: 28px; border-radius: 24px; background: var(--card); box-shadow: var(--shadow), inset 0 0 0 1px var(--line); }
+.guide-cta img { border-radius: 14px; }
+.guide-cta__text b { display: block; font: 400 26px/1.15 var(--serif); letter-spacing: -0.01em; color: var(--ink); }
+.guide-cta__text span { display: block; margin-top: 6px; font-size: 15.5px; color: var(--ink-2); }
+.guide-cta .btns { grid-column: 1 / -1; }
+.prose .guide-faq { padding: 44px 0 0; border-top: 1px solid var(--line); }
+.prose .guide-faq summary { font-size: 19px; color: var(--ink); }
+.prose .guide-faq details p { color: var(--ink-2); }
+.guides { padding: 20px 0 110px; }
+.guide-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.guide-grid .topic b { font: 400 22px/1.2 var(--serif); }
+@media (max-width: 560px) {
+  .guide-cta { grid-template-columns: minmax(0, 1fr); padding: 22px; }
+  .guide-cta img { width: 52px; height: 52px; }
+  .guide-cta .btns .btn { width: 100%; }
+  .guide-table th:nth-child(2), .guide-table td:nth-child(2) { display: none; }
+}

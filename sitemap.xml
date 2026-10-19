@@ -2,8 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://textlore.app/</loc></url>
   <url><loc>https://textlore.app/about/</loc></url>
+  <url><loc>https://textlore.app/guides/</loc></url>
   <url><loc>https://textlore.app/help/</loc></url>
   <url><loc>https://textlore.app/privacy/</loc></url>
   <url><loc>https://textlore.app/support/</loc></url>
   <url><loc>https://textlore.app/terms/</loc></url>
+  <url><loc>https://textlore.app/guides/export-imessages-to-pdf/</loc></url>
 </urlset>
