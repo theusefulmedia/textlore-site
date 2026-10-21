@@ -1,0 +1,132 @@
+<!--
+path: guides/find-first-imessage/index.html
+title: How to find the first message in an iMessage conversation on a Mac (3 ways)
+description: See the first text you and someone ever sent each other: scroll to the top in Messages, find the start date of every chat in Terminal, or jump to any date in Textlore.
+head: guide-find-first-imessage-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to find the first message in an iMessage conversation, <em>3 ways.</em></h1>
+      <p class="lede">The first thing you ever texted your partner, your best friend or your mum is still on your Mac, as long as nothing deleted it. Getting there in Messages takes patience. These are the ways to reach it faster.</p>
+      <p class="guide-meta">Updated 21 October 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#quick-answer">Quick answer</a>
+      <a href="#scroll">1. Scroll in Messages</a>
+      <a href="#terminal">2. Terminal</a>
+      <a href="#textlore">3. Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="quick-answer">
+  <h2><span class="ic">{{icon:rings}}</span>Quick answer</h2>
+  <p class="aside">Messages has no button to jump to the top. Open the conversation on your Mac and keep scrolling up, pausing while it loads older messages, until nothing more appears. First make sure <strong>Messages &gt; Settings &gt; General &gt; Keep messages</strong> is set to Forever and Messages in iCloud has finished syncing, or the oldest texts may not be on your Mac.</p>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Way</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Scroll in Messages</td><td>Short or recent chats</td><td>Slow for years of history.</td></tr>
+      <tr><td>Terminal</td><td>The start date of every chat, free</td><td>Technical. Shows dates, not the conversation.</td></tr>
+      <tr><td>Textlore</td><td>Jumping to any date in a chat</td><td>Paid app after a 14-day free trial.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="scroll">
+  <h2><span class="ic">{{icon:bubble}}</span>1. Scroll to the top in Messages</h2>
+  <ol>
+    <li>In <strong>Messages &gt; Settings</strong>, check that <strong>General &gt; Keep messages</strong> is set to <strong>Forever</strong> and that <strong>iMessage &gt; Enable Messages in iCloud</strong> is on. If you just switched it on, give the Mac time to download your history.</li>
+    <li>Click the conversation in the sidebar.</li>
+    <li>Scroll up with your trackpad or mouse. Messages loads older texts in batches, so you'll see it pause each time it fetches more.</li>
+    <li>Keep scrolling until no older messages load. The message at the top is the oldest one on this Mac.</li>
+  </ol>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>It takes a long time.</strong> A conversation with years of daily texts can mean many minutes of scrolling.</li>
+    <li><strong>It is easy to lose your place.</strong> Click anything, or switch conversations, and you start again from the bottom.</li>
+    <li><strong>The top may not be the real first text.</strong> If you texted on an old phone before using Messages in iCloud, or deleted chats along the way, those messages aren't on your Mac.</li>
+  </ul>
+</section>
+
+<section id="terminal">
+  <h2><span class="ic">{{icon:keyboard}}</span>2. Find when every chat started, in Terminal</h2>
+  <p>Messages keeps a date for every message in its database. One query in Terminal lists every conversation with the date of its first message, oldest first, which is a fun list on its own.</p>
+  <ol>
+    <li>Open <strong>System Settings &gt; Privacy &amp; Security &gt; Full Disk Access</strong> and switch on Terminal.</li>
+    <li>In Terminal, paste this to work on a copy of the database:</li>
+  </ol>
+  <pre><code>mkdir -p ~/Desktop/messages-copy &amp;&amp; cp ~/Library/Messages/chat.db* ~/Desktop/messages-copy/</code></pre>
+  <ol start="3">
+    <li>Paste this and press Return:</li>
+  </ol>
+  <pre><code>sqlite3 ~/Desktop/messages-copy/chat.db &quot;SELECT datetime(MIN(m.date)/1000000000 + 978307200, &#x27;unixepoch&#x27;, &#x27;localtime&#x27;) AS first, c.chat_identifier, c.display_name FROM message m JOIN chat_message_join cm ON cm.message_id = m.ROWID JOIN chat c ON c.ROWID = cm.chat_id GROUP BY c.ROWID ORDER BY first;&quot;</code></pre>
+  <ol start="4">
+    <li>Each line shows the date and time of the first message, the phone number, email or group ID, and the group's name if it has one. Delete the copy on your desktop when you're done.</li>
+  </ol>
+  <p>Now you know which year to look for. Search Messages for a word from that time, or use <a href="/guides/search-imessages-by-date-mac/">a date search</a> to get there.</p>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:rings}}</span>3. Jump to any date with Textlore</h2>
+  <p>Textlore is a Mac app that reads your whole Messages history at once, so you can jump straight to a date instead of scrolling for minutes. It only reads: it never sends, edits or deletes a message, and nothing leaves your Mac.</p>
+  <ol>
+    <li><strong>Install it.</strong> Download Textlore, open it and switch on Full Disk Access when it asks. macOS keeps your Messages history in a protected folder, and this lets Textlore read it. About 100,000 messages import in under a minute.</li>
+    <li><strong>Open the conversation.</strong> Press <kbd>⌘1</kbd> for Conversations and pick the person or group.</li>
+    <li><strong>Jump to a date.</strong> Press <kbd>⌘J</kbd> and pick an early date, such as the month you met, to go straight there. Scroll up from there to the very first message.</li>
+    <li><strong>Or search.</strong> Type <code>in:Jordan before:2016</code> to see only the oldest messages in that chat, and press Return on one to open the conversation there.</li>
+  </ol>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:lore|(max-width: 960px) calc(100vw - 32px), 760px|Your Lore in Textlore: a ring for every year of texting, and 3 moments.}}</div></div>
+  <p>Your Lore, at <kbd>⌘4</kbd>, shows your texting life as tree rings, one ring for every year, so you can see the year your history starts. Click a ring or a year to see just that year.</p>
+  <p>Textlore keeps its own copy of every message from the day you install it, so that first text stays even if Messages deletes the chat later.</p>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>See the first text in any conversation in seconds.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$29</s> $20|Buy Textlore, $29}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Is there a shortcut to scroll to the top of a conversation in Messages?</summary><div><p>No. Messages loads older messages in batches as you scroll, so there's no way to jump to the first one. Keep scrolling, or use an app that can jump to a date.</p></div></details>
+    <details><summary>Why does my conversation stop at a certain date?</summary><div><p>Older messages aren't on your Mac. Keep messages may have been set to 30 Days or 1 Year, Messages in iCloud may still be syncing, or the texts were on an older phone that never synced.</p></div></details>
+    <details><summary>Can I see my first iMessage on my iPhone instead?</summary><div><p>Only by scrolling up in the conversation. Tapping the top of the screen scrolls up faster, but you still wait for each batch to load.</p></div></details>
+    <details><summary>Can I see the date a conversation started without scrolling?</summary><div><p>Yes. The Terminal query on this page lists the date of the first message in every conversation on your Mac. In Textlore, search the conversation with before: to see the oldest messages.</p></div></details>
+    <details><summary>Does any of this change my messages?</summary><div><p>No. Scrolling, a copy of the database and Textlore only read your messages. Textlore never sends, edits or deletes a message.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Your first text, <em>without the scroll.</em></h2>
+    <p class="rise">Download Textlore and jump to any date in any conversation. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $29}}</a>
+    </div>
+  </div>
+</section>
+
+</main>

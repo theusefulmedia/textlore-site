@@ -1,0 +1,159 @@
+<!--
+path: guides/back-up-imessages-mac/index.html
+title: How to back up iMessages on a Mac before they're deleted (5 ways)
+description: Messages in iCloud syncs deletions and skips iCloud Backup. Keep your iMessages safe on a Mac: stop auto-delete, use Time Machine, copy the Messages folder, export to HTML for free, or keep an archive with Textlore.
+head: guide-back-up-imessages-mac-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to back up iMessages on a Mac before they're <em>deleted.</em></h1>
+      <p class="lede">Texts disappear more easily than most people think: a setting that removes old chats, a delete on your iPhone that syncs everywhere, or a Mac low on space. These are 5 ways to keep a copy that stays.</p>
+      <p class="guide-meta">Updated 21 October 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#quick-answer">Quick answer</a>
+      <a href="#why">Why texts vanish</a>
+      <a href="#forever">1. Keep forever</a>
+      <a href="#time-machine">2. Time Machine</a>
+      <a href="#copy">3. Copy the folder</a>
+      <a href="#exporter">4. imessage-exporter</a>
+      <a href="#textlore">5. Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="quick-answer">
+  <h2><span class="ic">{{icon:keep}}</span>Quick answer</h2>
+  <p class="aside">First set <strong>Messages &gt; Settings &gt; General &gt; Keep messages</strong> to <strong>Forever</strong>. Then keep a copy that doesn't sync: Time Machine backs up the Messages folder with the rest of your Mac, or you can export your chats to files. Messages in iCloud alone isn't a backup, because a delete on one device deletes everywhere.</p>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Way</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Keep messages forever</td><td>Stopping automatic deletes</td><td>Doesn't protect against your own deletes.</td></tr>
+      <tr><td>Time Machine</td><td>A full Mac backup</td><td>Hard to restore one chat. Misses iCloud-only photos.</td></tr>
+      <tr><td>Copy the Messages folder</td><td>A quick snapshot, free</td><td>Can't be read on its own.</td></tr>
+      <tr><td>imessage-exporter</td><td>Readable HTML files, free</td><td>Terminal. A snapshot, not ongoing.</td></tr>
+      <tr><td>Textlore</td><td>An archive that keeps saving</td><td>Paid app after a 14-day free trial.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="why">
+  <h2><span class="ic">{{icon:help}}</span>Why iMessages disappear</h2>
+  <ul>
+    <li><strong>Keep messages is set to 30 Days or 1 Year.</strong> Messages removes conversations and their attachments automatically after that period.</li>
+    <li><strong>Messages in iCloud syncs deletes.</strong> Delete a conversation on your iPhone and it's removed from your Mac too.</li>
+    <li><strong>iCloud Backup skips them.</strong> Apple says that with Messages in iCloud on, your messages aren't included in your daily iCloud Backup.</li>
+    <li><strong>Your Mac clears space.</strong> When storage runs low, macOS removes the Mac's copies of older photos and files and keeps only a preview, with the original in iCloud.</li>
+  </ul>
+</section>
+
+<section id="forever">
+  <h2><span class="ic">{{icon:infinity}}</span>1. Stop Messages deleting old texts</h2>
+  <ol>
+    <li>Open <strong>Messages</strong>, choose <strong>Messages &gt; Settings &gt; General &gt; Keep messages</strong> and pick <strong>Forever</strong>.</li>
+    <li>Open <strong>Settings &gt; Apps &gt; Messages &gt; Keep Messages</strong> and pick <strong>Forever</strong>.</li>
+  </ol>
+  <p>This stops automatic removal. It doesn't help when you or someone with your phone deletes a chat, so use one of the ways below as well.</p>
+</section>
+
+<section id="time-machine">
+  <h2><span class="ic">{{icon:refresh}}</span>2. Back up the Mac with Time Machine</h2>
+  <p>Time Machine backs up your whole Mac, including the Messages folder in your Library, to an external drive.</p>
+  <ol>
+    <li>Connect an external drive with more free space than your Mac uses.</li>
+    <li>Open <strong>System Settings &gt; General &gt; Time Machine</strong>, click <strong>Add Backup Disk</strong> and choose the drive.</li>
+    <li>Time Machine backs up every hour while the drive is connected. Leave it plugged in, or connect it often.</li>
+  </ol>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>Restoring one chat is hard.</strong> Your messages live in one database, so getting an old conversation back means restoring the whole Messages folder over your current one.</li>
+    <li><strong>iCloud-only photos are missing.</strong> Photos that macOS already moved to iCloud aren't on the Mac, so they aren't in the backup either.</li>
+  </ul>
+</section>
+
+<section id="copy">
+  <h2><span class="ic">{{icon:copy}}</span>3. Copy the Messages folder to a drive</h2>
+  <p>A quick, free snapshot of everything Messages has on your Mac right now.</p>
+  <ol>
+    <li>Quit <strong>Messages</strong> so the database isn't changing while you copy it.</li>
+    <li>In Finder, choose <strong>Go &gt; Go to Folder</strong>, type <code>~/Library/Messages</code> and press Return.</li>
+    <li>Go up one level so you can see the Messages folder itself, and copy it to an external drive or another folder. Name the copy with today's date.</li>
+  </ol>
+  <p>The copy holds <code>chat.db</code>, your message database, and the Attachments folder. You can't open it like a document, but tools such as imessage-exporter can read it later.</p>
+</section>
+
+<section id="exporter">
+  <h2><span class="ic">{{icon:keyboard}}</span>4. Export every chat to HTML with imessage-exporter</h2>
+  <p><a href="/compare/textlore-vs-imessage-exporter/">imessage-exporter</a> is a free, open-source command-line tool that turns your whole history into web pages you can open in any browser, with photos alongside.</p>
+  <ol>
+    <li>Open <strong>System Settings &gt; Privacy &amp; Security &gt; Full Disk Access</strong> and switch on Terminal.</li>
+    <li>If you use Homebrew, run <code>brew install imessage-exporter</code> in Terminal. The project's GitHub page has other ways to install it.</li>
+    <li>Run this command. It writes one HTML file per conversation into a folder on your desktop and copies the attachments, turning HEIC photos into JPEG:</li>
+  </ol>
+  <pre><code>imessage-exporter -f html -c basic -o ~/Desktop/imessage-backup</code></pre>
+  <p>Open the folder and double-click a file to read the conversation in your browser. Copy the folder to a drive to keep it safe. Run the command again whenever you want a fresh copy.</p>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:keep}}</span>5. Keep an archive that saves as you go with Textlore</h2>
+  <p>Textlore is a Mac app that keeps its own copy of every message, and of every photo, video and file while it's on your Mac. When Messages later deletes a chat or clears space, Textlore's copy stays. It only reads: it never sends, edits or deletes a message, and nothing leaves your Mac.</p>
+  <ol>
+    <li><strong>Install it.</strong> Download Textlore, open it and switch on Full Disk Access when it asks. macOS keeps your Messages history in a protected folder, and this lets Textlore read it. About 100,000 messages import in under a minute.</li>
+    <li><strong>Leave Keep a local archive on.</strong> It's in Settings &gt; Archive, with the archive's size, a running count and a Show in Finder button. New messages are saved within seconds.</li>
+    <li><strong>Include it in your backups.</strong> The archive lives in <code>~/Library/Application Support/Textlore</code>, so Time Machine backs it up with the rest of your Mac.</li>
+  </ol>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:main-window|(max-width: 960px) calc(100vw - 32px), 760px|The Textlore window: the sidebar, a list of conversations, and a conversation with Jordan open, with photos and messages.}}</div></div>
+  <p>Everything in the archive stays searchable and can be exported to PDF, HTML, plain text, Markdown or CSV at any time. If your Mac runs low on space, a banner in Settings &gt; Archive shows how much is free, because the archive needs room to save new photos.</p>
+  <p>If Messages is set to delete verification codes after use, Textlore never archives those messages. Files that were already gone from your Mac and from iCloud before you installed it can't be brought back.</p>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Start keeping every message and photo today.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$29</s> $20|Buy Textlore, $29}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Is Messages in iCloud a backup?</summary><div><p>No. It keeps your devices in sync, so deleting a message on one device deletes it on all of them. Apple also says that with Messages in iCloud on, messages aren't included in iCloud Backup.</p></div></details>
+    <details><summary>Does Time Machine back up iMessages?</summary><div><p>Yes. Time Machine backs up the Messages folder in your Library with the rest of your Mac. Photos that were only in iCloud at the time aren't included.</p></div></details>
+    <details><summary>Where are iMessages stored on a Mac?</summary><div><p>In <code>~/Library/Messages</code>. The messages are in a database called chat.db, and photos and files are in the Attachments folder.</p></div></details>
+    <details><summary>Can I recover iMessages I already deleted?</summary><div><p>Only from a backup made before you deleted them, such as Time Machine, a copied Messages folder, or an iPhone backup. Textlore can't bring back messages that were gone before you installed it.</p></div></details>
+    <details><summary>Does Textlore change or delete anything in Messages?</summary><div><p>No. It reads a copy of your Messages history and keeps its own archive. It never sends, edits or deletes a message.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Keep every text, <em>for good.</em></h2>
+    <p class="rise">Download Textlore and start your archive today. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $29}}</a>
+    </div>
+  </div>
+</section>
+
+</main>

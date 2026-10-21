@@ -1,0 +1,139 @@
+<!--
+path: guides/export-imessages-to-csv-excel/index.html
+title: How to export iMessages to CSV or Excel on a Mac (3 ways)
+description: Get an iMessage conversation into a spreadsheet: export it to CSV for free with sqlite3 in Terminal, use an iPhone backup tool, or export a chat or date range to CSV in Textlore.
+head: guide-export-imessages-to-csv-excel-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to export iMessages to CSV or Excel on a Mac, <em>3 ways.</em></h1>
+      <p class="lede">A spreadsheet of your texts is handy for a case, an expense claim, research or just counting who texts more. Messages can't make one, but your Mac can, for free, if you don't mind Terminal.</p>
+      <p class="guide-meta">Updated 21 October 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#quick-answer">Quick answer</a>
+      <a href="#terminal">1. sqlite3 in Terminal</a>
+      <a href="#backup-tools">2. Backup tools</a>
+      <a href="#textlore">3. Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="quick-answer">
+  <h2><span class="ic">{{icon:export}}</span>Quick answer</h2>
+  <p class="aside">Messages has no CSV or Excel export. The free way is to copy the Messages database and export a conversation with the sqlite3 tool built into macOS, which writes a CSV file that opens in Excel or Numbers. For a chat with years of history, or if you'd rather not use Terminal, an export app is faster.</p>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Way</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>sqlite3 in Terminal</td><td>Free, any conversation on your Mac</td><td>Technical. Some messages come out blank on recent macOS.</td></tr>
+      <tr><td>iPhone backup tools</td><td>Texts that are only on an iPhone, or Windows</td><td>Paid. You make a backup first.</td></tr>
+      <tr><td>Textlore</td><td>A chat, a date range or a few messages, in a few clicks</td><td>Paid app after a 14-day free trial.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="terminal">
+  <h2><span class="ic">{{icon:keyboard}}</span>1. Export a conversation to CSV with sqlite3</h2>
+  <p>Messages stores your history in a database file, <code>chat.db</code>, in your Library folder. macOS includes sqlite3, a tool that can read it and write the results as CSV. You'll paste 3 commands.</p>
+  <ol>
+    <li>Open <strong>System Settings &gt; Privacy &amp; Security &gt; Full Disk Access</strong> and switch on Terminal. macOS protects the Messages folder, and Terminal can't read it without this.</li>
+    <li>Open Terminal and paste this, so you work on a copy and never on the live file:</li>
+  </ol>
+  <pre><code>mkdir -p ~/Desktop/messages-copy &amp;&amp; cp ~/Library/Messages/chat.db* ~/Desktop/messages-copy/</code></pre>
+  <ol start="3">
+    <li>List your conversations. For a one-to-one chat the identifier is the phone number or email. Group chats show the name you gave them in the display_name column.</li>
+  </ol>
+  <pre><code>sqlite3 -header ~/Desktop/messages-copy/chat.db &quot;SELECT chat_identifier, display_name FROM chat;&quot;</code></pre>
+  <ol start="4">
+    <li>Paste this, with <code>+15551234567</code> replaced by the identifier from the last step. It writes <code>messages.csv</code> to your desktop with the date and time, who sent each message, and the text.</li>
+  </ol>
+  <pre><code>sqlite3 -header -csv ~/Desktop/messages-copy/chat.db &quot;SELECT datetime(m.date/1000000000 + 978307200, &#x27;unixepoch&#x27;, &#x27;localtime&#x27;) AS sent, CASE m.is_from_me WHEN 1 THEN &#x27;Me&#x27; ELSE h.id END AS sender, m.text FROM message m JOIN chat_message_join cm ON cm.message_id = m.ROWID JOIN chat c ON c.ROWID = cm.chat_id LEFT JOIN handle h ON h.ROWID = m.handle_id WHERE c.chat_identifier = &#x27;+15551234567&#x27; ORDER BY m.date;&quot; &gt; ~/Desktop/messages.csv</code></pre>
+  <ol start="5">
+    <li>Double-click <code>messages.csv</code> to open it in Numbers, or open it from Excel. Delete the <code>messages-copy</code> folder when you're done, since it holds your whole history.</li>
+  </ol>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>Some rows have no text.</strong> On recent versions of macOS, many messages keep their text in a coded column instead of the plain text one, so those rows come out blank.</li>
+    <li><strong>Numbers, not names.</strong> The sender column shows phone numbers and emails, not the names in your Contacts.</li>
+    <li><strong>No attachments.</strong> Photos and files aren't in the CSV, and reactions show up as their own rows.</li>
+    <li><strong>Easy to get wrong.</strong> One missing quote mark and the command fails, and the date maths is easy to break if you edit it.</li>
+  </ul>
+</section>
+
+<section id="backup-tools">
+  <h2><span class="ic">{{icon:install}}</span>2. Use an app that reads iPhone backups</h2>
+  <p>If your texts are only on your iPhone, or you use Windows, apps that read iPhone backups can export them as a spreadsheet. <a href="/compare/textlore-vs-imazing/">iMazing</a> exports messages to Excel and CSV, and <a href="/compare/textlore-vs-decipher-textmessage/">Decipher TextMessage</a> exports CSV. Both are paid and run on Mac and Windows.</p>
+  <ol>
+    <li>Install the app and connect your iPhone. Let the app make or read a backup of the phone.</li>
+    <li>Open the messages section in the app and choose the conversation.</li>
+    <li>Choose the CSV or Excel export and save the file.</li>
+  </ol>
+  <p>The free command-line tool <a href="/compare/textlore-vs-imessage-exporter/">imessage-exporter</a> reads backups too, but it exports text and HTML files, not CSV.</p>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:export}}</span>3. Export to CSV with Textlore</h2>
+  <p>Textlore is a Mac app that reads your whole Messages history and exports any conversation, date range or set of messages as a CSV file. There's no Terminal and no backup to make. It only reads: it never sends, edits or deletes a message, and nothing leaves your Mac.</p>
+  <ol>
+    <li><strong>Install it.</strong> Download Textlore, open it and switch on Full Disk Access when it asks. macOS keeps your Messages history in a protected folder, and this lets Textlore read it. About 100,000 messages import in under a minute.</li>
+    <li><strong>Pick what to export.</strong> Open a conversation and press <kbd>⇧⌘E</kbd> for the whole chat, or choose a date range. For a few messages, click Select, pick them (Shift-click picks everything in between) and press <kbd>⌘E</kbd>.</li>
+  </ol>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:selecting|(max-width: 960px) calc(100vw - 32px), 760px|Selecting 3 messages in a conversation in Textlore, with Copy and Export at the bottom.}}</div></div>
+  <ol start="3">
+    <li><strong>Choose CSV and export.</strong> Pick CSV as the format, check the preview and export. Textlore shows the finished file with buttons to Share, Show in Finder or Open it.</li>
+    <li><strong>Open it in Numbers or Excel.</strong> Each message is its own row, ready to sort, filter or count.</li>
+  </ol>
+  <p>Use search first if you only want some messages. Search words such as from:Jordan, has:link or after:march 2024 find them across every chat, and Return opens the conversation at that message, ready to select.</p>
+  <p>The same export saves PDF, HTML, plain text, Markdown or an image. See <a href="/help/#export">Export in Help</a> for every option.</p>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Turn any conversation into a spreadsheet in a few minutes.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$29</s> $20|Buy Textlore, $29}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Can I export iMessages to Excel for free?</summary><div><p>Yes, with sqlite3 in Terminal, which comes with macOS. It writes a CSV file that Excel and Numbers open. It takes some care, and on recent macOS some messages come out without their text.</p></div></details>
+    <details><summary>Why are some messages blank in my CSV?</summary><div><p>Newer versions of macOS keep the text of many messages in a coded column of the database instead of the plain text column. A simple sqlite3 query only reads the plain column, so those rows are empty. Export apps decode both.</p></div></details>
+    <details><summary>Can I export iMessages from my iPhone to Excel?</summary><div><p>Switch on Messages in iCloud so your iPhone texts are on your Mac, then use any method on this page. Or use an app that reads iPhone backups, such as <a href="/compare/textlore-vs-imazing/">iMazing</a>.</p></div></details>
+    <details><summary>Can I export a group chat to CSV?</summary><div><p>Yes. In sqlite3, use the group's chat_identifier from the list of conversations. In Textlore, open the group and export it like any other conversation.</p></div></details>
+    <details><summary>Does exporting change anything in Messages?</summary><div><p>No. sqlite3 reads a copy of the database, and Textlore only reads too. It never sends, edits or deletes a message, and nothing is uploaded.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Your texts, <em>in a spreadsheet.</em></h2>
+    <p class="rise">Download Textlore and export your first conversation to CSV. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $29}}</a>
+    </div>
+  </div>
+</section>
+
+</main>

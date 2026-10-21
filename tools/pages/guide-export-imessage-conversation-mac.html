@@ -1,0 +1,148 @@
+<!--
+path: guides/export-imessage-conversation-mac/index.html
+title: How to export an iMessage conversation from a Mac (3 ways)
+description: Save a whole iMessage conversation as a file on your Mac: print it to PDF from Messages, export it to text or HTML with the free imessage-exporter, or export to PDF, HTML, text, Markdown, CSV or an image with Textlore.
+head: guide-export-imessage-conversation-mac-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to export an iMessage conversation from a Mac, <em>3 ways.</em></h1>
+      <p class="lede">Keep a chat with someone you lost touch with, hand a thread to an accountant, or just save a group chat before you leave it. These are the ways to turn a conversation into a file you can keep.</p>
+      <p class="guide-meta">Updated 21 October 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#quick-answer">Quick answer</a>
+      <a href="#print">1. Print to PDF</a>
+      <a href="#exporter">2. imessage-exporter</a>
+      <a href="#textlore">3. Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="quick-answer">
+  <h2><span class="ic">{{icon:export}}</span>Quick answer</h2>
+  <p class="aside">Messages has no Export button. The free built-in way is <strong>File &gt; Print</strong> and <strong>Save as PDF</strong>, after scrolling up so the whole conversation has loaded. For text or HTML files, the free imessage-exporter tool works from Terminal. For any format with a preview, use an export app such as Textlore.</p>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Way</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Print to PDF</td><td>A short chat as a PDF, free</td><td>Only prints what has loaded. PDF only.</td></tr>
+      <tr><td>imessage-exporter</td><td>Text or HTML files, free</td><td>Terminal. No preview, no PDF.</td></tr>
+      <tr><td>Textlore</td><td>PDF, HTML, text, Markdown, CSV or an image</td><td>Paid app after a 14-day free trial.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="print">
+  <h2><span class="ic">{{icon:bubble}}</span>1. Print the conversation to PDF in Messages</h2>
+  <ol>
+    <li>Open <strong>Messages</strong> and click the conversation.</li>
+    <li>Scroll up until the first message you want to keep is on screen. Messages loads older texts in batches as you scroll.</li>
+    <li>Choose <strong>File &gt; Print</strong>, open the <strong>PDF</strong> menu in the print dialog and choose <strong>Save as PDF</strong>.</li>
+  </ol>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>PDF only.</strong> There's no way to save the conversation as text, a web page or a spreadsheet.</li>
+    <li><strong>Only loaded messages print.</strong> Anything above the point you scrolled to is left out, and years of history take a long time to load.</li>
+    <li><strong>No date range and no picking.</strong> You get everything from your scroll point down to the newest message.</li>
+    <li><strong>Nothing is hidden.</strong> Names, phone numbers and emails print as Messages shows them.</li>
+  </ul>
+  <p>Our <a href="/guides/export-imessages-to-pdf/">guide to exporting iMessages to PDF</a> covers the PDF route in more detail.</p>
+</section>
+
+<section id="exporter">
+  <h2><span class="ic">{{icon:keyboard}}</span>2. Export to text or HTML with imessage-exporter</h2>
+  <p><a href="/compare/textlore-vs-imessage-exporter/">imessage-exporter</a> is a free, open-source command-line tool that reads your Messages database and writes each conversation as a text file or a web page.</p>
+  <ol>
+    <li>Open <strong>System Settings &gt; Privacy &amp; Security &gt; Full Disk Access</strong> and switch on Terminal.</li>
+    <li>With Homebrew, run <code>brew install imessage-exporter</code>. Its GitHub page lists other ways to install it.</li>
+    <li>Run this, with the phone number, email or contact name of the person in quotes. Use -f html instead of -f txt for web pages with photos, and add -c basic to copy the attachments:</li>
+  </ol>
+  <pre><code>imessage-exporter -f txt -t &quot;+15551234567&quot; -o ~/Desktop/jordan-export</code></pre>
+  <ol start="4">
+    <li>Open the folder on your desktop. Each conversation with that person, including group chats they're in, is its own file.</li>
+  </ol>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>Terminal only.</strong> There's no window to browse or preview what you'll get.</li>
+    <li><strong>2 formats.</strong> It writes text and HTML. For a PDF, you open the HTML in a browser and print it.</li>
+    <li><strong>No picking.</strong> You export whole conversations, or a date range with its start and end date options, not 3 messages from the middle.</li>
+  </ul>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:export}}</span>3. Export in any format with Textlore</h2>
+  <p>Textlore is a Mac app that reads your whole Messages history and exports a conversation, a date range or a few messages, with a live preview before you save. It only reads: it never sends, edits or deletes a message, and nothing leaves your Mac.</p>
+  <ol>
+    <li><strong>Install it.</strong> Download Textlore, open it and switch on Full Disk Access when it asks. macOS keeps your Messages history in a protected folder, and this lets Textlore read it. About 100,000 messages import in under a minute.</li>
+    <li><strong>Pick what to export.</strong> Open the conversation and press <kbd>⇧⌘E</kbd> for all of it, choose a date range, or click Select, pick messages and press <kbd>⌘E</kbd>.</li>
+    <li><strong>Choose a format and options.</strong> Turn timestamps, date headings and tapbacks on or off. Show names in full, as initials, or hide them. Phone numbers and emails stay hidden unless you switch them on. Keep photos full size, small, or leave them out.</li>
+  </ol>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:export-options|(max-width: 960px) calc(100vw - 32px), 760px|The Textlore export sheet: format, what to include, names and photos on the left, and a live preview on the right.}}</div></div>
+  <ol start="4">
+    <li><strong>Check the preview and export.</strong> Textlore shows the finished file with buttons to Share, Show in Finder or Open it.</li>
+  </ol>
+  <h3>Which format to pick</h3>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Format</th><th scope="col">Good for</th><th scope="col">Opens in</th></tr></thead>
+    <tbody>
+      <tr><td>PDF</td><td>Printing, sending to a lawyer or a landlord</td><td>Preview, any PDF reader</td></tr>
+      <tr><td>HTML</td><td>Reading a long chat with its bubbles in a browser</td><td>Safari, Chrome, any browser</td></tr>
+      <tr><td>Plain text</td><td>Keeping a light, searchable copy</td><td>TextEdit, any text editor</td></tr>
+      <tr><td>Markdown</td><td>Pasting into notes apps that use Markdown</td><td>Notes apps, text editors</td></tr>
+      <tr><td>CSV</td><td>Sorting, filtering and counting</td><td>Numbers, Excel, Google Sheets</td></tr>
+      <tr><td>Image</td><td>Sharing a few messages as one picture</td><td>Photos, any app</td></tr>
+    </tbody>
+  </table>
+  <p>Textlore also keeps its own copy of every photo from the day you install it, so photos that Messages later moves to iCloud still make it into your export.</p>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Export your first conversation in a few minutes.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$29</s> $20|Buy Textlore, $29}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Is there an export button in Messages on a Mac?</summary><div><p>No. Messages can print a conversation, and the print dialog can save it as a PDF. For other formats you need another tool.</p></div></details>
+    <details><summary>How do I export a whole iMessage conversation with photos?</summary><div><p>Print to PDF includes some photos, but not reliably. imessage-exporter copies attachments with its -c option, and Textlore puts photos in the export full size or small, as you choose.</p></div></details>
+    <details><summary>Can I export a group chat?</summary><div><p>Yes. All 3 ways work for group chats. In Textlore, open the group and export it like any other conversation.</p></div></details>
+    <details><summary>Can I export iMessages from my iPhone?</summary><div><p>Messages on iPhone has no export option. Switch on Messages in iCloud on your iPhone and your Mac so the conversations are on your Mac, then use any way on this page.</p></div></details>
+    <details><summary>Does exporting delete or change the conversation?</summary><div><p>No. Exporting only reads your messages. Textlore never sends, edits or deletes a message, and nothing is uploaded.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Any conversation, <em>as a file you keep.</em></h2>
+    <p class="rise">Download Textlore and export your first chat today. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $29}}</a>
+    </div>
+  </div>
+</section>
+
+</main>

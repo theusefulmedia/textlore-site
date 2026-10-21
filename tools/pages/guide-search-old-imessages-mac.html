@@ -1,0 +1,150 @@
+<!--
+path: guides/search-old-imessages-mac/index.html
+title: How to search old iMessages on a Mac (3 ways)
+description: Find a text from years ago on your Mac: use the search field in Messages, search the Messages database in Terminal for free, or search every year as you type with Textlore.
+head: guide-search-old-imessages-mac-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to search old iMessages on a Mac, <em>3 ways.</em></h1>
+      <p class="lede">Find a text from years ago without scrolling for an hour. Messages has a search field that works well for recent chats, Terminal can dig through everything for free, and Textlore searches every year as you type.</p>
+      <p class="guide-meta">Updated 21 October 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#quick-answer">Quick answer</a>
+      <a href="#messages">1. Messages search</a>
+      <a href="#terminal">2. Terminal</a>
+      <a href="#textlore">3. Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="quick-answer">
+  <h2><span class="ic">{{icon:search}}</span>Quick answer</h2>
+  <p class="aside">In Messages on your Mac, click the search field at the top of the sidebar, type a word you remember and press <strong>Return</strong>. Click a result to open the conversation at that message. If old texts don't show up, check that <strong>Keep messages</strong> is set to Forever and that Messages in iCloud has finished syncing.</p>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Way</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Messages search</td><td>Recent chats, quick lookups</td><td>No date filter. Only finds what is on this Mac.</td></tr>
+      <tr><td>Terminal</td><td>Free, every message on your Mac</td><td>Technical. Misses text that newer macOS stores in a coded form.</td></tr>
+      <tr><td>Textlore</td><td>Years of history, filters by person, date and type</td><td>Paid app after a 14-day free trial.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="messages">
+  <h2><span class="ic">{{icon:bubble}}</span>1. Search in the Messages app</h2>
+  <p>The search field in Messages looks through every conversation on your Mac, not just the one that's open.</p>
+  <ol>
+    <li>Open <strong>Messages</strong> and click the search field at the top of the sidebar.</li>
+    <li>Type a word or phrase from the message. Messages suggests matching conversations, photos, links and places as you type.</li>
+    <li>Add another word, or pick a suggestion or a filter below the search field, such as a person, to narrow the results.</li>
+    <li>Press <strong>Return</strong> to see all results, grouped into conversations, links, photos, locations and documents.</li>
+    <li>Click a result. The conversation opens at that message, with the messages before and after it.</li>
+  </ol>
+  <p>Messages can also find text inside photos, so searching for a word on a screenshot or a sign can turn up the picture.</p>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>No date filter.</strong> You can't ask for messages from 2019 or from last March. If you need that, see <a href="/guides/search-imessages-by-date-mac/">how to search iMessages by date</a>.</li>
+    <li><strong>It only searches this Mac.</strong> If Messages in iCloud is off, your Mac only has the texts it received itself. If Keep messages is set to 30 Days or 1 Year, older conversations were removed.</li>
+    <li><strong>Old texts can be missing while syncing.</strong> On a new Mac, or right after you switch on Messages in iCloud, it can take a while for your whole history to download.</li>
+    <li><strong>Common words bring back a long list.</strong> Searching for dinner in 10 years of texts gives you hundreds of hits, and you can't narrow them by year or by whether you sent or received them.</li>
+  </ul>
+  <h3>Make sure your old messages are on your Mac</h3>
+  <ul>
+    <li>On your Mac, open <strong>Messages &gt; Settings &gt; General &gt; Keep messages</strong> and choose <strong>Forever</strong>.</li>
+    <li>On your Mac, check <strong>Messages &gt; Settings &gt; iMessage &gt; Enable Messages in iCloud</strong>, then click <strong>Sync Now</strong>.</li>
+    <li>On your iPhone, open <strong>Settings &gt; [your name] &gt; iCloud &gt; See All &gt; Messages in iCloud &gt; Use on this iPhone</strong>.</li>
+  </ul>
+</section>
+
+<section id="terminal">
+  <h2><span class="ic">{{icon:keyboard}}</span>2. Search the Messages database in Terminal</h2>
+  <p>Messages keeps your history in a database file called <code>chat.db</code> in your Library folder. macOS comes with a tool called sqlite3 that can search it. It's free and searches every message on your Mac at once, but you'll be typing commands.</p>
+  <ol>
+    <li>Open <strong>System Settings &gt; Privacy &amp; Security &gt; Full Disk Access</strong> and switch on Terminal. Without it, macOS blocks Terminal from the Messages folder.</li>
+    <li>Open Terminal and paste this to copy the database into a folder on your desktop, so you never work on the live file:</li>
+  </ol>
+  <pre><code>mkdir -p ~/Desktop/messages-copy &amp;&amp; cp ~/Library/Messages/chat.db* ~/Desktop/messages-copy/</code></pre>
+  <ol start="3">
+    <li>Paste this command, change cabin to the word you're looking for, and press Return:</li>
+  </ol>
+  <pre><code>sqlite3 ~/Desktop/messages-copy/chat.db &quot;SELECT datetime(m.date/1000000000 + 978307200, &#x27;unixepoch&#x27;, &#x27;localtime&#x27;), h.id, m.text FROM message m LEFT JOIN handle h ON h.ROWID = m.handle_id WHERE m.text LIKE &#x27;%cabin%&#x27; ORDER BY m.date;&quot;</code></pre>
+  <ol start="4">
+    <li>Each line shows the date and time, the phone number or email of the other person, and the message. Your own messages show the same way, so read the conversation around them to tell who said what.</li>
+  </ol>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>Some messages come back blank.</strong> On recent versions of macOS, many messages keep their text in a coded column instead of the plain text one, so this search can't see them.</li>
+    <li><strong>Numbers, not names.</strong> You see phone numbers and emails, not the names in your Contacts.</li>
+    <li><strong>Text only.</strong> Photos, links and files don't show.</li>
+    <li><strong>Clean up after.</strong> The copy on your desktop holds your whole history. Delete the folder when you're done, and switch Terminal off again in Full Disk Access.</li>
+  </ul>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:search}}</span>3. Search every year with Textlore</h2>
+  <p>Textlore is a Mac app that reads your whole Messages history and searches it as you type, with filters for people, dates and photos. It only reads: it never sends, edits or deletes a message, and nothing leaves your Mac.</p>
+  <ol>
+    <li><strong>Install it.</strong> Download Textlore, open it and switch on Full Disk Access when it asks. macOS keeps your Messages history in a protected folder, and this lets Textlore read it. About 100,000 messages import in under a minute.</li>
+    <li><strong>Press</strong> <kbd>⌘F</kbd> <strong>and type.</strong> Results narrow with every letter and your words are lit up in amber. Use <kbd>↑</kbd> and <kbd>↓</kbd> to move through them and <kbd>Return</kbd> to open the conversation at that message.</li>
+  </ol>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:search|(max-width: 960px) calc(100vw - 32px), 760px|Search in Textlore, with the match lit up in amber in its conversation.}}</div></div>
+  <ol start="3">
+    <li><strong>Narrow it down with search words.</strong> <code>from:Jordan</code> finds what Jordan sent you, <code>in:Family</code> searches one group, <code>before:2023</code> and <code>after:march 2021</code> set dates, <code>has:photo</code> or <code>has:link</code> finds messages that came with one, <code>is:sent</code> finds only yours, and quotes find an exact phrase such as <code>&quot;see you soon&quot;</code>.</li>
+    <li><strong>Search from anywhere.</strong> Press <kbd>⌥Space</kbd> in any app and a small search bar floats over your work. Pick a result and Textlore opens at that message.</li>
+  </ol>
+  <p>If nothing matches, Textlore suggests a spelling it did find. When you can't remember the words at all, Ask AI on Macs with Apple Intelligence answers questions such as “When did we book the cabin?” with Apple's on-device model, and lists the messages it used.</p>
+  <p>Textlore also keeps its own copy of your messages, so a text stays searchable even after Messages deletes it or clears space. See <a href="/help/#searching">Searching in Help</a> for every search word.</p>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Search every year of your messages in a few minutes.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$29</s> $20|Buy Textlore, $29}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Why can't Messages find an old text I know exists?</summary><div><p>Usually it isn't on this Mac. Check that Keep messages is set to Forever in Messages &gt; Settings &gt; General, and that Messages in iCloud is on and has finished syncing. Then try a different word from the message, since search matches the words you type.</p></div></details>
+    <details><summary>Can I search iMessages by date on a Mac?</summary><div><p>Not in Messages. You can scroll, search the database in Terminal, or use before:, after: and during: in Textlore. The guide on <a href="/guides/search-imessages-by-date-mac/">searching iMessages by date</a> covers each way.</p></div></details>
+    <details><summary>Can Messages find words inside photos?</summary><div><p>Yes. Messages on a Mac can search for text or objects inside images, so a word on a screenshot can turn up the photo.</p></div></details>
+    <details><summary>Can I search the texts from my iPhone on my Mac?</summary><div><p>Yes, once Messages in iCloud is on for both your iPhone and your Mac. Your Mac then has the same conversations, and every method on this page searches them.</p></div></details>
+    <details><summary>Does searching change anything in Messages?</summary><div><p>No. Searching in Messages, a copy of the database, or Textlore only reads your messages. Textlore never sends, edits or deletes a message.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Every old text, <em>one search away.</em></h2>
+    <p class="rise">Download Textlore and search every year of your Messages history. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $29}}</a>
+    </div>
+  </div>
+</section>
+
+</main>

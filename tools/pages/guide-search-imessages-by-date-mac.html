@@ -1,0 +1,138 @@
+<!--
+path: guides/search-imessages-by-date-mac/index.html
+title: How to search iMessages by date on a Mac (3 ways)
+description: Messages can't search by date. Find texts from a day, month or year on your Mac: list them with sqlite3 or imessage-exporter for free, or use before:, after: and during: in Textlore.
+head: guide-search-imessages-by-date-mac-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to search iMessages by date on a Mac, <em>3 ways.</em></h1>
+      <p class="lede">You know it was the week of the move, or Christmas 2021, but not the words. Messages has no date search, so here are the ways to get to a date anyway, from a free workaround to a search that understands plain dates.</p>
+      <p class="guide-meta">Updated 21 October 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#quick-answer">Quick answer</a>
+      <a href="#messages">1. Messages</a>
+      <a href="#terminal">2. Terminal</a>
+      <a href="#textlore">3. Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="quick-answer">
+  <h2><span class="ic">{{icon:search}}</span>Quick answer</h2>
+  <p class="aside">Messages on the Mac has no date filter and no way to jump to a date. You can search for a word linked to that day and scroll from there, list every message in a date range with Terminal for free, or type a date such as during:march 2023 in Textlore.</p>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Way</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Workarounds in Messages</td><td>Dates tied to an event or a word</td><td>Guesswork, then scrolling.</td></tr>
+      <tr><td>Terminal</td><td>Every message in a date range, free</td><td>Technical. Some text comes out blank.</td></tr>
+      <tr><td>Textlore</td><td>Plain dates combined with words and people</td><td>Paid app after a 14-day free trial.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="messages">
+  <h2><span class="ic">{{icon:bubble}}</span>1. Get to a date in Messages with a word</h2>
+  <p>Messages can't filter by date, but you can often reach a date through a word you know was used then.</p>
+  <ol>
+    <li>Pick something tied to the date: happy birthday, merry christmas, a flight number, a restaurant, a place you went, or the name of a new job.</li>
+    <li>Click the search field at the top of the Messages sidebar, type the word and press <strong>Return</strong>.</li>
+    <li>Click through the results until you find one from the right time. The conversation opens at that message.</li>
+    <li>Scroll up or down to read the messages around it. Messages shows the date between groups of messages as you go.</li>
+  </ol>
+  <h3>Where it falls short</h3>
+  <ul>
+    <li><strong>You need a word.</strong> If nothing distinctive was said that day, there's nothing to search for.</li>
+    <li><strong>No range.</strong> You can't ask for everything from March 2023, or everything before you moved.</li>
+    <li><strong>Scrolling is slow.</strong> Messages loads older texts in batches, so moving a few months takes time.</li>
+  </ul>
+</section>
+
+<section id="terminal">
+  <h2><span class="ic">{{icon:keyboard}}</span>2. List every message in a date range, free</h2>
+  <p>Messages stores the date of every message in its database, <code>chat.db</code>. With the sqlite3 tool built into macOS you can list everything in a date range.</p>
+  <ol>
+    <li>Open <strong>System Settings &gt; Privacy &amp; Security &gt; Full Disk Access</strong> and switch on Terminal.</li>
+    <li>In Terminal, paste this to work on a copy of the database:</li>
+  </ol>
+  <pre><code>mkdir -p ~/Desktop/messages-copy &amp;&amp; cp ~/Library/Messages/chat.db* ~/Desktop/messages-copy/</code></pre>
+  <ol start="3">
+    <li>Paste this, changing the 2 dates. The first is the start, and the second is the day after the end. This example lists March 2023:</li>
+  </ol>
+  <pre><code>sqlite3 ~/Desktop/messages-copy/chat.db &quot;SELECT datetime(m.date/1000000000 + 978307200, &#x27;unixepoch&#x27;, &#x27;localtime&#x27;), h.id, m.text FROM message m LEFT JOIN handle h ON h.ROWID = m.handle_id WHERE m.date &gt;= (strftime(&#x27;%s&#x27;, &#x27;2023-03-01&#x27;) - 978307200) * 1000000000 AND m.date &lt; (strftime(&#x27;%s&#x27;, &#x27;2023-04-01&#x27;) - 978307200) * 1000000000 ORDER BY m.date;&quot;</code></pre>
+  <ol start="4">
+    <li>Each line shows the date and time, the phone number or email, and the text. Delete the copy on your desktop when you're done.</li>
+  </ol>
+  <p>The range is worked out in UTC, so messages close to midnight can land a day either side. On recent versions of macOS, some messages keep their text in a coded column, so they show up blank here.</p>
+  <h3>Prefer readable pages? Use imessage-exporter</h3>
+  <p>The free command-line tool <a href="/compare/textlore-vs-imessage-exporter/">imessage-exporter</a> has start and end date options. After installing it (for example with <code>brew install imessage-exporter</code>), this exports March 2023 as web pages with photos, one per conversation:</p>
+  <pre><code>imessage-exporter -f html -c basic -s 2023-03-01 -e 2023-04-01 -o ~/Desktop/march-2023</code></pre>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:search}}</span>3. Search with plain dates in Textlore</h2>
+  <p>Textlore is a Mac app that searches your whole Messages history as you type, and it understands dates written the way you'd say them. It only reads: it never sends, edits or deletes a message, and nothing leaves your Mac.</p>
+  <ol>
+    <li><strong>Install it.</strong> Download Textlore, open it and switch on Full Disk Access when it asks. macOS keeps your Messages history in a protected folder, and this lets Textlore read it. About 100,000 messages import in under a minute.</li>
+    <li><strong>Type a date.</strong> Press <kbd>⌘F</kbd> and use <code>before:</code>, <code>after:</code> or <code>during:</code>. <code>before:2023</code>, <code>after:march 2021</code> and <code>during:summer 2024</code> all work, and so do plain dates such as last week or christmas 2022.</li>
+    <li><strong>Add words and people.</strong> Combine a date with anything else: <code>from:Jordan during:may 2022</code>, <code>cabin after:2023</code> or <code>has:photo during:diwali 2024</code>.</li>
+  </ol>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:search|(max-width: 960px) calc(100vw - 32px), 760px|Search in Textlore, with the match lit up in amber in its conversation.}}</div></div>
+  <ol start="4">
+    <li><strong>Jump to a date in a chat.</strong> Open a conversation and press <kbd>⌘J</kbd> to go straight to a date without scrolling.</li>
+    <li><strong>Export the range.</strong> Need those messages as a file? Export a date range of any conversation as PDF, HTML, plain text, Markdown or CSV.</li>
+  </ol>
+  <p>See <a href="/help/#searching">Searching in Help</a> for every search word.</p>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Find texts from any day in your history.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$29</s> $20|Buy Textlore, $29}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Can you search iMessages by date on a Mac?</summary><div><p>Not in Messages. It has no date filter and no way to jump to a date. Search for a word from that day and scroll, list a date range in Terminal, or use a date search in an app such as Textlore.</p></div></details>
+    <details><summary>Can I search iMessages by date on my iPhone?</summary><div><p>Messages on iPhone has no date search either. With Messages in iCloud on, your iPhone texts are on your Mac, so the Mac methods on this page cover them too.</p></div></details>
+    <details><summary>How do I see the exact time a message was sent?</summary><div><p>On a Mac, Messages shows times between groups of messages. On an iPhone, swipe left in a conversation to show the time of each message.</p></div></details>
+    <details><summary>Can I export messages from a date range?</summary><div><p>Yes. imessage-exporter takes a start and end date for free, and Textlore exports a date range to PDF, HTML, text, Markdown or CSV. The <a href="/guides/export-imessages-to-pdf/">PDF guide</a> covers the steps.</p></div></details>
+    <details><summary>Does searching by date change anything?</summary><div><p>No. All 3 ways only read your messages. Textlore never sends, edits or deletes a message.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Any day in your texts, <em>in one search.</em></h2>
+    <p class="rise">Download Textlore and search your messages by date. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $29}}</a>
+    </div>
+  </div>
+</section>
+
+</main>
