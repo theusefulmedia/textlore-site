@@ -1,0 +1,148 @@
+<!--
+path: compare/textlore-vs-imessage-exporter/index.html
+title: Textlore vs imessage-exporter: a free command-line tool or a Mac app for your iMessages?
+description: An honest comparison of Textlore and imessage-exporter: imessage-exporter is free, open source and runs on Mac, Linux and Windows from Terminal, while Textlore is a paid Mac app that searches, archives and exports your Messages history.
+head: compare-textlore-vs-imessage-exporter-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/compare/">Compare</a></p>
+      <h1>Textlore vs imessage-exporter, <em>free tool or app.</em></h1>
+      <p class="lede">imessage-exporter is a free, open-source command-line tool that turns your Messages database into text files or web pages. Textlore is a paid Mac app. If you're comfortable in Terminal and only need an export, the free tool may be all you need.</p>
+      <p class="guide-meta">Updated 21 October 2026. Prices and features checked on each maker's website.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#verdict">Short answer</a>
+      <a href="#glance">At a glance</a>
+      <a href="#exporter-wins">Where it wins</a>
+      <a href="#textlore-wins">Where Textlore wins</a>
+      <a href="#pick">Which to pick</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="verdict">
+  <h2><span class="ic">{{icon:bolt}}</span>Short answer</h2>
+  <p class="aside">Pick imessage-exporter if you're happy in Terminal, want a free one-off export to text or HTML, need to read an iPhone backup, or use Linux or Windows. Pick Textlore if you want a window to search your messages every day, exports in more formats with private details hidden, and an archive that keeps saving without you running anything.</p>
+</section>
+
+<section id="glance">
+  <h2><span class="ic">{{icon:doc}}</span>Textlore and imessage-exporter at a glance</h2>
+  <div class="compare__scroll">
+      <table class="compare__table">
+        <thead>
+          <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col" class="us"><img src="/img/icon-96.webp" width="40" height="40" alt="">Textlore</th><th scope="col">imessage-exporter</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>What it is</td><td class="us">A Mac app with a window</td><td>A command-line tool you run in Terminal</td></tr>
+          <tr><td>Where messages come from</td><td class="us">The Messages history on your Mac</td><td>The Messages database on a Mac, or an iPhone backup</td></tr>
+          <tr><td>Runs on</td><td class="us">Mac, macOS 26 or later</td><td>Mac, Linux and Windows</td></tr>
+          <tr><td>Open source</td><td class="us"><span class="no">{{icon:x}}</span></td><td><span class="yes">{{icon:check}}</span><small>GPL-3.0</small></td></tr>
+          <tr><td>Export to text and HTML</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="yes">{{icon:check}}</span></td></tr>
+          <tr><td>Export to PDF</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span><small>Print the HTML from a browser</small></td></tr>
+          <tr><td>Export to CSV, Markdown or an image</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>Export a date range</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="yes">{{icon:check}}</span><small>Start and end date options</small></td></tr>
+          <tr><td>Pick a few messages to export</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>Hide names, phone numbers and emails</td><td class="us"><span class="yes">{{icon:check}}</span><small>Numbers and emails hidden by default</small></td><td><span class="no">{{icon:x}}</span><small>Can relabel your own name</small></td></tr>
+          <tr><td>Copy and convert attachments</td><td class="us"><span class="yes">{{icon:check}}</span><small>Photos in exports</small></td><td><span class="yes">{{icon:check}}</span><small>HEIC to JPEG, audio and video to MP4</small></td></tr>
+          <tr><td>Search every year as you type, with filters</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>Keeps its own archive as new texts arrive</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span><small>Run it again for a new copy</small></td></tr>
+          <tr><td>Your Lore and Ask AI</td><td class="us"><span class="yes">{{icon:check}}</span></td><td><span class="no">{{icon:x}}</span></td></tr>
+          <tr><td>Price</td><td class="us">{{lp:$20 until 28 October, then $29|$29}}<small>Once, for 2 Macs. 14 days free.</small></td><td>Free</td></tr>
+        </tbody>
+      </table>
+    </div>
+  <p>imessage-exporter is made by ReagentX and published on <a href="https://github.com/ReagentX/imessage-exporter">GitHub</a> under the GPL-3.0 licence. You install it with Homebrew (<code>brew install imessage-exporter</code>), with Cargo, or by downloading a release. Its README recommends opening the HTML export in a browser and printing it when you need a PDF.</p>
+</section>
+
+<section id="exporter-wins">
+  <h2><span class="ic">{{icon:check}}</span>Where imessage-exporter is the better choice</h2>
+  <ul>
+    <li><strong>It is free and open source.</strong> You pay nothing, and anyone can read the code to see exactly what it does with your messages.</li>
+    <li><strong>It reads iPhone backups.</strong> Point it at an iPhone backup folder, encrypted or not, and it exports the messages inside.</li>
+    <li><strong>It runs anywhere.</strong> It works on Mac, Linux and Windows, and on older Macs that can't run macOS 26.</li>
+    <li><strong>It is scriptable.</strong> You can run it on a schedule, filter by person with <code>-t</code>, set dates with <code>-s</code> and <code>-e</code>, and fold it into your own backups.</li>
+    <li><strong>It converts attachments.</strong> It can turn HEIC photos into JPEG and audio and video into MP4, so exports open anywhere.</li>
+  </ul>
+</section>
+
+<section id="textlore-wins">
+  <h2><span class="ic">{{icon:spark}}</span>Where Textlore is the better choice</h2>
+  <p>Textlore is a Mac app that reads the Messages history already on your Mac and turns it into something you can search, keep and export. It searches every year as you type, keeps its own archive of messages and photos, exports to 6 formats with names and numbers hidden, and adds Your Lore, your texting years as tree rings, and Ask AI on Macs with Apple Intelligence. It never sends, edits or deletes a message, and nothing leaves your Mac.</p>
+  <ul>
+    <li><strong>No Terminal.</strong> Install it, switch on Full Disk Access, and your history is ready in about a minute for 100,000 messages.</li>
+    <li><strong>Search, not just export.</strong> Results narrow as you type, with filters such as <code>from:</code>, <code>before:</code> and <code>has:photo</code>, and <kbd>⌥Space</kbd> searches from any app. imessage-exporter has no search.</li>
+    <li><strong>More export choices.</strong> PDF, HTML, plain text, Markdown, CSV or an image, for a whole chat, a date range or just the messages you pick, with a live preview.</li>
+    <li><strong>Private by default.</strong> Phone numbers and emails are hidden unless you switch them on, and names can be initials or hidden.</li>
+    <li><strong>An archive that runs itself.</strong> Textlore saves new messages and photos as they arrive, so they stay after Messages deletes them or clears space. With imessage-exporter you run it again for a fresh copy.</li>
+    <li><strong>Photos by person and month,</strong> plus Your Lore and, on Macs with Apple Intelligence, Ask AI.</li>
+  </ul>
+  <h3>What Textlore doesn't do</h3>
+  <ul>
+    <li>It is Mac only, and needs macOS 26 or later.</li>
+    <li>It reads the Messages history on your Mac, so your iPhone texts need Messages in iCloud switched on to get there.</li>
+    <li>It covers Messages only: iMessage, SMS and the other texts in the Messages app.</li>
+    <li>It isn't open source, and it costs {{lp:$20 until 28 October, then $29|$29}} once after the 14-day free trial.</li>
+  </ul>
+</section>
+
+<section id="pick">
+  <h2><span class="ic">{{icon:person}}</span>Which one should you pick?</h2>
+  <ul>
+    <li><strong>You want a free, one-off export and you know Terminal:</strong> imessage-exporter.</li>
+    <li><strong>Your texts are in an iPhone backup, or you use Linux or Windows:</strong> imessage-exporter.</li>
+    <li><strong>You want to search your messages, not just save them:</strong> Textlore.</li>
+    <li><strong>You want PDF or CSV, picked messages, or hidden phone numbers without extra steps:</strong> Textlore.</li>
+  </ul>
+  <p>Our guides use imessage-exporter as the free option where it fits, such as <a href="/guides/back-up-imessages-mac/">backing up iMessages on a Mac</a> and <a href="/guides/export-imessage-conversation-mac/">exporting an iMessage conversation</a>.</p>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Try Textlore free, no Terminal needed.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$29</s> $20|Buy Textlore, $29}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Is imessage-exporter really free?</summary><div><p>Yes. It's free, open-source software under the GPL-3.0 licence.</p></div></details>
+    <details><summary>Is imessage-exporter safe to use?</summary><div><p>Its code is public on GitHub, and it reads your Messages database without changing it. As with any tool you give Full Disk Access, install it from the official source.</p></div></details>
+    <details><summary>Can imessage-exporter make a PDF?</summary><div><p>Not directly. It exports text and HTML, and its README suggests opening the HTML in a browser and printing it to PDF. Textlore exports PDF directly.</p></div></details>
+    <details><summary>Do I need Terminal for Textlore?</summary><div><p>No. Textlore is a normal Mac app. You install it from a disk image, switch on Full Disk Access when it asks, and everything else happens in its window.</p></div></details>
+    <details><summary>Can I try Textlore before I pay?</summary><div><p>Yes. Every feature is free for 14 days, with no account, no email and no card. After that it's a one-time purchase for 2 Macs.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Your messages, <em>without the Terminal.</em></h2>
+    <p class="rise">Download Textlore and search, keep and export your Messages history. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $29}}</a>
+    </div>
+  </div>
+</section>
+
+</main>

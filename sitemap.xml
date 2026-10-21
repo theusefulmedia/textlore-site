@@ -2,10 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://textlore.app/</loc></url>
   <url><loc>https://textlore.app/about/</loc></url>
+  <url><loc>https://textlore.app/compare/</loc></url>
   <url><loc>https://textlore.app/guides/</loc></url>
   <url><loc>https://textlore.app/help/</loc></url>
   <url><loc>https://textlore.app/privacy/</loc></url>
   <url><loc>https://textlore.app/support/</loc></url>
   <url><loc>https://textlore.app/terms/</loc></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-decipher-textmessage/</loc></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-imazing/</loc></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-imessage-exporter/</loc></url>
+  <url><loc>https://textlore.app/guides/back-up-imessages-mac/</loc></url>
+  <url><loc>https://textlore.app/guides/export-imessage-conversation-mac/</loc></url>
+  <url><loc>https://textlore.app/guides/export-imessages-to-csv-excel/</loc></url>
   <url><loc>https://textlore.app/guides/export-imessages-to-pdf/</loc></url>
+  <url><loc>https://textlore.app/guides/find-first-imessage/</loc></url>
+  <url><loc>https://textlore.app/guides/find-photos-in-imessage-mac/</loc></url>
+  <url><loc>https://textlore.app/guides/print-text-messages-for-court/</loc></url>
+  <url><loc>https://textlore.app/guides/save-text-messages-iphone-to-mac/</loc></url>
+  <url><loc>https://textlore.app/guides/search-imessages-by-date-mac/</loc></url>
+  <url><loc>https://textlore.app/guides/search-old-imessages-mac/</loc></url>
 </urlset>

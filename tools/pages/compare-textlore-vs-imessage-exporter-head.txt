@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/compare/textlore-vs-imessage-exporter/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Textlore","item":"https://textlore.app/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://textlore.app/compare/"},{"@type":"ListItem","position":3,"name":"Textlore vs imessage-exporter","item":"https://textlore.app/compare/textlore-vs-imessage-exporter/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is imessage-exporter really free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It's free, open-source software under the GPL-3.0 licence."}},
+{"@type":"Question","name":"Is imessage-exporter safe to use?","acceptedAnswer":{"@type":"Answer","text":"Its code is public on GitHub, and it reads your Messages database without changing it. As with any tool you give Full Disk Access, install it from the official source."}},
+{"@type":"Question","name":"Can imessage-exporter make a PDF?","acceptedAnswer":{"@type":"Answer","text":"Not directly. It exports text and HTML, and its README suggests opening the HTML in a browser and printing it to PDF. Textlore exports PDF directly."}},
+{"@type":"Question","name":"Do I need Terminal for Textlore?","acceptedAnswer":{"@type":"Answer","text":"No. Textlore is a normal Mac app. You install it from a disk image, switch on Full Disk Access when it asks, and everything else happens in its window."}},
+{"@type":"Question","name":"Can I try Textlore before I pay?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every feature is free for 14 days, with no account, no email and no card. After that it's a one-time purchase for 2 Macs."}}
+]}
+</script>

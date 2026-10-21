@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/compare/textlore-vs-imazing/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Textlore","item":"https://textlore.app/"},{"@type":"ListItem","position":2,"name":"Compare","item":"https://textlore.app/compare/"},{"@type":"ListItem","position":3,"name":"Textlore vs iMazing","item":"https://textlore.app/compare/textlore-vs-imazing/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is iMazing a one-time purchase?","acceptedAnswer":{"@type":"Answer","text":"No. iMazing's licensing policy says it stopped selling device licences in June 2025 and now only offers subscriptions, renewed yearly. Textlore is a one-time purchase."}},
+{"@type":"Question","name":"Does iMazing need an iPhone backup to export messages?","acceptedAnswer":{"@type":"Answer","text":"Yes. iMazing reads messages from a backup of your iPhone or iPad that it makes or reads on your computer. Textlore reads the Messages history on your Mac, so there's no backup to make."}},
+{"@type":"Question","name":"Can Textlore read an iPhone backup?","acceptedAnswer":{"@type":"Answer","text":"No. Textlore reads the Messages history on your Mac. To get iPhone texts there, switch on Messages in iCloud on your iPhone and your Mac."}},
+{"@type":"Question","name":"Which is better for printing texts for court?","acceptedAnswer":{"@type":"Answer","text":"Both export a PDF. iMazing works from the iPhone itself and has detailed print options. Textlore exports a date range with timestamps and phone numbers switched on, with a live preview. Our guide on printing text messages for court covers the details."}},
+{"@type":"Question","name":"Can I try Textlore before I pay?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every feature is free for 14 days, with no account, no email and no card. After that it's a one-time purchase for 2 Macs."}}
+]}
+</script>
