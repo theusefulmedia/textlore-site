@@ -6,29 +6,38 @@
     <description>Textlore updates</description>
     <language>en</language>
     <item>
-      <title>Version 1.1</title>
-      <pubDate>Wed, 21 Oct 2026 19:07:02 +0000</pubDate>
-      <sparkle:version>69</sparkle:version>
-      <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+      <title>Version 1.1.1</title>
+      <pubDate>Thu, 22 Oct 2026 04:51:54 +0000</pubDate>
+      <sparkle:version>82</sparkle:version>
+      <sparkle:shortVersionString>1.1.1</sparkle:shortVersionString>
       <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
       <description><![CDATA[
-<h2>Textlore 1.1: Recs and Promises, and WhatsApp</h2>
-<p>A free update with the two things people asked for most. Your friends tell you what to try, and you tell them what you'll do. Textlore now remembers both for you.</p>
-<h3>Recs</h3>
-<p>Every book, show, film, restaurant, place, podcast, song and app a friend told you to try, in one place. You can see who said it, when, and their own words. Things more than one friend recommended come first. Mark them as tried as you go.</p>
-<h3>Promises</h3>
-<p>Every "I'll send it tomorrow" and "kal pakka bhej dunga" you wrote, with who it was for and the day you said. Textlore shows what's past its day, what's coming up, and what looks done. A short weekly note says how many are still open (numbers only, so nothing private shows on your lock screen), and you can set a reminder for any one of them. Textlore never sends a message for you.</p>
-<h3>WhatsApp</h3>
-<p>Textlore can now read your WhatsApp for Mac chats as well as Messages, if you say yes. They show up in your conversations, search, Your Lore, Ask AI, and Recs and Promises.</p>
-<h3>How it works</h3>
+<h2>Textlore 1.1.1: smoother first run and many small fixes</h2>
+<p>A free update with fixes from our first-time-user test.</p>
+<h3>First run</h3>
 <ul>
-  <li>Apple Intelligence reads your chats on your Mac. Nothing goes to a server.</li>
-  <li>The first read starts on its own, newest messages first. On a long history it can take a few hours, and it's fastest with the Mac plugged in. You can keep using Textlore while it works.</li>
-  <li>Recs and Promises need a Mac with Apple Intelligence. WhatsApp works on every Mac.</li>
+  <li>"Show me my story" now opens Your Lore and plays your story, then points you to Recs and Promises.</li>
+  <li>A Mac with no Messages history now says how to get it (sign in to Messages and switch on Messages in iCloud), and you can start with WhatsApp for Mac alone.</li>
+  <li>The setup screen is tidier, and its picture no longer shows another app switched on.</li>
 </ul>
-<p>Textlore is not affiliated with WhatsApp or Meta. Everything stays on your Mac, and Textlore only reads.</p>
+<h3>Around the app</h3>
+<ul>
+  <li>One-time tips sit next to what they describe and never cover a page.</li>
+  <li>The sidebar's trial note, trial pill and Settings always fit the window.</li>
+  <li>The Years list shows each chat's last message from that year, and the date filter says the year.</li>
+  <li>Day headings stay pinned at the top of a conversation as you scroll.</li>
+  <li>SMS chats are labelled SMS, and the Recs count says "to try".</li>
+  <li>Search suggestions count the right messages, keep the season in "during:summer 2024", and "Did you mean" picks the word you meant.</li>
+  <li>Ask AI keeps straight who said what, and answers about recs and promises link to those pages with their messages.</li>
+  <li>Export shows only the options each format uses, fits the window, and Save panels open on the Textlore window.</li>
+  <li>The share studio's 16:9 card fits the window.</li>
+  <li>New File and Edit menu items for Export, Jump to Date, Find Next and Select.</li>
+  <li>Reduce Motion takes effect at once, and VoiceOver reads more controls clearly.</li>
+  <li>The licence sheet takes a key from a link even when it is already open, and helps you find your key if it does not match.</li>
+</ul>
+<p>Everything stays on your Mac, and Textlore only reads.</p>
       ]]></description>
-      <enclosure url="https://github.com/theusefulmedia/textlore-site/releases/download/v1.1/Textlore-1.1.dmg" type="application/octet-stream" sparkle:edSignature="83mpGqBbaGSLLMUp4M0Hnb3hYGRPlyX4DtHhBa63PeoGaIfLOe8UvZuASPejnSwXXIomW35tRXKEB3FOpblcCg==" length="9962711" />
+      <enclosure url="https://github.com/theusefulmedia/textlore-site/releases/download/v1.1.1/Textlore-1.1.1.dmg" type="application/octet-stream" sparkle:edSignature="HlWxi9A0OhtMtLRNuFX/OHwdwob12STWqTOX2wmfwUMnBnvMPFIUNnrzHvqBOQ7s7ze9Dujvd4FZexF/9wgCDw==" length="10151692" />
     </item>
   </channel>
 </rss>
