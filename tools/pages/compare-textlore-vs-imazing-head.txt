@@ -9,6 +9,7 @@
 {"@type":"Question","name":"Does iMazing need an iPhone backup to export messages?","acceptedAnswer":{"@type":"Answer","text":"Yes. iMazing reads messages from a backup of your iPhone or iPad that it makes or reads on your computer. Textlore reads the Messages history on your Mac, so there's no backup to make."}},
 {"@type":"Question","name":"Can Textlore read an iPhone backup?","acceptedAnswer":{"@type":"Answer","text":"No. Textlore reads the Messages history on your Mac. To get iPhone texts there, switch on Messages in iCloud on your iPhone and your Mac."}},
 {"@type":"Question","name":"Which is better for printing texts for court?","acceptedAnswer":{"@type":"Answer","text":"Both export a PDF. iMazing works from the iPhone itself and has detailed print options. Textlore exports a date range with timestamps and phone numbers switched on, with a live preview. Our guide on printing text messages for court covers the details."}},
+{"@type":"Question","name":"Do Textlore and iMazing both read WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"Yes, from different places. Textlore reads your chats from WhatsApp for Mac and shows them next to your iMessages. iMazing reads WhatsApp from an iPhone backup and can transfer it to a new phone."}},
 {"@type":"Question","name":"Can I try Textlore before I pay?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every feature is free for 14 days, with no account, no email and no card. After that it's a one-time purchase for 2 Macs."}}
 ]}
 </script>
