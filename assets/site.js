@@ -242,7 +242,7 @@
       try { navigator.clipboard.writeText(SHARE_URL).then(copied, shown); } catch (err) { shown(); }
     };
     if (navigator.share) {
-      navigator.share({ title: 'Textlore for Mac', text: 'Textlore finds any text in my Messages history on my Mac. Free for 14 days.', url: SHARE_URL })
+      navigator.share({ title: 'Textlore for Mac', text: 'Textlore finds what my friends told me to try, and the promises I made, in my texts on my Mac. Free for 14 days.', url: SHARE_URL })
         .catch(function (err) { if (!err || err.name !== 'AbortError') fallback(); });
     } else fallback();
   }

@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Textlore: search, keep and relive your iMessages on Mac</title>
-<meta name="description" content="Find any iMessage or text in under a second, keep every photo, relive your years of texting as rings you can share, and ask your texts anything. Private, on your Mac. Free for 14 days, then $29 once.">
+<title>Textlore: what your friends told you to try, found in your texts</title>
+<meta name="description" content="Recs lists every book, show, restaurant and song friends told you to try in iMessage and WhatsApp, with their exact words. Promises shows what you said you would do. Plus search and an archive, private on your Mac. Free for 14 days.">
 <link rel="canonical" href="https://textlore.app/">
 <meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0C0A1D" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Textlore">
-<meta property="og:title" content="Textlore: search, keep and relive your iMessages on Mac">
-<meta property="og:description" content="Find any iMessage or text in under a second, keep every photo, relive your years of texting as rings you can share, and ask your texts anything. Private, on your Mac. Free for 14 days, then $29 once.">
+<meta property="og:title" content="Textlore: what your friends told you to try, found in your texts">
+<meta property="og:description" content="Recs lists every book, show, restaurant and song friends told you to try in iMessage and WhatsApp, with their exact words. Promises shows what you said you would do. Plus search and an archive, private on your Mac. Free for 14 days.">
 <meta property="og:image" content="https://textlore.app/img/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,9 +23,11 @@
 <script>document.documentElement.classList.add('js');if(Date.now()>Date.parse('2026-10-29T06:59:00Z'))document.documentElement.classList.add('launch-over')</script>
 <meta property="og:url" content="https://textlore.app/">
 <meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Textlore","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 26 or later","description":"Search, keep and relive your whole iMessage history, privately on your Mac. Instant search, an archive that keeps every photo, Your Lore and Ask AI.","url":"https://textlore.app/","downloadUrl":"https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg","softwareVersion":"1.0","offers":{"@type":"Offer","price":"29","priceCurrency":"USD"},"author":{"@type":"Person","name":"Raja"},"publisher":{"@type":"Organization","name":"The Useful Media Co.","url":"https://theusefulmedia.com"}}
+<script type="application/ld+json" id="app-ld">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Textlore","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS 26 or later","description":"Recs lists every book, show, film, restaurant, place, podcast, song, app and thing to buy your friends told you to try in iMessage and WhatsApp, with who said it and their exact words. Promises shows every time you said you would do something for someone. Plus search, an archive that keeps every photo, Your Lore and Ask AI, privately on your Mac.","featureList":["Recs","Promises","iMessage and WhatsApp for Mac","Search with filters","An archive that keeps photos","Export to PDF, HTML, text, Markdown, CSV and images","Your Lore","Ask AI on your Mac"],"url":"https://textlore.app/","downloadUrl":"https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg","softwareVersion":"1.1","offers":{"@type":"Offer","price":"20","priceCurrency":"USD","priceValidUntil":"2026-10-28"},"author":{"@type":"Person","name":"Raja"},"publisher":{"@type":"Organization","name":"The Useful Media Co.","url":"https://theusefulmedia.com"}}
 </script>
+<script>/* After the launch price ends the page shows $39, so the structured data says so too, with no rebuild. */
+if(document.documentElement.classList.contains('launch-over')){try{var ld=document.getElementById('app-ld'),d=JSON.parse(ld.textContent);d.offers={"@type":"Offer","price":"39","priceCurrency":"USD"};ld.textContent=JSON.stringify(d)}catch(e){}}</script>
 <script src="/assets/site.js" defer></script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="15ada41b-1c57-4ce8-a23f-406f5de351a5" data-domains="textlore.app" data-do-not-track="true"></script>
 <script src="/assets/home.js" defer></script>
@@ -37,7 +39,7 @@
   <ul class="nav__links"><li class="nav__pill" aria-hidden="true"></li><li><a href="#features">Features</a></li><li><a href="#relive">Your Lore</a></li><li><a href="#pricing">Pricing</a></li><li><a href="/help/">Help</a></li><li><a href="/about/">About</a></li></ul>
   <div class="nav__cta">
     <a class="btn btn--ghost download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</a>
-    <a class="btn btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a>
+    <a class="btn btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $39</span></a>
   </div>
   <button class="nav__menu" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </header>
@@ -45,53 +47,40 @@
 <main id="main">
 
 <!-- Hero -->
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero hero--lead" aria-labelledby="hero-title">
   <div class="wrap">
-    <div class="hero__grid">
-      <div>
-        <a class="badge-new" href="#pricing"><b><span class="l-on">Launch price</span><span class="l-off">New</span></b><span class="l-on">$20 until 28 October</span><span class="l-off">Textlore 1.0 for Mac is here</span></a>
-        <h1 id="hero-title">Your whole texting life, <em>on your Mac.</em></h1>
-        <p class="hero__sub">Find any text in under a second, keep every photo from now on, relive your years as rings you can share, and ask your texts anything. Private, and all on your Mac.</p>
-        <div class="btns">
-          <a class="btn btn--big download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z" fill="currentColor" stroke="none"/></svg><span class="btn__two">Download free<small>14 days, no account</small></span></a>
-          <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="btn__two"><span class="l-on">Buy Textlore, <s>$29</s> $20</span><span class="l-off">Buy Textlore, $29</span><small><span class="l-on">Launch price until 28 October</span><span class="l-off">Once, for 2 Macs</span></small></span></a>
-        </div>
-        <ul class="reqs">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>macOS 26 or later</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Apple silicon and Intel</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Notarized by Apple</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>9 MB download</li>
-        </ul>
+    <div class="hero__lead">
+      <a class="badge-new" href="#recs"><b>Textlore 1.1</b><span class="l-on">Recs, Promises and WhatsApp, $20 until 28 October</span><span class="l-off">Recs, Promises and WhatsApp are here</span></a>
+      <h1 id="hero-title">Everything your friends told you to try, <em>found in your texts.</em></h1>
+      <p class="hero__sub">Recs lists every book, show, restaurant, song and app friends recommended in iMessage and WhatsApp, with who said it and their exact words. Promises shows every time you said you'd do something for someone, and which ones are still open.</p>
+      <div class="btns">
+        <a class="btn btn--big download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z" fill="currentColor" stroke="none"/></svg><span class="btn__two">Download free<small>14 days, no account</small></span></a>
+        <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="btn__two"><span class="l-on">Buy Textlore, <s>$39</s> $20</span><span class="l-off">Buy Textlore, $39</span><small><span class="l-on">Launch price until 28 October</span><span class="l-off">Once, for 2 Macs</span></small></span></a>
       </div>
-
-      <div class="ringsearch" id="ringsearch">
-        <svg class="ringsearch__svg" viewBox="0 0 600 600" aria-hidden="true"></svg>
-        <div class="tip" aria-hidden="true"></div>
-        <div class="search" role="search">
-          <label class="search__field">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            <span class="sr-only">Try search on Sam's texts, a made-up demo library</span>
-            <input type="search" autocomplete="off" spellcheck="false" placeholder="Try it: search Sam's 10 years">
-            <span class="search__count" aria-hidden="true"></span>
-          </label>
-          <div class="chips" aria-label="Try a search">
-            <button class="chip" type="button">cabin</button>
-            <button class="chip" type="button">flight lands</button>
-            <button class="chip" type="button">from:Mom</button>
-            <button class="chip" type="button">has:photo</button>
-            <button class="chip" type="button">2020</button>
-          </div>
-          <ul class="hits" aria-live="polite"></ul>
-          <p class="search__note">Sam is a made-up person from Textlore's demo library. Each dot is a message, on the ring for its year.</p>
-        </div>
-      </div>
+      <p class="maconly">Textlore is a Mac app. Open this page on your Mac to download.</p>
+      <ul class="reqs">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>macOS 26 or later</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Recs and Promises on Macs with Apple Intelligence</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Notarized by Apple</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>9 MB download</li>
+      </ul>
     </div>
 
-    <nav class="pillars" id="features" aria-label="What Textlore does">
-      <a class="pillar glow rise" href="#find"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><b>Find</b><span>Any text from any year, in under a second.</span><i aria-hidden="true">&#8599;</i></a>
-      <a class="pillar glow rise" href="#keep" style="--rd:.06s"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M3 4h18v3H3zM10 11h4"/></svg></span><b>Keep</b><span>Every message and photo, saved on your Mac.</span><i aria-hidden="true">&#8599;</i></a>
-      <a class="pillar glow rise" href="#relive" style="--rd:.12s"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><b>Relive</b><span>Your years of texting, drawn as rings.</span><i aria-hidden="true">&#8599;</i></a>
-      <a class="pillar glow rise" href="#ask" style="--rd:.18s"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><b>Ask</b><span>Questions answered on your Mac, with sources.</span><i aria-hidden="true">&#8599;</i></a>
+    <div class="hero__shot" data-scheme="auto">
+      <div class="frame tilt">
+        <div class="frame__glow" aria-hidden="true"></div>
+        <div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/recs-light-1000.avif 1000w, /img/shots/recs-light-1600.avif 1600w, /img/shots/recs-light-2200.avif 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px"><img src="/img/shots/recs-light-1600.webp" srcset="/img/shots/recs-light-1000.webp 1000w, /img/shots/recs-light-1600.webp 1600w, /img/shots/recs-light-2200.webp 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px" width="2200" height="1464" loading="eager" decoding="async" alt="Recs in Textlore: 25 things your friends told you to try, from 5 people. Severance is at the top, recommended by Jordan, Theo and Priya, each in their own words, with a Mark as tried button."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/recs-dark-1000.avif 1000w, /img/shots/recs-dark-1600.avif 1600w, /img/shots/recs-dark-2200.avif 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px"><img src="/img/shots/recs-dark-1600.webp" srcset="/img/shots/recs-dark-1000.webp 1000w, /img/shots/recs-dark-1600.webp 1600w, /img/shots/recs-dark-2200.webp 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px" width="2200" height="1464" loading="eager" decoding="async" alt="Recs in Textlore: 25 things your friends told you to try, from 5 people. Severance is at the top, recommended by Jordan, Theo and Priya, each in their own words, with a Mark as tried button. Dark appearance."></picture></span></div>
+      </div>
+      <p class="shot-cap"><span><b>Recs</b>, sorted by most recommended, with who said it and when</span><span>Sam's demo library</span></p>
+    </div>
+
+    <nav class="pillars pillars--six" id="features" aria-label="What Textlore does">
+      <a class="pillar glow rise" href="#recs"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10a1 1 0 0 1 1 1v17l-6-4-6 4V4a1 1 0 0 1 1-1z"/></svg></span><b>Recs</b><span>Every book, show and place friends told you to try.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#promises" style="--rd:.06s"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8 5.2-5.6"/></svg></span><b>Promises</b><span>What you said you'd do, and how late it is.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#find" style="--rd:.12s"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><b>Find</b><span>Any text from any year, in under a second.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#keep"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="M3 4h18v3H3zM10 11h4"/></svg></span><b>Keep</b><span>Every message and photo, saved on your Mac.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#relive" style="--rd:.06s"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="2" fill="currentColor"/></svg></span><b>Relive</b><span>Your years of texting, drawn as rings.</span><i aria-hidden="true">&#8599;</i></a>
+      <a class="pillar glow rise" href="#ask" style="--rd:.12s"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span><b>Ask</b><span>Questions answered on your Mac, with sources.</span><i aria-hidden="true">&#8599;</i></a>
     </nav>
   </div>
 </section>
@@ -103,6 +92,61 @@
     <div class="trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L5 14h6l-1 7 8-11h-6z"/></svg><div><b><span data-count="17">17</span> ms</b>to search 123,580 messages</div></div>
     <div class="trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A9.7 9.7 0 0 1 12 6c5 0 9 6 9 6a15 15 0 0 1-2.6 3.2M6.6 6.6C4.4 8 3 12 3 12s4 6 9 6a9 9 0 0 0 4.4-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg><div><b>0</b>accounts, trackers or uploads</div></div>
     <div class="trust__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><div><b><span data-count="78">78</span>K+</b>readers follow the maker on Medium</div></div>
+  </div>
+</section>
+
+<!-- Recs -->
+<section class="chapter" id="recs" aria-labelledby="recs-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <div>
+        <p class="eyebrow">Recs</p>
+        <h2 id="recs-title" class="rise">The show 3 friends told you to watch <em>is at the top of the list.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>Recs gathers every book, show, film, restaurant, place, podcast, song, app and thing to buy that someone told you to try. Each one shows <strong>who said it, when, and their exact words</strong>, sorted by how many people recommended it.</p>
+        <p class="aside">Found on your Mac by Apple's on-device model, on Macs with Apple Intelligence. The first full scan of a long history can take hours and runs in the background, and this year is ready first.</p>
+      </div>
+    </div>
+    <div class="callouts">
+      <div class="rise"><b>In their words</b><span>Jordan's "you HAVE to watch Severance", with the day and a link back to the conversation.</span></div>
+      <div class="rise" style="--rd:.08s"><b>Most recommended first</b><span>When 3 people tell you about the same book, it rises to the top.</span></div>
+      <div class="rise" style="--rd:.16s"><b>Mark as tried</b><span>Tick off the restaurant once you've been, and see how many you've tried.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Promises -->
+<section class="chapter" id="promises" aria-labelledby="promises-title">
+  <div class="wrap">
+    <div class="chapter__head">
+      <div>
+        <p class="eyebrow">Promises</p>
+        <h2 id="promises-title" class="rise">Every &#8220;I&#8217;ll do it&#8221; you texted, <em>with how late it is.</em></h2>
+      </div>
+      <div class="chapter__body rise">
+        <p>Promises finds every time you said you would do something for someone, with the day you said it and <strong>how many days late it is</strong>. When a later message suggests you kept it, Textlore tells you, so you can check it off.</p>
+        <p>Each one has <strong>I kept this</strong>, <strong>Remind me</strong> and <strong>Open in Messages</strong>.</p>
+        <p class="aside">Read only. Textlore never sends a message, so you keep every promise yourself.</p>
+      </div>
+    </div>
+    <div class="shot-wide showcase" data-scheme="auto">
+      <div class="frame tilt rise"><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/promises-light-1000.avif 1000w, /img/shots/promises-light-1600.avif 1600w, /img/shots/promises-light-2200.avif 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px"><img src="/img/shots/promises-light-1600.webp" srcset="/img/shots/promises-light-1000.webp 1000w, /img/shots/promises-light-1600.webp 1600w, /img/shots/promises-light-2200.webp 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px" width="2200" height="1464" loading="lazy" decoding="async" alt="Promises in Textlore: 13 of 15 promises still open, 7 past their day. Call Grandma on her birthday is 55 days late, with the message where you said it and buttons for I kept this, Remind me and Open in Messages."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/promises-dark-1000.avif 1000w, /img/shots/promises-dark-1600.avif 1600w, /img/shots/promises-dark-2200.avif 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px"><img src="/img/shots/promises-dark-1600.webp" srcset="/img/shots/promises-dark-1000.webp 1000w, /img/shots/promises-dark-1600.webp 1600w, /img/shots/promises-dark-2200.webp 2200w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px" width="2200" height="1464" loading="lazy" decoding="async" alt="Promises in Textlore: 13 of 15 promises still open, 7 past their day. Call Grandma on her birthday is 55 days late, with the message where you said it and buttons for I kept this, Remind me and Open in Messages. Dark appearance."></picture></span></div></div>
+      <p class="shot-cap"><span><b>13 of 15 promises</b> still open, 7 past the day you said</span><span>Sam's demo library</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp -->
+<section class="band" id="whatsapp" aria-labelledby="whatsapp-title">
+  <div class="wrap">
+    <div class="band__card rise">
+      <span class="band__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4 3v-3h.5A2.5 2.5 0 0 1 4 14.5z"/></svg></span>
+      <div>
+        <h2 id="whatsapp-title">Your WhatsApp chats, next to your iMessages.</h2>
+        <p>Textlore imports your chats from WhatsApp for Mac alongside iMessage. Each one carries a badge, the Sources filter shows one app or both, and Settings &gt; Sources is where you set them up. Recs, Promises, search, Ask AI and export all cover WhatsApp too.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -152,9 +196,28 @@
       </div>
     </div>
 
-    <div class="shot-wide showcase" data-scheme="auto">
-      <div class="frame tilt rise"><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/search-light-1000.avif 1000w, /img/shots/search-light-1600.avif 1600w, /img/shots/search-light-2400.avif 2400w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px"><img src="/img/shots/search-light-1600.webp" srcset="/img/shots/search-light-1000.webp 1000w, /img/shots/search-light-1600.webp 1600w, /img/shots/search-light-2400.webp 2400w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px" width="2400" height="1500" loading="lazy" decoding="async" alt="Textlore search for flight lands: 376 messages in 128 conversations, with the match lit up in amber in the Trip Planning conversation."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/search-dark-1000.avif 1000w, /img/shots/search-dark-1600.avif 1600w, /img/shots/search-dark-2400.avif 2400w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px"><img src="/img/shots/search-dark-1600.webp" srcset="/img/shots/search-dark-1000.webp 1000w, /img/shots/search-dark-1600.webp 1600w, /img/shots/search-dark-2400.webp 2400w" sizes="(max-width: 1272px) calc(100vw - 32px), 1240px" width="2400" height="1500" loading="lazy" decoding="async" alt="Textlore search for flight lands: 376 messages in 128 conversations, with the match lit up in amber in the Trip Planning conversation. Dark appearance."></picture></span></div></div>
-      <p class="shot-cap"><span><b>376 messages</b> in 128 conversations, in about 17 milliseconds</span><span>Up and down arrows move through every match</span></p>
+    <div class="find-demo">
+        <div class="ringsearch" id="ringsearch">
+          <svg class="ringsearch__svg" viewBox="0 0 600 600" aria-hidden="true"></svg>
+          <div class="tip" aria-hidden="true"></div>
+          <div class="search" role="search">
+            <label class="search__field">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <span class="sr-only">Try search on Sam's texts, a made-up demo library</span>
+              <input type="search" autocomplete="off" spellcheck="false" placeholder="Try it: search Sam's 10 years">
+              <span class="search__count" aria-hidden="true"></span>
+            </label>
+            <div class="chips" aria-label="Try a search">
+              <button class="chip" type="button">cabin</button>
+              <button class="chip" type="button">flight lands</button>
+              <button class="chip" type="button">from:Mom</button>
+              <button class="chip" type="button">has:photo</button>
+              <button class="chip" type="button">2020</button>
+            </div>
+            <ul class="hits" aria-live="polite"></ul>
+            <p class="search__note">Sam is a made-up person from Textlore's demo library. Each dot is a message, on the ring for its year.</p>
+          </div>
+        </div>
     </div>
 
     <div class="trio">
@@ -298,7 +361,7 @@
       </div>
       <div class="chapter__body rise">
         <p>Ask AI reads your messages with Apple Intelligence, right on your Mac. Every answer lists the messages it used, and one click takes you to them.</p>
-        <p class="aside">Ask AI needs a Mac with Apple Intelligence. Everything else works on any Mac running macOS 26.</p>
+        <p class="aside">Recs, Promises and Ask AI need a Mac with Apple Intelligence. Everything else works on any Mac running macOS 26.</p>
       </div>
     </div>
     <div class="ask">
@@ -323,19 +386,23 @@
   <div class="wrap">
     <p class="eyebrow">Why Textlore</p>
     <h2 id="compare-title" class="section-title rise" style="margin-top:16px">Everything your messages need, <em>in one app.</em></h2>
+    <p class="compare__hint" aria-hidden="true">Swipe the table to see every app <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
     <div class="compare__scroll rise">
       <table class="compare__table">
         <thead>
           <tr><th scope="col"><span class="sr-only">Feature</span></th><th scope="col" class="us"><img src="/img/icon-96.webp" width="40" height="40" alt="">Textlore</th><th scope="col">Messages search</th><th scope="col">Backup and export tools</th><th scope="col">Wrapped scripts</th></tr>
         </thead>
         <tbody>
+          <tr><td>What friends told you to try, in their words</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><small>Recs</small></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+          <tr><td>Promises you made, and which are still open</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><small>Promises</small></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
+          <tr><td>iMessage and WhatsApp in one place</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><small>WhatsApp for Mac</small></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><small>iMazing, from iPhone backups</small></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
           <tr><td>Search every year as you type, with filters</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span><small>Often misses old texts</small></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
           <tr><td>Keeps photos after Messages clears space</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span><small>Only when you back up</small></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
           <tr><td>Export to PDF with phone numbers hidden</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
           <tr><td>Your texting story, as cards and video</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><small>Once a year, in Terminal</small></td></tr>
           <tr><td>Ask questions, with the source texts</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span></td></tr>
           <tr><td>No account, nothing uploaded</td><td class="us"><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td><td><span class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l10 10M17 7L7 17"/></svg></span><small>Varies</small></td><td><span class="yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></td></tr>
-          <tr><td>Price</td><td class="us">$29 once</td><td>Built in</td><td>From €30 a year<small>iMazing. Decipher is $29.99 once and needs an iPhone backup.</small></td><td>Free</td></tr>
+          <tr><td>Price</td><td class="us"><span class="l-on">$20 until 28 Oct</span><span class="l-off">$39 once</span></td><td>Built in</td><td>From €30 a year<small>iMazing. Decipher is $29.99 once and needs an iPhone backup.</small></td><td>Free</td></tr>
         </tbody>
       </table>
     </div>
@@ -359,6 +426,9 @@
     </div>
   </div>
   <div class="gallery__track" tabindex="0" role="region" aria-label="Screens of Textlore">
+    <figure><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/recs-light-1000.avif 1000w, /img/shots/recs-light-1600.avif 1600w, /img/shots/recs-light-2200.avif 2200w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/recs-light-1600.webp" srcset="/img/shots/recs-light-1000.webp 1000w, /img/shots/recs-light-1600.webp 1600w, /img/shots/recs-light-2200.webp 2200w" sizes="(max-width: 1070px) 86vw, 920px" width="2200" height="1464" loading="lazy" decoding="async" alt="Recs: 25 things friends told you to try, with Severance recommended by 3 people."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/recs-dark-1000.avif 1000w, /img/shots/recs-dark-1600.avif 1600w, /img/shots/recs-dark-2200.avif 2200w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/recs-dark-1600.webp" srcset="/img/shots/recs-dark-1000.webp 1000w, /img/shots/recs-dark-1600.webp 1600w, /img/shots/recs-dark-2200.webp 2200w" sizes="(max-width: 1070px) 86vw, 920px" width="2200" height="1464" loading="lazy" decoding="async" alt="Recs: 25 things friends told you to try, with Severance recommended by 3 people. Dark appearance."></picture></span></div><figcaption><b>Recs</b><span>What friends told you to try, with who said it, when and their words.</span></figcaption></figure>
+    <figure><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/promises-light-1000.avif 1000w, /img/shots/promises-light-1600.avif 1600w, /img/shots/promises-light-2200.avif 2200w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/promises-light-1600.webp" srcset="/img/shots/promises-light-1000.webp 1000w, /img/shots/promises-light-1600.webp 1600w, /img/shots/promises-light-2200.webp 2200w" sizes="(max-width: 1070px) 86vw, 920px" width="2200" height="1464" loading="lazy" decoding="async" alt="Promises: 13 of 15 still open, with Call Grandma on her birthday 55 days late."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/promises-dark-1000.avif 1000w, /img/shots/promises-dark-1600.avif 1600w, /img/shots/promises-dark-2200.avif 2200w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/promises-dark-1600.webp" srcset="/img/shots/promises-dark-1000.webp 1000w, /img/shots/promises-dark-1600.webp 1600w, /img/shots/promises-dark-2200.webp 2200w" sizes="(max-width: 1070px) 86vw, 920px" width="2200" height="1464" loading="lazy" decoding="async" alt="Promises: 13 of 15 still open, with Call Grandma on her birthday 55 days late. Dark appearance."></picture></span></div><figcaption><b>Promises</b><span>What you said you'd do, the day you said it and how late it is.</span></figcaption></figure>
+    <figure><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/search-light-1000.avif 1000w, /img/shots/search-light-1600.avif 1600w, /img/shots/search-light-2400.avif 2400w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/search-light-1600.webp" srcset="/img/shots/search-light-1000.webp 1000w, /img/shots/search-light-1600.webp 1600w, /img/shots/search-light-2400.webp 2400w" sizes="(max-width: 1070px) 86vw, 920px" width="2400" height="1500" loading="lazy" decoding="async" alt="Search for flight lands, with the match lit up in amber in its conversation."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/search-dark-1000.avif 1000w, /img/shots/search-dark-1600.avif 1600w, /img/shots/search-dark-2400.avif 2400w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/search-dark-1600.webp" srcset="/img/shots/search-dark-1000.webp 1000w, /img/shots/search-dark-1600.webp 1600w, /img/shots/search-dark-2400.webp 2400w" sizes="(max-width: 1070px) 86vw, 920px" width="2400" height="1500" loading="lazy" decoding="async" alt="Search for flight lands, with the match lit up in amber in its conversation. Dark appearance."></picture></span></div><figcaption><b>Search</b><span>Every year as you type, with filters for people, dates and photos.</span></figcaption></figure>
     <figure><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/quick-search-light-1000.avif 1000w, /img/shots/quick-search-light-1600.avif 1600w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/quick-search-light-1600.webp" srcset="/img/shots/quick-search-light-1000.webp 1000w, /img/shots/quick-search-light-1600.webp 1600w" sizes="(max-width: 1070px) 86vw, 920px" width="1600" height="1160" loading="lazy" decoding="async" alt="Quick search floating over Your Lore, with results for cabin."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/quick-search-dark-1000.avif 1000w, /img/shots/quick-search-dark-1600.avif 1600w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/quick-search-dark-1600.webp" srcset="/img/shots/quick-search-dark-1000.webp 1000w, /img/shots/quick-search-dark-1600.webp 1600w" sizes="(max-width: 1070px) 86vw, 920px" width="1600" height="1160" loading="lazy" decoding="async" alt="Quick search floating over Your Lore, with results for cabin. Dark appearance."></picture></span></div><figcaption><b>Quick search</b><span>Option-Space from any app, with results as you type.</span></figcaption></figure>
     <figure><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/attachments-light-1000.avif 1000w, /img/shots/attachments-light-1600.avif 1600w, /img/shots/attachments-light-2400.avif 2400w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/attachments-light-1600.webp" srcset="/img/shots/attachments-light-1000.webp 1000w, /img/shots/attachments-light-1600.webp 1600w, /img/shots/attachments-light-2400.webp 2400w" sizes="(max-width: 1070px) 86vw, 920px" width="2400" height="1500" loading="lazy" decoding="async" alt="The Attachments page: 20,000 photos, videos and files, by person and by month."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/attachments-dark-1000.avif 1000w, /img/shots/attachments-dark-1600.avif 1600w, /img/shots/attachments-dark-2400.avif 2400w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/attachments-dark-1600.webp" srcset="/img/shots/attachments-dark-1000.webp 1000w, /img/shots/attachments-dark-1600.webp 1600w, /img/shots/attachments-dark-2400.webp 2400w" sizes="(max-width: 1070px) 86vw, 920px" width="2400" height="1500" loading="lazy" decoding="async" alt="The Attachments page: 20,000 photos, videos and files, by person and by month. Dark appearance."></picture></span></div><figcaption><b>Photos and files</b><span>Everything people sent you, by person and by month.</span></figcaption></figure>
     <figure><div class="frame__win"><span class="duo"><picture class="l"><source type="image/avif" srcset="/img/shots/selecting-light-1000.avif 1000w, /img/shots/selecting-light-1600.avif 1600w, /img/shots/selecting-light-2400.avif 2400w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/selecting-light-1600.webp" srcset="/img/shots/selecting-light-1000.webp 1000w, /img/shots/selecting-light-1600.webp 1600w, /img/shots/selecting-light-2400.webp 2400w" sizes="(max-width: 1070px) 86vw, 920px" width="2400" height="1500" loading="lazy" decoding="async" alt="Selecting 3 messages in a conversation, with Copy and Export at the bottom."></picture><picture class="d"><source type="image/avif" srcset="/img/shots/selecting-dark-1000.avif 1000w, /img/shots/selecting-dark-1600.avif 1600w, /img/shots/selecting-dark-2400.avif 2400w" sizes="(max-width: 1070px) 86vw, 920px"><img src="/img/shots/selecting-dark-1600.webp" srcset="/img/shots/selecting-dark-1000.webp 1000w, /img/shots/selecting-dark-1600.webp 1600w, /img/shots/selecting-dark-2400.webp 2400w" sizes="(max-width: 1070px) 86vw, 920px" width="2400" height="1500" loading="lazy" decoding="async" alt="Selecting 3 messages in a conversation, with Copy and Export at the bottom. Dark appearance."></picture></span></div><figcaption><b>Select a few messages</b><span>Click to pick, Shift-click for a range, or select a whole day.</span></figcaption></figure>
@@ -382,7 +452,7 @@
       <li><span>Charge you every month.</span></li>
     </ul>
     <div class="never__foot rise">
-      <p><strong>Textlore only reads.</strong> Your messages, photos and stats stay on your Mac, and Ask AI uses Apple's on-device model. <a href="/privacy/">Read the privacy policy</a></p>
+      <p><strong>Textlore only reads.</strong> Your messages, photos and stats stay on your Mac, and Recs, Promises and Ask AI use Apple's on-device model. <a href="/privacy/">Read the privacy policy</a></p>
       <p>It goes online for 2 things only: checking your licence and checking for updates. It asks for Full Disk Access because macOS keeps your Messages history in a protected folder.</p>
     </div>
   </div>
@@ -393,7 +463,7 @@
   <div class="wrap pricing__grid">
     <div>
       <p class="eyebrow">Pricing</p>
-      <h2 id="pricing-title" class="section-title rise" style="margin-top:16px">Try it free for 14 days, <em>then keep it for <span class="l-on">$20</span><span class="l-off">$29</span>.</em></h2>
+      <h2 id="pricing-title" class="section-title rise" style="margin-top:16px">Try it free for 14 days, <em>then keep it for <span class="l-on">$20</span><span class="l-off">$39</span>.</em></h2>
       <ol class="steps rise">
         <li><div><b>Download</b><span>A 9 MB download, notarized by Apple.</span></div></li>
         <li><div><b>Try every feature for 14 days</b><span>No account, no email, no card.</span></div></li>
@@ -402,11 +472,13 @@
     </div>
     <div class="pricecard glow rise">
       <svg class="pricecard__rings" data-rings="card" viewBox="0 0 600 600" aria-hidden="true"></svg>
-      <div class="pricecard__top"><img src="/img/icon-192.webp" width="56" height="56" alt=""><div><b>Textlore for Mac</b><span>Version 1.0, macOS 26 or later</span></div></div>
-      <p class="price l-on"><sup>$</sup><strong class="num">20</strong><span>once <s>$29</s></span></p>
-      <p class="price l-off"><sup>$</sup><strong class="num">29</strong><span>once</span></p>
-      <p class="pricecard__launch l-on">Launch price until 28 October, then $29.</p>
+      <div class="pricecard__top"><img src="/img/icon-192.webp" width="56" height="56" alt=""><div><b>Textlore for Mac</b><span>Version 1.1, macOS 26 or later</span></div></div>
+      <p class="price l-on"><sup>$</sup><strong class="num">20</strong><span>once <s>$39</s></span></p>
+      <p class="price l-off"><sup>$</sup><strong class="num">39</strong><span>once</span></p>
+      <p class="pricecard__launch l-on">Launch price until 28 October, then $39.</p>
       <ul class="includes">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Recs and Promises</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>iMessage and WhatsApp</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Search with filters</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Option-Space quick search</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>An archive that keeps photos</li>
@@ -417,9 +489,10 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>2 Macs, every 1.x update</li>
       </ul>
       <div class="btns">
-        <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy Textlore, $20</span><span class="l-off">Buy Textlore, $29</span></a>
+        <a class="btn btn--big btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy Textlore, $20</span><span class="l-off">Buy Textlore, $39</span></a>
         <a class="btn btn--big btn--ghost download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Try it free</a>
       </div>
+      <p class="maconly">Textlore is a Mac app. Open this page on your Mac to download.</p>
       <p class="pricecard__policy">Try every feature free for 14 days, so every sale is final.</p>
       <p class="pricecard__note">Every 1.x update is included, and 2.0 will be a discounted upgrade, never a subscription. Secure checkout by Gumroad. Prices adjust for your country at checkout.</p>
     </div>
@@ -435,7 +508,10 @@
       <p>Still wondering? Ask in <a href="https://discord.gg/WjfenUSZp4" rel="noopener">The Useful Tech Club</a> or read <a href="/help/">Help</a>.</p>
     </div>
     <div class="faq__list">
-      <details><summary>Does it work with WhatsApp?</summary><div><p>Not yet. Textlore reads Apple's Messages app: iMessage and SMS.</p></div></details>
+      <details><summary>Does it work with WhatsApp?</summary><div><p>Yes, with WhatsApp for Mac. Textlore imports your WhatsApp for Mac chats alongside iMessage, each with a badge, and the Sources filter shows one app or both. Recs, Promises, search, Ask AI and export cover WhatsApp too.</p></div></details>
+      <details><summary>Do Recs and Promises send my messages anywhere?</summary><div><p>No. Apple's on-device model finds them on your Mac, and nothing leaves it. Both are read only: Textlore never sends a message. They need a Mac with Apple Intelligence.</p></div></details>
+      <details><summary>How long does the first scan take?</summary><div><p>On a long history, the first full scan can take hours. It runs in the background while you use Textlore, and this year's messages are ready first.</p></div></details>
+      <details><summary>I bought 1.0. Do I pay for 1.1?</summary><div><p>No. Every 1.x update is included with your licence. Choose Textlore &gt; Check for Updates&#8230; to get it.</p></div></details>
       <details><summary>Do I need my iPhone?</summary><div><p>No. Textlore reads the Messages history on your Mac. Turn on Messages in iCloud on your iPhone and Mac to have your full history there.</p></div></details>
       <details><summary>Why does it ask for Full Disk Access?</summary><div><p>macOS keeps your Messages history in a protected folder and only opens it to apps you switch on. Textlore only reads it.</p></div></details>
       <details><summary>Why isn't it on the Mac App Store?</summary><div><p>Apple doesn't let Mac App Store apps read the Messages history, so every app like this is sold directly.</p></div></details>
@@ -452,12 +528,13 @@
 <section class="final" aria-labelledby="final-title">
   <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
   <div class="wrap">
-    <h2 id="final-title" class="rise">Your texts are waiting <em>to be found.</em></h2>
-    <p class="rise">Download Textlore and see your own rings in about a minute. Free for 14 days.</p>
+    <h2 id="final-title" class="rise">Your friends' best tips are already <em>in your texts.</em></h2>
+    <p class="rise">Download Textlore and see this year's Recs and Promises first, while it reads the rest. Free for 14 days.</p>
     <div class="btns rise">
       <a class="btn btn--big btn--amber btn--shine download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.8-3-.8-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.6 1.3-2.6s-2.5-1-2.5-3.8zM14.1 5.8c.6-.8 1.1-1.8 1-2.8-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.7-1 2.7 1 .1 2-.5 2.7-1.3z" fill="currentColor" stroke="none"/></svg>Download for Mac</a>
-      <a class="btn btn--big btn--ghost buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $39</span></a>
     </div>
+    <p class="maconly rise">Textlore is a Mac app. Open this page on your Mac to download.</p>
   </div>
 </section>
 
@@ -473,7 +550,7 @@
     <div class="footer__top">
       <div class="footer__brand">
         <a class="logo" href="/"><img src="/img/icon-96.webp" width="44" height="44" alt="" loading="lazy">Textlore</a>
-        <p>Search, keep and relive your whole iMessage history, privately on your Mac. Made in Chennai, India, by Raja at The Useful Media Co.</p>
+        <p>Recs, Promises, search and a lasting archive for your iMessage and WhatsApp history, privately on your Mac. Made in Chennai, India, by Raja at The Useful Media Co.</p>
         <div class="socials"><a href="https://www.instagram.com/theusefultech/" rel="noopener" aria-label="The Useful Tech on Instagram" title="The Useful Tech on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.youtube.com/@theusefultech9850" rel="noopener" aria-label="The Useful Tech on YouTube" title="The Useful Tech on YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg></a><a href="https://theusefultech.com" rel="noopener" aria-label="The Useful Tech on Medium" title="The Useful Tech on Medium"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="7.5" cy="12" rx="5" ry="5.2" fill="currentColor" stroke="none"/><ellipse cx="16" cy="12" rx="2.4" ry="4.9" fill="currentColor" stroke="none"/><ellipse cx="20.3" cy="12" rx=".9" ry="4.4" fill="currentColor" stroke="none"/></svg></a><a href="https://discord.gg/WjfenUSZp4" rel="noopener" aria-label="The Useful Tech Club on Discord" title="The Useful Tech Club on Discord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 6.5C6.6 7 5.3 7.7 5.3 7.7 3.8 10 3.2 12.9 3.4 16.3c1.6 1.2 3.2 1.9 4.7 2.3l1-1.6M15.5 6.5c1.9.5 3.2 1.2 3.2 1.2 1.5 2.3 2.1 5.2 1.9 8.6-1.6 1.2-3.2 1.9-4.7 2.3l-1-1.6M7.5 16c3 1.4 6 1.4 9 0M8.6 7.6c2.2-.6 4.6-.6 6.8 0"/><circle cx="9.3" cy="12.4" r="1.3" fill="currentColor" stroke="none"/><circle cx="14.7" cy="12.4" r="1.3" fill="currentColor" stroke="none"/></svg></a><a href="https://theusefulmedia.com/tech/" rel="noopener" aria-label="The Useful Tech newsletter" title="The Useful Tech newsletter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg></a></div>
       </div>
       <div><h2 class="footer__h">Textlore</h2><ul>
@@ -492,14 +569,13 @@
       </ul></div>
       <div><h2 class="footer__h">Company</h2><ul>
         <li><a href="/about/">About</a></li>
-        <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co</a></li>
-        <li><a href="https://theusefultech.com" rel="noopener">The Useful Tech</a></li>
+        <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co.</a></li>
         <li><a href="https://theusefulmedia.com/tech/" rel="noopener">Newsletter</a></li>
       </ul></div>
     </div>
     <div class="footer__cta">
-      <div><b>Try every feature free for 14 days.</b><span>No account, no email. <span class="l-on">$20 until 28 October</span><span class="l-off">$29 once</span> if you keep it.</span></div>
-      <div class="btns"><a class="btn download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free</a><a class="btn btn--amber buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a></div>
+      <div><b>Try every feature free for 14 days.</b><span>No account, no email. <span class="l-on">$20 until 28 October</span><span class="l-off">$39 once</span> if you keep it.</span></div>
+      <div class="btns"><a class="btn download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free</a><a class="btn btn--amber buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><span class="l-on">Buy $20</span><span class="l-off">Buy $39</span></a></div>
     </div>
     <div class="footer__bottom">
       <span>&copy; 2026 The Useful Media Co. Chennai, India.</span>
@@ -510,8 +586,8 @@
 </footer>
 <div class="dlbar" aria-hidden="true">
   <img src="/img/icon-96.webp" width="38" height="38" alt="">
-  <div><b>Textlore for Mac</b><span>Free for 14 days, then <span class="l-on">$20 until 28 Oct</span><span class="l-off">$29 once</span></span></div>
-  <a class="btn btn--ghost buy" href="https://theusefultech.gumroad.com/l/textlore?wanted=true" tabindex="-1"><span class="l-on">Buy $20</span><span class="l-off">Buy $29</span></a>
+  <div><b>Textlore for Mac</b><span>Free for 14 days, then <span class="l-on">$20 until 28 Oct</span><span class="l-off">$39 once</span></span></div>
+  <a class="btn btn--ghost buy" href="https://theusefultech.gumroad.com/l/textlore?wanted=true" tabindex="-1"><span class="l-on">Buy $20</span><span class="l-off">Buy $39</span></a>
   <a class="btn download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg" tabindex="-1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</a>
 </div>
 </body>

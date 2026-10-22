@@ -14,6 +14,7 @@ Each page source starts with a comment block of settings:
 and may use these placeholders:
     {{icon:name}}                         an inline SVG icon from ICONS below
     {{shot:name|sizes|alt}}               a screenshot as a light and dark pair (img/shots)
+    {{shothero:name|sizes|alt}}           the same, loaded straight away, for a screenshot at the top of a page
     {{shotdark:name|sizes|alt}}           the dark screenshot only
     {{rings:class}}                       the year rings drawing (filled in by site.js)
 The output is plain static HTML; the site itself has no build step to serve.
@@ -29,6 +30,8 @@ DOWNLOAD = "https://github.com/theusefulmedia/textlore-site/releases/latest/down
 BUY = "https://theusefultech.gumroad.com/l/textlore?wanted=true"
 
 ICONS = {
+    "bookmark": '<path d="M7 3h10a1 1 0 0 1 1 1v17l-6-4-6 4V4a1 1 0 0 1 1-1z"/>',
+    "promise": '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8 5.2-5.6"/>',
     "download": '<path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/>',
     "check": '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
     "x": '<path d="M7 7l10 10M17 7L7 17"/>',
@@ -88,7 +91,7 @@ def widths(name, scheme):
     return found
 
 
-def picture(name, scheme, sizes, alt, cls):
+def picture(name, scheme, sizes, alt, cls, eager=False):
     ws = widths(name, scheme)
     big = ws[-1]
     w0 = big
@@ -100,13 +103,13 @@ def picture(name, scheme, sizes, alt, cls):
     webp = ", ".join(f"/img/shots/{name}-{scheme}-{w}.webp {w}w" for w in ws)
     return (f'<picture class="{cls}"><source type="image/avif" srcset="{avif}" sizes="{sizes}">'
             f'<img src="/img/shots/{name}-{scheme}-{ws[min(1, len(ws) - 1)]}.webp" srcset="{webp}" sizes="{sizes}" '
-            f'width="{w0}" height="{h0}" loading="lazy" decoding="async" alt="{alt}"></picture>')
+            f'width="{w0}" height="{h0}" loading="{"eager" if eager else "lazy"}" decoding="async" alt="{alt}"></picture>')
 
 
-def shot(m):
+def shot(m, eager=False):
     name, sizes, alt = m.group(1).split("|")
-    return ('<span class="duo">' + picture(name, "light", sizes, alt, "l")
-            + picture(name, "dark", sizes, alt + " Dark appearance.", "d") + "</span>")
+    return ('<span class="duo">' + picture(name, "light", sizes, alt, "l", eager)
+            + picture(name, "dark", sizes, alt + " Dark appearance.", "d", eager) + "</span>")
 
 
 def shotdark(m):
@@ -118,7 +121,7 @@ NAV_ITEMS = [("features", "/#features", "Features"), ("lore", "/#relive", "Your 
              ("pricing", "/#pricing", "Pricing"), ("help", "/help/", "Help"), ("about", "/about/", "About")]
 
 
-LAUNCH_ENDS = "2026-10-29T06:59:00Z"  # the LAUNCH code on Gumroad ends at the same moment (28 Oct 23:59 Pacific, Gumroad account time)
+LAUNCH_ENDS = "2026-10-29T06:59:00Z"  # then the price goes from $20 to $39. The LAUNCH code on Gumroad ends at the same moment (28 Oct 23:59 Pacific, Gumroad account time)
 
 
 def lp(during, after):
@@ -138,7 +141,7 @@ def nav(current, home):
   <ul class="nav__links"><li class="nav__pill" aria-hidden="true"></li>{"".join(links)}</ul>
   <div class="nav__cta">
     <a class="btn btn--ghost download" href="{DOWNLOAD}">{icon("download")}Download</a>
-    <a class="btn btn--amber btn--shine buy magnet" href="{BUY}">{lp("Buy $20", "Buy $29")}</a>
+    <a class="btn btn--amber btn--shine buy magnet" href="{BUY}">{lp("Buy $20", "Buy $39")}</a>
   </div>
   <button class="nav__menu" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
 </header>'''
@@ -166,7 +169,7 @@ def footer(home):
     <div class="footer__top">
       <div class="footer__brand">
         <a class="logo" href="/"><img src="/img/icon-96.webp" width="44" height="44" alt="" loading="lazy">Textlore</a>
-        <p>Search, keep and relive your whole iMessage history, privately on your Mac. Made in Chennai, India, by Raja at The Useful Media Co.</p>
+        <p>Recs, Promises, search and a lasting archive for your iMessage and WhatsApp history, privately on your Mac. Made in Chennai, India, by Raja at The Useful Media Co.</p>
         {socials()}
       </div>
       <div><h2 class="footer__h">Textlore</h2><ul>
@@ -185,14 +188,13 @@ def footer(home):
       </ul></div>
       <div><h2 class="footer__h">Company</h2><ul>
         <li><a href="/about/">About</a></li>
-        <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co</a></li>
-        <li><a href="https://theusefultech.com" rel="noopener">The Useful Tech</a></li>
+        <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co.</a></li>
         <li><a href="https://theusefulmedia.com/tech/" rel="noopener">Newsletter</a></li>
       </ul></div>
     </div>
     <div class="footer__cta">
-      <div><b>Try every feature free for 14 days.</b><span>No account, no email. {lp("$20 until 28 October", "$29 once")} if you keep it.</span></div>
-      <div class="btns"><a class="btn download magnet" href="{DOWNLOAD}">{icon("download")}Download free</a><a class="btn btn--amber buy magnet" href="{BUY}">{lp("Buy $20", "Buy $29")}</a></div>
+      <div><b>Try every feature free for 14 days.</b><span>No account, no email. {lp("$20 until 28 October", "$39 once")} if you keep it.</span></div>
+      <div class="btns"><a class="btn download magnet" href="{DOWNLOAD}">{icon("download")}Download free</a><a class="btn btn--amber buy magnet" href="{BUY}">{lp("Buy $20", "Buy $39")}</a></div>
     </div>
     <div class="footer__bottom">
       <span>&copy; 2026 The Useful Media Co. Chennai, India.</span>
@@ -206,8 +208,8 @@ def footer(home):
 def dlbar():
     return f'''<div class="dlbar" aria-hidden="true">
   <img src="/img/icon-96.webp" width="38" height="38" alt="">
-  <div><b>Textlore for Mac</b><span>Free for 14 days, then {lp("$20 until 28 Oct", "$29 once")}</span></div>
-  <a class="btn btn--ghost buy" href="{BUY}" tabindex="-1">{lp("Buy $20", "Buy $29")}</a>
+  <div><b>Textlore for Mac</b><span>Free for 14 days, then {lp("$20 until 28 Oct", "$39 once")}</span></div>
+  <a class="btn btn--ghost buy" href="{BUY}" tabindex="-1">{lp("Buy $20", "Buy $39")}</a>
   <a class="btn download" href="{DOWNLOAD}" tabindex="-1">{icon("download")}Download</a>
 </div>'''
 
@@ -251,6 +253,7 @@ def build(src):
     body = text[meta_block.end():]
     home = meta["path"] == "index.html"
     body = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: icon(m.group(1)), body)
+    body = re.sub(r"\{\{shothero:([^}]+)\}\}", lambda m: shot(m, True), body)
     body = re.sub(r"\{\{shot:([^}]+)\}\}", shot, body)
     body = re.sub(r"\{\{shotdark:([^}]+)\}\}", shotdark, body)
     body = re.sub(r"\{\{lp:(.*?)\|(.*?)\}\}", lambda m: lp(m.group(1), m.group(2)), body)
@@ -281,7 +284,8 @@ def sitemap():
     urls.sort(key=lambda u: (u.count("/"), u))
     body = "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls)
     (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n")
-    (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /stats/\nDisallow: /tools/\n\nSitemap: https://textlore.app/sitemap.xml\n")
+    # AI crawlers share the same rules as everyone else, named so it is clear they are welcome.
+    (ROOT / "robots.txt").write_text("User-agent: *\nUser-agent: GPTBot\nUser-agent: ClaudeBot\nUser-agent: PerplexityBot\nDisallow: /stats/\nDisallow: /tools/\n\nSitemap: https://textlore.app/sitemap.xml\n")
     print("built sitemap.xml and robots.txt,", len(urls), "pages")
 
 
