@@ -1,4 +1,7 @@
 User-agent: *
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: PerplexityBot
 Disallow: /stats/
 Disallow: /tools/
 
