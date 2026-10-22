@@ -1,0 +1,142 @@
+<!--
+path: guides/best-imessage-app-for-lawyers/index.html
+title: Best iMessage app for lawyers on a Mac (2026)
+description: The best way for a lawyer to pull a client's iMessages and WhatsApp chats on a Mac: Textlore exports dated PDF transcripts with numbers and timestamps, and Promises lists what the client said they would do.
+head: guides-best-imessage-app-for-lawyers-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>The best iMessage app for lawyers on a Mac, <em>5 options.</em></h1>
+      <p class="lede">Textlore is the best iMessage app for a lawyer who needs a dated PDF transcript of a client's texts on a Mac, with numbers and timestamps on, but it is not a forensic tool and a printout can still be challenged.</p>
+      <p class="guide-meta">Updated 22 October 2026. For Messages on macOS 26 and later. Not legal advice.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#answer">Short answer</a>
+      <a href="#compare">5 options for a lawyer's workflow</a>
+      <a href="#need">What a lawyer needs from a text export</a>
+      <a href="#promises">Promises: the commitments a client made in writing</a>
+      <a href="#textlore">How to export a client's texts with Textlore</a>
+      <a href="#others">When another tool fits better</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="answer">
+  <h2><span class="ic">{{icon:bolt}}</span>Short answer</h2>
+  <p class="aside">Textlore is the best iMessage app for a lawyer who needs a dated PDF transcript of a client's texts on a Mac, with numbers and timestamps on, but it is not a forensic tool and a printout can still be challenged.</p>
+  <h3>TL;DR</h3>
+  <ul>
+    <li>Export exactly the dates you need as PDF, with timestamps, date headings and phone numbers switched on, and the same range as CSV to sort in Numbers or Excel.</li>
+    <li><strong>Promises</strong> lists every time the Mac's owner said they would do something, with the day and how late it is. For a client, that is a fast list of commitments made in writing.</li>
+    <li>Search across iMessage and WhatsApp for Mac chats with <code>from:</code>, <code>in:</code>, <code>before:</code> and <code>after:</code>.</li>
+    <li>Textlore never sends, edits or deletes a message, and nothing leaves the Mac. It goes online for 2 things only: checking the licence and checking for updates.</li>
+    <li>Not a fit: forensic collection from a phone, chain of custody, or iPhone-only texts with Messages in iCloud off.</li>
+  </ul>
+</section>
+
+<section id="compare">
+  <h2><span class="ic">{{icon:doc}}</span>5 options for a lawyer's workflow</h2>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Textlore</td><td>A dated PDF or CSV of a client's texts, Promises, search across iMessage and WhatsApp for Mac.</td><td>Mac only, macOS 26. Reads the Mac's Messages history, not an iPhone backup. Not forensic.</td></tr><tr><td>Decipher TextMessage</td><td>A printout from an iPhone backup, on Mac or Windows. $29.99 once.</td><td>No Recs or Promises. WhatsApp needs a separate app.</td></tr><tr><td>iMazing</td><td>Backing up the iPhone itself, with PDF, Excel, CSV and text export.</td><td>Yearly subscription. Works from a backup.</td></tr><tr><td>imessage-exporter</td><td>Free text or HTML exports you can reproduce from a script.</td><td>Terminal. No PDF. Your team needs to be comfortable with it.</td></tr><tr><td>Messages, File &gt; Print</td><td>A short chat, free.</td><td>Times appear between groups of messages. No date range.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="need">
+  <h2><span class="ic">{{icon:shield}}</span>What a lawyer needs from a text export</h2>
+  <ul>
+    <li><strong>Who and when.</strong> Each message needs its sender, number and time. Textlore's export can show timestamps and date headings, names in full, and phone numbers and emails (hidden by default, so switch them on).</li>
+    <li><strong>The right range.</strong> Export a date range, a whole chat with <kbd>⇧⌘E</kbd>, or a few messages with their context. A live preview shows the file before you save.</li>
+    <li><strong>A sortable copy.</strong> Export the same range as CSV for a spreadsheet.</li>
+    <li><strong>Untouched originals.</strong> Textlore only reads. Keep the phone and the original conversation, because the other side can question a printout.</li>
+  </ul>
+  <p>Our guide on <a href="/guides/print-text-messages-for-court/">printing text messages for court</a> covers what a printout should show. Check the format your court or clerk accepts first. This is practical help, not legal advice.</p>
+</section>
+
+<section id="promises">
+  <h2><span class="ic">{{icon:promise}}</span>Promises: the commitments a client made in writing</h2>
+  <p>Promises lists every time the person who owns the Mac said they would do something for someone, with the day they said it, how many days late it is, and the message behind it. Each item opens in the conversation. It finds them with Apple's on-device model on a Mac with Apple Intelligence, and it never sends a message.</p>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:promises|(max-width: 960px) calc(100vw - 32px), 760px|Promises in Textlore: 13 of 15 still open, with Call Grandma on her birthday 55 days late and the message where you said it.}}</div></div>
+  <p>Use it with the client at their Mac to find "I'll pay you back on the 15th" or "I'll send the documents Friday" across every chat, then export those conversations with dates. Promises shows what the Mac's owner promised. To find what someone else promised, search with <code>from:Name</code> and a phrase such as <code>"I will"</code>.</p>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:export}}</span>How to export a client's texts with Textlore</h2>
+  <ol>
+    <li><strong>Install it on the client's Mac.</strong> Open Textlore and switch on Full Disk Access when it asks. About 100,000 messages import in under a minute. WhatsApp for Mac chats are imported too.</li>
+    <li><strong>Pick the conversation and dates.</strong> Choose a date range, or press <kbd>⇧⌘E</kbd> for the whole chat.</li>
+    <li><strong>Choose PDF and the plain transcript.</strong> Turn on timestamps and date headings, show names in full, and switch on phone numbers and emails.</li>
+    <li><strong>Check the preview and export.</strong> Then export the same range as CSV if you want to sort it.</li>
+  </ol>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:export-options|(max-width: 960px) calc(100vw - 32px), 760px|The Textlore export sheet with a live preview of the PDF.}}</div></div>
+  <h3>What Textlore doesn't do</h3>
+  <ul>
+    <li>It is Mac only, and needs macOS 26 or later.</li>
+    <li>It reads the Messages history on your Mac, so your iPhone texts need Messages in iCloud switched on to get there.</li>
+    <li>It reads Messages (iMessage, SMS and the other texts in it) and WhatsApp for Mac. It can't read an iPhone backup.</li>
+    <li>Recs, Promises and Ask AI need a Mac with Apple Intelligence.</li>
+  </ul>
+</section>
+
+<section id="others">
+  <h2><span class="ic">{{icon:install}}</span>When another tool fits better</h2>
+  <ul>
+    <li><strong>The texts are only on an iPhone.</strong> Use a tool that reads iPhone backups, such as Decipher TextMessage or iMazing.</li>
+    <li><strong>You need evidence-grade collection.</strong> A forensic examiner collects from the phone. Textlore is an everyday export tool.</li>
+    <li><strong>You want free and reproducible.</strong> imessage-exporter is open source, so anyone can read exactly what it does.</li>
+  </ul>
+  <p>Full comparisons: <a href="/compare/textlore-vs-imazing/">Textlore vs iMazing</a>, <a href="/compare/textlore-vs-decipher-textmessage/">Textlore vs Decipher TextMessage</a>, <a href="/compare/textlore-vs-imessage-exporter/">Textlore vs imessage-exporter</a> and <a href="/compare/textlore-vs-messages-search/">Textlore vs Messages search</a>.</p>  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Export a dated transcript in a few minutes.</b>
+      <span>Every feature is free for 14 days. No account, no email, no card.</span>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two">{{lp:Buy Textlore, <s>$39</s> $20|Buy Textlore, $39}}<small>{{lp:Launch price until 28 October|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>What is the best app to export iMessages for a lawyer?</summary><div><p>Textlore, if the texts are on a Mac. It exports a date range as PDF with timestamps, names and phone numbers, and as CSV. For texts only on an iPhone, use a tool that reads iPhone backups.</p></div></details>
+    <details><summary>Is a Textlore export admissible in court?</summary><div><p>Courts often accept printed texts, but rules differ by court and country, and the other side can challenge them. Ask the court clerk or your own counsel. Textlore is not a forensic tool.</p></div></details>
+    <details><summary>Does Textlore change or delete messages?</summary><div><p>No. It only reads. It never sends, edits or deletes a message.</p></div></details>
+    <details><summary>Does client data leave the Mac?</summary><div><p>Not messages. Textlore has no account and no analytics. It goes online to check the licence with Gumroad and to check for updates.</p></div></details>
+    <details><summary>Can Textlore find what someone else promised?</summary><div><p>Promises lists what the Mac's owner promised. To find another person's promise, search with from:Name and a phrase such as "I will" or "I promise".</p></div></details>
+    <details><summary>Can I try Textlore before I pay?</summary><div><p>Yes. Every feature is free for 14 days, with no account, no email and no card. After that it is a one-time purchase for 2 Macs. See the <a href="/pricing/">pricing page</a>.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Clear, dated texts, <em>ready for the file.</em></h2>
+    <p class="rise">Download Textlore and export the conversation you need. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $39}}</a>
+    </div>
+  </div>
+</section>
+
+</main>
