@@ -180,6 +180,7 @@ def footer(home):
       </ul></div>
       <div><h2 class="footer__h">Help</h2><ul>
         <li><a href="/help/">Help</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
         <li><a href="/guides/">Guides</a></li>
         <li><a href="/compare/">Compare</a></li>
         <li><a href="/support/">Support</a></li>
@@ -237,12 +238,18 @@ HEAD = '''<!doctype html>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js');if(Date.now()>Date.parse('{launch_ends}'))document.documentElement.classList.add('launch-over')</script>
-{extra_head}<script src="/assets/site.js" defer></script>
+{org_ld}{extra_head}<script src="/assets/site.js" defer></script>
 <script defer src="https://cloud.umami.is/script.js" data-website-id="15ada41b-1c57-4ce8-a23f-406f5de351a5" data-domains="textlore.app" data-do-not-track="true"></script>
 {scripts}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 '''
+
+
+ORG_LD = """<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://textlore.app/#organization","name":"The Useful Media Co.","url":"https://theusefulmedia.com","logo":"https://textlore.app/img/icon-384.webp","description":"The Useful Media Co. is a sole proprietorship in Chennai, India, that publishes The Useful Tech, The Useful Life, The Useful Creator and The Useful Gaming, and makes Textlore, a Mac app for iMessage and WhatsApp history.","founder":{"@type":"Person","name":"Raja","url":"https://textlore.app/about/"},"address":{"@type":"PostalAddress","addressLocality":"Chennai","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"raja@theusefultech.com","url":"https://textlore.app/support/"},"sameAs":["https://www.instagram.com/theusefultech/","https://www.youtube.com/@theusefultech9850","https://theusefultech.com","https://theusefulmedia.com/tech/"]}
+</script>
+"""
 
 
 def build(src):
@@ -263,7 +270,7 @@ def build(src):
     canonical = '<meta name="robots" content="noindex">' if path == "404.html" else f'<link rel="canonical" href="{url}">'
     scripts = "".join(f'<script src="/assets/{s.strip()}.js" defer></script>\n' for s in meta.get("scripts", "").split(",") if s.strip())
     extra = (ROOT / "tools" / "pages" / meta["head"]).read_text() if meta.get("head") else ""
-    html = HEAD.format(launch_ends=LAUNCH_ENDS, title=meta["title"], description=meta["description"], canonical=canonical, scripts=scripts, extra_head=extra)
+    html = HEAD.format(launch_ends=LAUNCH_ENDS, title=meta["title"], description=meta["description"], canonical=canonical, scripts=scripts, extra_head=extra, org_ld=ORG_LD)
     html += nav(meta.get("nav", ""), home) + "\n\n" + body.strip() + "\n\n" + footer(home) + "\n"
     if meta.get("dlbar") == "yes":
         html += dlbar() + "\n"
@@ -274,18 +281,34 @@ def build(src):
     print("built", path)
 
 
+MONTHS = {m: i for i, m in enumerate(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], 1)}
+AI_BOTS = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-SearchBot", "Claude-User", "PerplexityBot", "Perplexity-User", "Google-Extended"]
+
+
+def lastmod(text):
+    """The date a page says it was updated ('Updated 22 October 2026'), or its updated: setting."""
+    m = re.search(r"^updated:\s*(\d{4}-\d{2}-\d{2})", text, re.M)
+    if m:
+        return m.group(1)
+    m = re.search(r"Updated (\d{1,2}) (%s) (\d{4})" % "|".join(MONTHS), text)
+    return f"{m.group(3)}-{MONTHS[m.group(2)]:02d}-{int(m.group(1)):02d}" if m else None
+
+
 def sitemap():
-    """sitemap.xml and robots.txt, so search engines find every page."""
+    """sitemap.xml and robots.txt, so search engines and AI crawlers find every page."""
     urls = []
     for src in sorted(PAGES.glob("*.html")):
-        m = re.search(r"^path:\s*(\S+)", src.read_text(), re.M)
+        text = src.read_text()
+        m = re.search(r"^path:\s*(\S+)", text, re.M)
         if m and m.group(1) != "404.html":
-            urls.append("https://textlore.app/" + m.group(1).replace("index.html", ""))
-    urls.sort(key=lambda u: (u.count("/"), u))
-    body = "".join(f"  <url><loc>{u}</loc></url>\n" for u in urls)
+            urls.append(("https://textlore.app/" + m.group(1).replace("index.html", ""), lastmod(text)))
+    urls.sort(key=lambda u: (u[0].count("/"), u[0]))
+    body = "".join(f"  <url><loc>{u}</loc>" + (f"<lastmod>{d}</lastmod>" if d else "") + "</url>\n" for u, d in urls)
     (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "</urlset>\n")
-    # AI crawlers share the same rules as everyone else, named so it is clear they are welcome.
-    (ROOT / "robots.txt").write_text("User-agent: *\nUser-agent: GPTBot\nUser-agent: ClaudeBot\nUser-agent: PerplexityBot\nDisallow: /stats/\nDisallow: /tools/\n\nSitemap: https://textlore.app/sitemap.xml\n")
+    # AI crawlers are named and allowed, with the same private paths closed as for everyone else.
+    rules = "Allow: /\nDisallow: /stats/\nDisallow: /tools/\n"
+    groups = "".join(f"User-agent: {b}\n{rules}\n" for b in AI_BOTS)
+    (ROOT / "robots.txt").write_text(f"User-agent: *\n{rules}\n{groups}Sitemap: https://textlore.app/sitemap.xml\n")
     print("built sitemap.xml and robots.txt,", len(urls), "pages")
 
 

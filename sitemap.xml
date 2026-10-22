@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://textlore.app/</loc></url>
+  <url><loc>https://textlore.app/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://textlore.app/about/</loc></url>
-  <url><loc>https://textlore.app/compare/</loc></url>
-  <url><loc>https://textlore.app/guides/</loc></url>
+  <url><loc>https://textlore.app/compare/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://textlore.app/help/</loc></url>
+  <url><loc>https://textlore.app/pricing/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://textlore.app/privacy/</loc></url>
   <url><loc>https://textlore.app/support/</loc></url>
   <url><loc>https://textlore.app/terms/</loc></url>
-  <url><loc>https://textlore.app/compare/textlore-vs-decipher-textmessage/</loc></url>
-  <url><loc>https://textlore.app/compare/textlore-vs-imazing/</loc></url>
-  <url><loc>https://textlore.app/compare/textlore-vs-imessage-exporter/</loc></url>
-  <url><loc>https://textlore.app/guides/back-up-imessages-mac/</loc></url>
-  <url><loc>https://textlore.app/guides/export-imessage-conversation-mac/</loc></url>
-  <url><loc>https://textlore.app/guides/export-imessages-to-csv-excel/</loc></url>
-  <url><loc>https://textlore.app/guides/export-imessages-to-pdf/</loc></url>
-  <url><loc>https://textlore.app/guides/find-first-imessage/</loc></url>
-  <url><loc>https://textlore.app/guides/find-photos-in-imessage-mac/</loc></url>
-  <url><loc>https://textlore.app/guides/print-text-messages-for-court/</loc></url>
-  <url><loc>https://textlore.app/guides/save-text-messages-iphone-to-mac/</loc></url>
-  <url><loc>https://textlore.app/guides/search-imessages-by-date-mac/</loc></url>
-  <url><loc>https://textlore.app/guides/search-old-imessages-mac/</loc></url>
+  <url><loc>https://textlore.app/compare/decipher-textmessage-alternative/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/compare/imazing-alternative/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/compare/imessage-exporter-alternative/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-decipher-textmessage/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-imazing/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-imessage-exporter/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-messages-search/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/compare/textlore-vs-spotlight/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/back-up-imessages-mac/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/best-app-to-find-promises-in-text-messages/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/best-app-to-find-recommendations-in-text-messages/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/best-imessage-app-for-journalists/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/best-imessage-app-for-lawyers/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/best-imessage-app-for-recruiters/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/best-imessage-app-for-students/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://textlore.app/guides/export-imessage-conversation-mac/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/export-imessages-to-csv-excel/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/export-imessages-to-pdf/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://textlore.app/guides/find-first-imessage/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/find-photos-in-imessage-mac/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/print-text-messages-for-court/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/save-text-messages-iphone-to-mac/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/search-imessages-by-date-mac/</loc><lastmod>2026-10-21</lastmod></url>
+  <url><loc>https://textlore.app/guides/search-old-imessages-mac/</loc><lastmod>2026-10-21</lastmod></url>
 </urlset>

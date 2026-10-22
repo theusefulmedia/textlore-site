@@ -843,3 +843,8 @@ html:not(.launch-over) .l-off, html.launch-over .l-on { display: none !important
   .guide-cta .btns .btn { width: 100%; }
   .guide-table th:nth-child(2), .guide-table td:nth-child(2) { display: none; }
 }
+
+/* What is Textlore: a plain paragraph near the top of the home page, for readers and for search and AI crawlers */
+.whatis { padding: 56px 0 0; }
+.whatis h2 { font: 700 clamp(22px, 2.4vw, 28px)/1.2 var(--rounded); margin-bottom: 14px; }
+.whatis p { max-width: 760px; font-size: 18px; line-height: 1.6; color: var(--ink-2); }
