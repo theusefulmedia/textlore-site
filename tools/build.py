@@ -147,7 +147,7 @@ def lp(during, after):
         ("<strong>A similar price.</strong> $29.99 once, against Textlore's $20 launch price until 28 October. After that Textlore is $39.",
          f"<strong>A similar price.</strong> $29.99 once, against Textlore's ${P} today. Textlore's price rises ${LADDER['step']} after every {LADDER['per_step']} sales, up to ${F}."),
         ("Recs, Promises and WhatsApp, $20 until 28 October", f"Recs, Promises and WhatsApp, ${P} for the next {L} {lic}"),
-        ("Launch price until 28 October", f"{L} {lic} left at ${P}, then ${N}"),
+        ("Launch price until 28 October", f"{L} left at ${P}, then ${N}"),
         ("$20 once until 28 October 2026, then $39 once", f"${P} once for the next {L} {lic}, then ${N}"),
         ("$20 once until 28 October 2026, then $39", f"${P} once for the next {L} {lic}, then ${N}"),
         ("$20 once until 28 October, then $39", f"${P} once for the next {L} {lic}, then ${N}"),

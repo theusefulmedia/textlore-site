@@ -8,11 +8,11 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How much does Textlore cost?","acceptedAnswer":{"@type":"Answer","text":"Textlore is a one-time purchase, with a launch price that rises $5 after every 20 sales, up to $39 once. It is free to try for 14 days with every feature, and it is not a subscription."}},
+{"@type":"Question","name":"How much does Textlore cost?","acceptedAnswer":{"@type":"Answer","text":"Textlore is a one-time purchase, with a price that rises $5 after every 20 sales, up to $39 once. It is free to try for 14 days with every feature, and it is not a subscription."}},
 {"@type":"Question","name":"Is Textlore a subscription?","acceptedAnswer":{"@type":"Answer","text":"No. It is a one-time purchase. One licence covers 1 person on 2 Macs, with every 1.x update included. Version 2.0 will be a discounted upgrade, never a subscription."}},
 {"@type":"Question","name":"Is there a free trial?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every feature is free for 14 days, with no account, no email and no card. The 14 days start when the first import finishes."}},
 {"@type":"Question","name":"What happens when the trial ends?","acceptedAnswer":{"@type":"Answer","text":"Textlore asks for a licence and opens to a locked screen with Buy and Enter Licence Key. Its archive keeps saving in the background while you decide, so nothing is lost."}},
-{"@type":"Question","name":"How does Textlore's price compare with iMazing and Decipher TextMessage?","acceptedAnswer":{"@type":"Answer","text":"iMazing only sells yearly subscriptions since June 2025. Decipher TextMessage is $29.99 once, according to its product page. imessage-exporter is free and open source. Textlore has a launch price that rises $5 after every 20 sales, up to $39 once."}},
+{"@type":"Question","name":"How does Textlore's price compare with iMazing and Decipher TextMessage?","acceptedAnswer":{"@type":"Answer","text":"iMazing only sells yearly subscriptions since June 2025. Decipher TextMessage is $29.99 once, according to its product page. imessage-exporter is free and open source. Textlore has a price that rises $5 after every 20 sales, up to $39 once."}},
 {"@type":"Question","name":"Where do I buy Textlore?","acceptedAnswer":{"@type":"Answer","text":"On Gumroad, with secure checkout. Prices adjust for your country at checkout."}}
 ]}
 </script>

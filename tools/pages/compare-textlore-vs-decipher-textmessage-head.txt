@@ -5,7 +5,7 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"How much does Decipher TextMessage cost?","acceptedAnswer":{"@type":"Answer","text":"Its product page lists $29.99 as a one-time purchase with no subscription, including 2 device activations. Textlore has a launch price that rises $5 after every 20 sales, up to $39 once, for 2 Macs."}},
+{"@type":"Question","name":"How much does Decipher TextMessage cost?","acceptedAnswer":{"@type":"Answer","text":"Its product page lists $29.99 as a one-time purchase with no subscription, including 2 device activations. Textlore has a price that rises $5 after every 20 sales, up to $39 once, for 2 Macs."}},
 {"@type":"Question","name":"Does Decipher TextMessage work on a Mac without an iPhone backup?","acceptedAnswer":{"@type":"Answer","text":"Its product page says it also saves and exports text messages from the Messages app on a Mac. Textlore only reads the Mac's Messages history."}},
 {"@type":"Question","name":"Can Textlore read an iPhone backup?","acceptedAnswer":{"@type":"Answer","text":"No. Switch on Messages in iCloud on your iPhone and your Mac so your iPhone conversations are on the Mac, and Textlore reads them there."}},
 {"@type":"Question","name":"Can either app recover deleted texts?","acceptedAnswer":{"@type":"Answer","text":"Decipher's trial can show whether deleted messages are still in an iPhone backup. Textlore can't bring back messages that were gone before you installed it, but it keeps its own copy of everything after that."}},
