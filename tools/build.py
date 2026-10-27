@@ -124,6 +124,7 @@ NAV_ITEMS = [("features", "/#features", "Features"), ("lore", "/#relive", "Your 
 LAUNCH_ENDS = "2099-01-01T00:00:00Z"  # the 28 Oct launch deadline was replaced by the price ladder in tools/ladder.json (27 Oct 2026)
 
 import json as _json
+CF_ANALYTICS = '<!-- Cloudflare Web Analytics --><script type=\'module\' src=\'https://static.cloudflareinsights.com/beacon.min.js\' data-cf-beacon=\'{"token": "b8aff8dc443a40ce9c0458d588e5ee1b"}\'></script><!-- End Cloudflare Web Analytics -->'
 LADDER = _json.load(open(Path(__file__).resolve().parent / "ladder.json"))
 
 
@@ -310,7 +311,7 @@ def build(src):
     html += nav(meta.get("nav", ""), home) + "\n\n" + body.strip() + "\n\n" + footer(home) + "\n"
     if meta.get("dlbar") == "yes":
         html += dlbar() + "\n"
-    html += "</body>\n</html>\n"
+    html += CF_ANALYTICS + "\n</body>\n</html>\n"
     out = ROOT / path
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)
