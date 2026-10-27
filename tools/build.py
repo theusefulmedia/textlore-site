@@ -121,12 +121,47 @@ NAV_ITEMS = [("features", "/#features", "Features"), ("lore", "/#relive", "Your 
              ("pricing", "/#pricing", "Pricing"), ("help", "/help/", "Help"), ("about", "/about/", "About")]
 
 
-LAUNCH_ENDS = "2026-10-29T06:59:00Z"  # then the price goes from $20 to $39. The LAUNCH code on Gumroad ends at the same moment (28 Oct 23:59 Pacific, Gumroad account time)
+LAUNCH_ENDS = "2099-01-01T00:00:00Z"  # the 28 Oct launch deadline was replaced by the price ladder in tools/ladder.json (27 Oct 2026)
+
+import json as _json
+LADDER = _json.load(open(Path(__file__).resolve().parent / "ladder.json"))
+
+
+
+def ladder_note():
+    P, N, L, F = LADDER["price"], LADDER["next"], LADDER["left"], LADDER["final"]
+    if P >= F:
+        return ""
+    lic = "licence" if L == 1 else "licences"
+    return f"{L} {lic} left at ${P}. Then ${N}, rising ${LADDER['step']} every {LADDER['per_step']} sales up to ${F}."
 
 
 def lp(during, after):
-    """Text shown during the launch price, and the text that takes over when it ends (no rebuild needed)."""
-    return f'<span class="l-on">{during}</span><span class="l-off">{after}</span>'
+    """Price text for the current step of the ladder in tools/ladder.json. 'after' is used once the final price is reached."""
+    P, N, L, F = LADDER["price"], LADDER["next"], LADDER["left"], LADDER["final"]
+    if P >= F:
+        return after
+    lic = "licence" if L == 1 else "licences"
+    t = during
+    reps = [
+        ("<strong>A similar price.</strong> $29.99 once, against Textlore's $20 launch price until 28 October. After that Textlore is $39.",
+         f"<strong>A similar price.</strong> $29.99 once, against Textlore's ${P} today. Textlore's price rises ${LADDER['step']} after every {LADDER['per_step']} sales, up to ${F}."),
+        ("Recs, Promises and WhatsApp, $20 until 28 October", f"Recs, Promises and WhatsApp, ${P} for the next {L} {lic}"),
+        ("Launch price until 28 October", f"{L} {lic} left at ${P}, then ${N}"),
+        ("$20 once until 28 October 2026, then $39 once", f"${P} once for the next {L} {lic}, then ${N}"),
+        ("$20 once until 28 October 2026, then $39", f"${P} once for the next {L} {lic}, then ${N}"),
+        ("$20 once until 28 October, then $39", f"${P} once for the next {L} {lic}, then ${N}"),
+        ("$20 until 28 October, then $39", f"${P} for the next {L} {lic}, then ${N}"),
+        ("$20 once, then $39", f"${P} once for the next {L} {lic}, then ${N}"),
+        ("$20 until 28 October", f"${P} for the next {L} {lic}, then ${N}"),
+        ("$20 until 28 Oct", f"${P}, {L} left at this price"),
+        ("$20", f"${P}"),
+    ]
+    for a, b in reps:
+        if a in t:
+            t = t.replace(a, b)
+            break
+    return t
 
 
 def nav(current, home):
@@ -264,6 +299,7 @@ def build(src):
     body = re.sub(r"\{\{shot:([^}]+)\}\}", shot, body)
     body = re.sub(r"\{\{shotdark:([^}]+)\}\}", shotdark, body)
     body = re.sub(r"\{\{lp:(.*?)\|(.*?)\}\}", lambda m: lp(m.group(1), m.group(2)), body)
+    body = body.replace("{{LADDER_PRICE}}", str(LADDER["price"])).replace("{{LADDER_NOTE}}", ladder_note())
     body = body.replace("{{DOWNLOAD}}", DOWNLOAD).replace("{{BUY}}", BUY).replace("{{SOCIALS}}", socials())
     path = meta["path"]
     url = "https://textlore.app/" + path.replace("index.html", "")

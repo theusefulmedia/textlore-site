@@ -1,0 +1,9 @@
+{
+  "price": 20,
+  "next": 25,
+  "left": 17,
+  "final": 39,
+  "step": 5,
+  "per_step": 20,
+  "note": "Price ladder approved by Raja 27 Oct 2026: $20, $25, $30, $35, then $39, rising after every 20 sales. Update price, next and left, rebuild, and change the Gumroad price to match."
+}
