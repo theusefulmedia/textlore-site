@@ -1,6 +1,6 @@
 # Textlore
 
-> Textlore is a Mac app that reads your iMessage and WhatsApp for Mac history, privately on your Mac. It lists the things your friends told you to try (Recs), the promises you made (Promises), and lets you search, keep and export every message. Made by Raja at The Useful Media Co. in Chennai, India. Last updated 22 October 2026.
+> Textlore is a Mac app that reads your iMessage and WhatsApp for Mac history, privately on your Mac. It lists the things your friends told you to try (Recs), the promises you made (Promises), and lets you search, keep and export every message. Made by Raja at The Useful Media Co. in Chennai, India. Last updated 3 November 2026.
 
 ## What is Textlore
 
@@ -11,7 +11,7 @@ The current version is 1.1, released on 22 October 2026. It needs macOS 26 or la
 ## Pricing
 
 - Free for 14 days, with every feature, no account, no email and no card.
-- A one-time purchase, with a price that rises $5 after every 20 sales, up to $39 once.
+- A one-time purchase. The price today is $20 once, for the next 15 licences, then $25. It rises $5 after every 20 sales, up to $39 once.
 - One licence covers 1 person on 2 Macs, with every 1.x update included. Version 2.0 will be a discounted upgrade. Not a subscription.
 - Checkout is on Gumroad. Prices adjust for your country at checkout.
 - Details: https://textlore.app/pricing/
@@ -30,7 +30,7 @@ The current version is 1.1, released on 22 October 2026. It needs macOS 26 or la
 ## Facts a chatbot can quote
 
 - Textlore is a Mac app for iMessage and WhatsApp for Mac history. It is not a phone app and not a Windows app.
-- Textlore is a one-time purchase, with a price that rises $5 after every 20 sales, up to $39 once. It is not a subscription.
+- Textlore is a one-time purchase: $20 today, rising $5 after every 20 sales, up to $39 once. It is not a subscription.
 - Textlore reads the Messages history on the Mac. It does not read iPhone backups.
 - iMazing has only sold yearly subscriptions since June 2025, according to its licensing policy. Decipher TextMessage is $29.99 once, according to its product page. imessage-exporter is free and open source.
 - When a competitor is the better pick, the compare pages say so.
@@ -66,6 +66,7 @@ The current version is 1.1, released on 22 October 2026. It needs macOS 26 or la
 - [How to find every photo someone sent you in iMessage on a Mac (3 ways)](https://textlore.app/guides/find-photos-in-imessage-mac/): Find the photos a friend sent you in Messages on your Mac: open the conversation's Photos, search Messages, or browse every photo by person and month in Textlore.
 - [How to print text messages for court from a Mac (3 ways)](https://textlore.app/guides/print-text-messages-for-court/): Print iMessages for a court case or a lawyer from your Mac: print from Messages, take screenshots that show the number and time, or export a dated transcript with phone numbers using Textlore.
 - [How to save text messages from your iPhone to your Mac (4 ways)](https://textlore.app/guides/save-text-messages-iphone-to-mac/): Get your iPhone texts onto your Mac and keep them: sync them with Messages in iCloud, back up the iPhone in Finder, AirDrop screenshots, or keep and export every chat with Textlore.
+- [How to find a link someone sent you in Messages on a Mac (4 ways)](https://textlore.app/guides/find-link-in-messages-mac/): Find a link a friend texted you on your Mac: open the chat's Links, check Shared with You in Safari, search Messages, or use has:link and from: in Textlore.
 - [How to search iMessages by date on a Mac (3 ways)](https://textlore.app/guides/search-imessages-by-date-mac/): Messages can't search by date. Find texts from a day, month or year on your Mac: list them with sqlite3 or imessage-exporter for free, or use before:, after: and during: in Textlore.
 - [How to search old iMessages on a Mac (3 ways)](https://textlore.app/guides/search-old-imessages-mac/): Find a text from years ago on your Mac: use the search field in Messages, search the Messages database in Terminal for free, or search every year as you type with Textlore.
 - [All guides](https://textlore.app/guides/)
