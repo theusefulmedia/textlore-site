@@ -633,6 +633,10 @@ html.not-mac .maconly { display: block; }
 .footer__cta > div > span { color: var(--ink-2); font-size: 15px; }
 .footer__badges { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
 .footer__badges img { display: block; height: 40px; width: auto; }
+.ph-live { margin-top: 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.ph-live[hidden] { display: none; }
+.ph-live p { margin: 0; font-size: 15px; color: var(--ink-2); }
+.ph-live img { display: block; height: 54px; width: auto; }
 .footer__bottom { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-3); }
 .footer__bottom a { color: var(--ink-2); }
 .copy-mail { display: inline-flex; align-items: center; gap: 6px; border: 0; cursor: pointer; background: none; }
