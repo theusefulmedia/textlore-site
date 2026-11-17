@@ -1,6 +1,6 @@
 # Textlore
 
-> Textlore is a Mac app that reads your iMessage and WhatsApp for Mac history, privately on your Mac. It lists the things your friends told you to try (Recs), the promises you made (Promises), and lets you search, keep and export every message. Made by Raja at The Useful Media Co. in Chennai, India. Last updated 13 November 2026.
+> Textlore is a Mac app that reads your iMessage and WhatsApp for Mac history, privately on your Mac. It lists the things your friends told you to try (Recs), the promises you made (Promises), and lets you search, keep and export every message. Made by Raja at The Useful Media Co. in Chennai, India. Last updated 17 November 2026.
 
 ## What is Textlore
 
@@ -62,6 +62,8 @@ The current version is 1.1, released on 22 October 2026. It needs macOS 26 or la
 - [How to back up WhatsApp chats on a Mac (4 ways)](https://textlore.app/guides/back-up-whatsapp-chats-mac/): Back up WhatsApp chats with a Mac: iCloud Chat Backup, Export Chat to a .zip, a full iPhone backup in Finder, or export WhatsApp for Mac chats with Textlore.
 - [How to export an iMessage conversation from a Mac (3 ways)](https://textlore.app/guides/export-imessage-conversation-mac/): Save a whole iMessage conversation as a file on your Mac: print it to PDF from Messages, export it to text or HTML with the free imessage-exporter, or export to PDF, HTML, text, Markdown, CSV or an image with Textlore.
 - [How to export iMessages to PDF on a Mac (3 ways)](https://textlore.app/guides/export-imessages-to-pdf/): Save an iMessage conversation as a PDF on your Mac: print it from Messages for free, combine screenshots, or export a whole chat, a date range or a few texts with Textlore.
+- [Export a WhatsApp chat to PDF on a Mac (3 ways)](https://textlore.app/guides/export-whatsapp-chat-to-pdf-mac/): Save a WhatsApp chat as a PDF on a Mac: Export Chat and print it, join screenshots, or export a whole chat or a few messages from WhatsApp for Mac with Textlore.
+- [How to search WhatsApp messages on a Mac (3 ways)](https://textlore.app/guides/search-whatsapp-messages-mac/): Search WhatsApp messages on a Mac with WhatsApp for Mac, an exported chat in Spotlight, or Textlore, next to your iMessages by word, person or date.
 - [How to export iMessages to CSV or Excel on a Mac (3 ways)](https://textlore.app/guides/export-imessages-to-csv-excel/): Get an iMessage conversation into a spreadsheet: export it to CSV for free with sqlite3 in Terminal, use an iPhone backup tool, or export a chat or date range to CSV in Textlore.
 - [How to find the first message in an iMessage conversation on a Mac (3 ways)](https://textlore.app/guides/find-first-imessage/): See the first text you and someone ever sent each other: scroll to the top in Messages, find the start date of every chat in Terminal, or jump to any date in Textlore.
 - [How to find every photo someone sent you in iMessage on a Mac (3 ways)](https://textlore.app/guides/find-photos-in-imessage-mac/): Find the photos a friend sent you in Messages on your Mac: open the conversation's Photos, search Messages, or browse every photo by person and month in Textlore.
