@@ -293,3 +293,14 @@
     });
   }
 })();
+
+/* Hide time-limited notes (e.g. Black Friday) after their data-until date. */
+(function () {
+  try {
+    var now = Date.now();
+    document.querySelectorAll('[data-until]').forEach(function (el) {
+      var t = Date.parse(el.getAttribute('data-until'));
+      if (!isNaN(t) && now >= t) el.hidden = true;
+    });
+  } catch (e) {}
+})();

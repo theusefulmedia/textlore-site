@@ -1,0 +1,123 @@
+<!--
+path: guides/imessage-wrapped/index.html
+title: How to get your iMessage Wrapped for 2026 on a Mac
+description: See who you texted most in 2026 and how many messages you sent: count them free in Terminal, or make share cards of your texting year with Textlore's Your Lore.
+head: guide-imessage-wrapped-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to get your iMessage Wrapped for 2026, <em>2 ways.</em></h1>
+      <p class="lede">Apple doesn't make an iMessage Wrapped. On a Mac you can count your 2026 messages for free in Terminal, or open Textlore's Your Lore for your texting year as tree rings and share cards with names hidden.</p>
+      <p class="guide-meta">Updated 18 November 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#answer">Short answer</a>
+      <a href="#compare">At a glance</a>
+      <a href="#terminal">1. Count it free in Terminal</a>
+      <a href="#lore">2. Your Lore in Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="answer">
+  <h2><span class="ic">{{icon:bolt}}</span>Short answer</h2>
+  <p class="aside">Apple doesn't make an iMessage Wrapped. On a Mac you can count your 2026 messages for free in Terminal, or open Textlore's Your Lore for your texting year as tree rings and share cards with names hidden.</p>
+  <h3>TL;DR</h3>
+  <ul>
+    <li>Messages has no stats page. Your history sits in a database on your Mac that you can count yourself.</li>
+    <li>Terminal gives you a top 10 by phone number or email for free, once Terminal has Full Disk Access.</li>
+    <li>Textlore's Your Lore shows every year as a ring and makes share cards for Stories, Instagram, X and TikTok.</li>
+    <li>Cards hide names by default and never show message text, phone numbers or emails.</li>
+  </ul>
+</section>
+
+<section id="compare">
+  <h2><span class="ic">{{icon:doc}}</span>At a glance</h2>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Terminal</td><td>A free, raw count of 2026.</td><td>Phone numbers, not names. You paste a query.</td></tr><tr><td>Your Lore in Textlore</td><td>A year in rings, share cards and a video.</td><td>Paid after 14 days. Mac only.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="terminal">
+  <h2><span class="ic">{{icon:keyboard}}</span>1. Count it free in Terminal</h2>
+  <ol>
+    <li>Open System Settings &gt; Privacy &amp; Security &gt; Full Disk Access and switch on Terminal.</li>
+    <li>Open Terminal and paste this, then press Return:</li>
+  </ol>
+  <pre><code>sqlite3 ~/Library/Messages/chat.db "SELECT h.id, COUNT(*) AS n FROM message m JOIN handle h ON m.handle_id = h.ROWID WHERE m.date/1000000000 + 978307200 &gt;= strftime('%s','2026-01-01') GROUP BY h.id ORDER BY n DESC LIMIT 10;"</code></pre>
+  <p>You get the 10 phone numbers and emails you swapped the most messages with in 2026. Drop the <code>JOIN</code> and <code>GROUP BY</code> parts to get 1 total. It is free and private. It shows numbers instead of names, counts group chats per person, and makes nothing you can share.</p>
+</section>
+
+<section id="lore">
+  <h2><span class="ic">{{icon:rings}}</span>2. Your Lore in Textlore</h2>
+  <p>Textlore is a Mac app that reads your Messages and WhatsApp for Mac history. Your Lore draws your texting life as tree rings, 1 ring for every year, with the thickest year in amber. Click 2026 to see just this year, or press Return to play your story full screen.</p>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:lore|(max-width: 960px) calc(100vw - 32px), 760px|Your Lore in Textlore: a ring for every year of texting, with the busiest year in amber.}}</div></div>
+  <ul>
+    <li><strong>Share cards.</strong> Press <kbd>⇧⌘L</kbd> and pick “Your 2026” or all time, in Indigo, Amber, Midnight, Paper or Glass.</li>
+    <li><strong>Every size.</strong> 9:16 for Stories, Reels and TikTok, 4:5 for Instagram, 1:1 and 16:9 for X, LinkedIn and YouTube.</li>
+    <li><strong>Private by default.</strong> People show as Person 1 to 5 unless you choose initials or first names. Bank codes and delivery texts stay out of people stats.</li>
+    <li><strong>Image, carousel or video.</strong> Export 1 card, a carousel, or a silent video for your own music.</li>
+  </ul>
+  <h3>What Textlore doesn't do</h3>
+  <ul>
+    <li>It is Mac only, and needs macOS 26 or later.</li>
+    <li>It reads the Messages history on your Mac, so your iPhone texts need Messages in iCloud switched on to get there.</li>
+    <li>It reads Messages (iMessage, SMS and the other texts in it) and WhatsApp for Mac. It can't read an iPhone backup.</li>
+    <li>It only reads. It never sends, edits or deletes a message, and nothing leaves your Mac.</li>
+  </ul>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Your 2026 in texts, ready to share.</b>
+      <span>Rings for every year and share cards in 4 sizes. Every feature is free for 14 days. No account, no email, no card.</span>
+      <em class="bf-note" data-until="2026-12-02T00:00:00+05:30" style="display:block;margin-top:10px;font-style:normal;font-size:15px;color:var(--ink)"><strong>Black Friday:</strong> 30% off Textlore with code <strong>BF2026</strong>, 20 Nov to 1 Dec.</em>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two"><span>{{lp:Buy Textlore, <s>$39</s> $20|Buy Textlore, $39}}</span><small>{{lp:Price rises after 20 sales|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Does Apple have an iMessage Wrapped?</summary><div><p>No. Messages has no yearly stats. You can count your messages in Terminal or use an app that reads your Messages history, such as Textlore.</p></div></details>
+    <details><summary>How do I see who I text the most?</summary><div><p>Run a count query on ~/Library/Messages/chat.db in Terminal for a free list by phone number, or open Textlore's Your Lore for names and share cards.</p></div></details>
+    <details><summary>Does it include my iPhone texts?</summary><div><p>Yes, if Messages in iCloud is on for your iPhone and Mac, because your iPhone conversations are then on your Mac too.</p></div></details>
+    <details><summary>Will my share card show my messages?</summary><div><p>No. Textlore's cards never show message text, phone numbers, emails or file names, and names are hidden by default.</p></div></details>
+    <details><summary>Can I try Textlore before I pay?</summary><div><p>Yes. Every feature is free for 14 days, with no account, no email and no card. After that it is a one-time purchase for 2 Macs.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Your texting year, <em>in rings.</em></h2>
+    <p class="rise">Download Textlore and make your 2026 cards. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $39}}</a>
+    </div>
+  </div>
+</section>
+
+</main>

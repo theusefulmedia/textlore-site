@@ -1,0 +1,132 @@
+<!--
+path: guides/search-imessages-from-one-person-mac/index.html
+title: How to search iMessages from 1 person on a Mac
+description: Search only the texts 1 person sent you on a Mac: pick them in Messages search, query the database in Terminal, or use from: with a word and a date in Textlore.
+head: guide-search-imessages-from-one-person-mac-head.txt
+dlbar: yes
+-->
+<main id="main">
+
+<section class="page-hero guide-hero">
+  <div class="wrap page-hero__grid">
+    <div>
+      <p class="eyebrow"><a href="/guides/">Guides</a></p>
+      <h1>How to search iMessages from 1 person on a Mac, <em>3 ways.</em></h1>
+      <p class="lede">To find what 1 person texted you on a Mac, pick them in Messages search and add a word, or use from: in Textlore, which also adds dates, group chats, photos and links in 1 search.</p>
+      <p class="guide-meta">Updated 18 November 2026. For Messages on macOS 26 and later.</p>
+    </div>
+    <svg class="page-hero__art" data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  </div>
+</section>
+
+<div class="doc">
+  <div class="wrap doc__grid">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <a href="#answer">Short answer</a>
+      <a href="#compare">At a glance</a>
+      <a href="#messages">1. Pick them in Messages search</a>
+      <a href="#terminal">2. Query it in Terminal</a>
+      <a href="#textlore">3. from: in Textlore</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <div class="prose">
+
+<section id="answer">
+  <h2><span class="ic">{{icon:bolt}}</span>Short answer</h2>
+  <p class="aside">To find what 1 person texted you on a Mac, pick them in Messages search and add a word, or use from: in Textlore, which also adds dates, group chats, photos and links in 1 search.</p>
+  <h3>TL;DR</h3>
+  <ul>
+    <li>In Messages, type the name, pick the person from the suggestions, then add a word.</li>
+    <li>Terminal can list every text from 1 number for free, with a catch on newer messages.</li>
+    <li>In Textlore, <code>from:Jordan cabin</code> finds Jordan's messages about the cabin, and <code>from:me</code> finds yours.</li>
+    <li>Add <code>during:2025</code>, <code>in:Family</code> or <code>has:photo</code> to narrow it further.</li>
+  </ul>
+</section>
+
+<section id="compare">
+  <h2><span class="ic">{{icon:doc}}</span>At a glance</h2>
+  <table class="table guide-table">
+    <thead><tr><th scope="col">Option</th><th scope="col">Best for</th><th scope="col">Catch</th></tr></thead>
+    <tbody>
+      <tr><td>Messages search</td><td>1 person and 1 word. Free.</td><td>No date filter. Long lists to scroll.</td></tr><tr><td>Terminal</td><td>Every text from 1 number, as plain text.</td><td>Misses the text of many newer messages.</td></tr><tr><td>from: in Textlore</td><td>1 person with dates, groups, photos and links.</td><td>Paid after 14 days. Mac only.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="messages">
+  <h2><span class="ic">{{icon:bubble}}</span>1. Pick them in Messages search</h2>
+  <ol>
+    <li>Click the search field at the top of the Messages sidebar.</li>
+    <li>Type the person's name and click them under the suggestions, so they become a filter.</li>
+    <li>Type a word after it and press Return. Click a result to jump to it in the chat.</li>
+  </ol>
+  <p>It is free and quick for 1 word. It can't add a date, limit to 1 group chat, or show only messages they sent rather than ones you sent them.</p>
+</section>
+
+<section id="terminal">
+  <h2><span class="ic">{{icon:keyboard}}</span>2. Query it in Terminal</h2>
+  <p>Switch on Full Disk Access for Terminal in System Settings &gt; Privacy &amp; Security, then run this with their number:</p>
+  <pre><code>sqlite3 ~/Library/Messages/chat.db "SELECT datetime(m.date/1000000000 + 978307200, 'unixepoch', 'localtime'), m.text FROM message m JOIN handle h ON m.handle_id = h.ROWID WHERE h.id LIKE '%5551234%' AND m.is_from_me = 0 AND m.text LIKE '%cabin%' ORDER BY m.date;"</code></pre>
+  <p>It is free and lists every match with a date. Newer macOS versions often store the words in a different column, so many recent messages come back blank or go missing.</p>
+</section>
+
+<section id="textlore">
+  <h2><span class="ic">{{icon:search}}</span>3. from: in Textlore</h2>
+  <p>Press <kbd>⌘F</kbd> and type <code>from:</code> with a name. Each search word turns into a token, and results narrow with every letter:</p>
+  <ul>
+    <li><code>from:Jordan cabin</code> finds Jordan's messages about the cabin.</li>
+    <li><code>from:Mom during:christmas 2025</code> finds what Mom sent last Christmas.</li>
+    <li><code>from:Theo in:Book Club</code> finds Theo's messages in 1 group chat.</li>
+    <li><code>from:Priya has:link</code> or <code>has:photo</code> finds the links or photos she sent.</li>
+  </ul>
+  <div class="showcase" data-scheme="auto"><div class="frame__win">{{shot:search|(max-width: 960px) calc(100vw - 32px), 760px|Textlore search with matches across conversations and the search words lit up in amber.}}</div></div>
+  <p>Return opens the conversation at that message. Press <kbd>⌥Space</kbd> in any app for quick search without opening Textlore first.</p>
+  <h3>What Textlore doesn't do</h3>
+  <ul>
+    <li>It is Mac only, and needs macOS 26 or later.</li>
+    <li>It reads the Messages history on your Mac, so your iPhone texts need Messages in iCloud switched on to get there.</li>
+    <li>It reads Messages (iMessage, SMS and the other texts in it) and WhatsApp for Mac. It can't read an iPhone backup.</li>
+    <li>It only reads. It never sends, edits or deletes a message, and nothing leaves your Mac.</li>
+  </ul>
+  <div class="guide-cta">
+    <img src="/img/icon-192.webp" width="64" height="64" alt="" loading="lazy">
+    <div class="guide-cta__text">
+      <b>Every text from 1 person, in 1 search.</b>
+      <span>Add a date, a group chat, photos or links. Every feature is free for 14 days. No account, no email, no card.</span>
+      <em class="bf-note" data-until="2026-12-02T00:00:00+05:30" style="display:block;margin-top:10px;font-style:normal;font-size:15px;color:var(--ink)"><strong>Black Friday:</strong> 30% off Textlore with code <strong>BF2026</strong>, 20 Nov to 1 Dec.</em>
+    </div>
+    <div class="btns">
+      <a class="btn btn--big download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--amber btn--shine buy magnet" href="{{BUY}}"><span class="btn__two"><span>{{lp:Buy Textlore, <s>$39</s> $20|Buy Textlore, $39}}</span><small>{{lp:Price rises after 20 sales|Once, for 2 Macs}}</small></span></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="guide-faq faq">
+  <h2><span class="ic">{{icon:help}}</span>Questions</h2>
+  <div class="faq__list">
+    <details><summary>Can you search iMessages by contact on a Mac?</summary><div><p>Yes. In Messages, type the name and pick the person from the suggestions, then add a word. Textlore's from: search word does the same and adds dates and group chats.</p></div></details>
+    <details><summary>How do I see only messages someone sent me?</summary><div><p>Use from: with their name in Textlore, such as from:Jordan. from:me shows only what you sent.</p></div></details>
+    <details><summary>Can I search 1 person's texts by date?</summary><div><p>Messages search has no date filter. In Textlore, add during:, before: or after:, such as from:Mom during:2024.</p></div></details>
+    <details><summary>Does it search WhatsApp too?</summary><div><p>Yes. Textlore imports WhatsApp for Mac chats, and from: works there too.</p></div></details>
+    <details><summary>Can I try Textlore before I pay?</summary><div><p>Yes. Every feature is free for 14 days, with no account, no email and no card. After that it is a one-time purchase for 2 Macs.</p></div></details>
+  </div>
+</section>
+    </div>
+  </div>
+</div>
+
+<section class="final" aria-labelledby="final-title">
+  <svg class="final__rings" data-rings="final" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <h2 id="final-title" class="rise">Everything 1 person ever texted you, <em>in 1 search.</em></h2>
+    <p class="rise">Download Textlore and try from: on your own texts. Free for 14 days.</p>
+    <div class="btns rise">
+      <a class="btn btn--big btn--amber btn--shine download magnet" href="{{DOWNLOAD}}">{{icon:apple}}<span class="btn__two">Download free<small>14 days, no account</small></span></a>
+      <a class="btn btn--big btn--ghost buy magnet" href="{{BUY}}">{{lp:Buy Textlore, $20|Buy Textlore, $39}}</a>
+    </div>
+  </div>
+</section>
+
+</main>
