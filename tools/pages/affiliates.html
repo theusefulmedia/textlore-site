@@ -1,0 +1,108 @@
+<!--
+path: affiliates/index.html
+title: Textlore affiliate program: earn 30% of every sale
+description: Recommend Textlore, the Mac app for iMessage and WhatsApp history, and earn 30% of every sale you send, paid out by Gumroad. Free to join, no minimum sales.
+nav: about
+-->
+<style>
+.aff-calc { margin-top: 40px; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 32px; align-items: center; padding: 36px; border: 1px solid var(--line); border-radius: 28px; background: var(--card, rgba(127,127,127,.06)); }
+.aff-calc label { display: block; font-weight: 600; }
+.aff-calc input[type=range] { width: 100%; margin: 18px 0 6px; accent-color: var(--accent-ink); height: 28px; }
+.aff-calc .hint { color: var(--ink-2); font-size: 15px; }
+.aff-out { text-align: center; }
+.aff-out b { display: block; font: 700 clamp(48px, 7vw, 84px)/1 var(--rounded); color: var(--accent-ink); }
+.aff-out span { display: block; margin-top: 10px; color: var(--ink-2); }
+.aff-faq { margin-top: 32px; display: grid; gap: 12px; }
+.aff-faq details { border: 1px solid var(--line); border-radius: 18px; padding: 18px 22px; }
+.aff-faq summary { cursor: pointer; font-weight: 600; }
+.aff-faq p { margin-top: 10px; color: var(--ink-2); }
+.aff-hero .monogram span { font-size: clamp(72px, 9vw, 128px); letter-spacing: -0.04em; }
+@media (max-width: 760px) { .aff-calc { grid-template-columns: 1fr; padding: 24px; } }
+</style>
+<main id="main">
+
+<section class="about-hero aff-hero">
+  <div class="wrap about-hero__grid">
+    <div>
+      <p class="eyebrow">Affiliate program</p>
+      <h1>Recommend Textlore. <em>Keep 30%.</em></h1>
+      <p class="lede">Textlore finds any iMessage or WhatsApp message on a Mac in under a second, lists the recommendations friends sent and the promises people made, and keeps a lasting archive. Your readers already ask how to do that. Send them here and keep 30% of every sale, paid out by Gumroad.</p>
+      <div class="btns" style="margin-top:32px">
+        <a class="btn btn--amber magnet" href="https://theusefultech.gumroad.com/affiliates" rel="noopener">Join free on Gumroad{{icon:out}}</a>
+        <button class="btn btn--ghost copy-mail" type="button" data-mail="raja@theusefultech.com">{{icon:mail}}Ask Raja a question</button>
+      </div>
+    </div>
+    <div class="monogram" aria-hidden="true"><svg data-rings="art" viewBox="0 0 600 600"></svg><span>30%</span></div>
+  </div>
+</section>
+
+<section class="about-block" style="padding-top:20px;border-top:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat rise"><b class="num">30%</b><span>Of every sale you send, on every Textlore licence</span></div>
+      <div class="stat rise" style="--rd:.06s"><b class="num">${{cut}}</b><span>What you earn on a ${{price}} licence today</span></div>
+      <div class="stat rise" style="--rd:.12s"><b class="num">$23.70</b><span>What you earn on a $79 Textlore Forever licence</span></div>
+      <div class="stat rise" style="--rd:.18s"><b class="num">$0</b><span>To join. No minimum sales, no exclusivity</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">Your earnings</p>
+    <h2 class="section-title rise" style="margin-top:16px">Move the slider <em>to see your month.</em></h2>
+    <div class="aff-calc rise">
+      <div>
+        <label for="aff-sales">Sales you send in a month: <span id="aff-n">10</span></label>
+        <input id="aff-sales" type="range" min="1" max="100" value="10" aria-describedby="aff-hint">
+        <p class="hint" id="aff-hint">Worked out on today's ${{price}} price. The price rises after every 20 sales, so your cut per sale grows with it. Use the arrow keys or drag.</p>
+      </div>
+      <div class="aff-out" aria-live="polite"><b id="aff-total">$60</b><span>a month, paid by Gumroad</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2 class="section-title rise" style="margin-top:16px">3 steps, <em>about 2 minutes.</em></h2>
+    <div class="rules">
+      <div class="rise"><b>1. Join on Gumroad</b><span>Sign up with your Gumroad account. You get your link as soon as your request is approved.</span></div>
+      <div class="rise" style="--rd:.08s"><b>2. Share your link</b><span>Gumroad gives you a personal Textlore link. Put it in a newsletter issue, a video description or a post.</span></div>
+      <div class="rise" style="--rd:.16s"><b>3. Get paid</b><span>Gumroad tracks every sale from your link and pays your 30% with its normal payouts. I never handle your money.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap about-split">
+    <div>
+      <p class="eyebrow">Who it fits</p>
+      <h2 class="section-title rise" style="margin-top:16px">Mac readers <em>who keep their texts.</em></h2>
+    </div>
+    <div class="rise">
+      <p>Mac newsletters, Mac and iPhone YouTube channels and Apple blogs with a real writer behind them. Textlore sells best to people who want to find an old message, export a chat to PDF, keep texts as evidence or save a loved one's messages.</p>
+      <p>The <a href="/guides/">guides</a> and <a href="/compare/">comparisons</a> on this site are yours to link to.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title rise" style="margin-top:16px">The details.</h2>
+    <div class="aff-faq">
+      <details><summary>How much do I earn per sale?</summary><p>30% of what the buyer pays: ${{cut}} on today's ${{price}} licence and $23.70 on Textlore Forever ($79). Your cut grows as the price climbs to $39.</p></details>
+      <details><summary>Who pays me, and when?</summary><p>Gumroad pays your commission straight to your Gumroad account with its regular payouts. You set up payouts once in Gumroad.</p></details>
+      <details><summary>Do readers get a free trial first?</summary><p>Yes. Every feature is free for 14 days with no account and no email, so readers try it before they buy. Sales after the trial still count when they buy through your link.</p></details>
+      <details><summary>Can I get a licence to review it?</summary><p>Yes. Email <button class="copy-mail" type="button" data-mail="raja@theusefultech.com" style="font-size:inherit;color:var(--accent-ink);padding:0">raja@theusefultech.com</button> after you join and I send one the same day.</p></details>
+      <details><summary>What does Textlore need?</summary><p>A Mac with macOS 26 or later. It only reads messages. It never sends, edits or deletes one, and nothing leaves the Mac.</p></details>
+    </div>
+    <div class="btns" style="margin-top:32px"><a class="btn btn--amber magnet" href="https://theusefultech.gumroad.com/affiliates" rel="noopener">Join free on Gumroad{{icon:out}}</a></div>
+  </div>
+</section>
+
+</main>
+<script>
+(function(){var r=document.getElementById('aff-sales'),n=document.getElementById('aff-n'),t=document.getElementById('aff-total');if(!r)return;var cut={{cut}};function u(){var v=+r.value;n.textContent=v;var s=v*cut;t.textContent='$'+(s%1?s.toFixed(2):s.toLocaleString());}r.addEventListener('input',u);u();})();
+</script>

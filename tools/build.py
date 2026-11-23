@@ -229,6 +229,7 @@ def footer(home):
         <li><a href="/about/">About</a></li>
         <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co.</a></li>
         <li><a href="https://theusefulmedia.com/tech/" rel="noopener">Newsletter</a></li>
+        <li><a href="/affiliates/">Affiliates: earn 30%</a></li>
       </ul></div>
     </div>
     <div class="footer__cta">
@@ -298,6 +299,7 @@ def build(src):
     body = text[meta_block.end():]
     home = meta["path"] == "index.html"
     body = re.sub(r"\{\{icon:([\w-]+)\}\}", lambda m: icon(m.group(1)), body)
+    body = body.replace("{{price}}", str(LADDER["price"])).replace("{{cut}}", f"{LADDER['price']*0.3:.2f}".rstrip("0").rstrip("."))
     body = re.sub(r"\{\{shothero:([^}]+)\}\}", lambda m: shot(m, True), body)
     body = re.sub(r"\{\{shot:([^}]+)\}\}", shot, body)
     body = re.sub(r"\{\{shotdark:([^}]+)\}\}", shotdark, body)
