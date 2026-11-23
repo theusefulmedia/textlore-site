@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/guides/document-harassing-text-messages/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Textlore", "item": "https://textlore.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://textlore.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to keep a record of harassing text messages on a Mac", "item": "https://textlore.app/guides/document-harassing-text-messages/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to keep a record of harassing text messages on a Mac", "description": "Document harassing or threatening texts: keep them instead of deleting, block safely, and export a dated record with the sender's number for the police, a lawyer or a court.", "url": "https://textlore.app/guides/document-harassing-text-messages/", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "The Useful Media Co."}, "publisher": {"@type": "Organization", "name": "The Useful Media Co.", "url": "https://theusefulmedia.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I delete harassing texts?", "acceptedAnswer": {"@type": "Answer", "text": "Most guidance says keep them, because they are your record. You can block and mute the sender so you don't see new ones."}}, {"@type": "Question", "name": "Does blocking delete old messages?", "acceptedAnswer": {"@type": "Answer", "text": "No. Blocking stops new messages. The old conversation stays until you delete it."}}, {"@type": "Question", "name": "Can I export messages from several numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Export each conversation, or search across all chats with a date range and export the results you select."}}, {"@type": "Question", "name": "Can the sender see that I exported?", "acceptedAnswer": {"@type": "Answer", "text": "No. Textlore only reads your Mac's copy and sends nothing."}}, {"@type": "Question", "name": "Who should I give the record to?", "acceptedAnswer": {"@type": "Answer", "text": "The police, a lawyer, your employer or school, depending on the case. They will tell you what format they need."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Textlore", "operatingSystem": "macOS 26 or later", "applicationCategory": "UtilitiesApplication", "url": "https://textlore.app/", "offers": [{"@type": "Offer", "name": "Textlore Forever", "price": "79", "priceCurrency": "USD"}]}
+</script>

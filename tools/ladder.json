@@ -5,5 +5,6 @@
   "final": 39,
   "step": 5,
   "per_step": 20,
-  "note": "Price ladder approved by Raja 27 Oct 2026: $20, $25, $30, $35, then $39, rising after every 20 sales. Update price, next and left, rebuild, and change the Gumroad price to match."
+  "note": "Price ladder approved by Raja 27 Oct 2026: $20, $25, $30, $35, then $39, rising after every 20 sales. Update price, next and left, rebuild, and change the Gumroad price to match.",
+  "forever": "Textlore Forever is a Gumroad version of the same product (option XVmMR-en8upZm8x5iCYR2A==), additional amount $59 so it totals $79. When the base price rises, lower the Forever additional amount so Forever stays $79 (approved 18 Nov 2026). A Gumroad upsell 'Textlore Forever upgrade' offers it after Pay is clicked."
 }

@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/guides/save-text-messages-before-switching-phones/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Textlore", "item": "https://textlore.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://textlore.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to save your text messages before you switch phones", "item": "https://textlore.app/guides/save-text-messages-before-switching-phones/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to save your text messages before you switch phones", "description": "Switching from iPhone to Android, or to a new iPhone? Save your iMessages to your Mac first, export the ones that matter, and turn off iMessage so new texts reach you.", "url": "https://textlore.app/guides/save-text-messages-before-switching-phones/", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "The Useful Media Co."}, "publisher": {"@type": "Organization", "name": "The Useful Media Co.", "url": "https://theusefulmedia.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will my texts move to Android?", "acceptedAnswer": {"@type": "Answer", "text": "Some transfer tools move texts, but often without photos, reactions or group chats. A copy on your Mac is a safe extra."}}, {"@type": "Question", "name": "Do I need to keep my old iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Keep it until you've checked that everything is on your Mac and the new phone."}}, {"@type": "Question", "name": "Can I still search old iMessages after moving to Android?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on your Mac with Textlore, as long as the history is on the Mac."}}, {"@type": "Question", "name": "What about WhatsApp?", "acceptedAnswer": {"@type": "Answer", "text": "Export your WhatsApp chats and import them into Textlore to search them in the same place."}}, {"@type": "Question", "name": "Is a Mac needed?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Textlore is a Mac app that reads the Messages history on your Mac."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Textlore", "operatingSystem": "macOS 26 or later", "applicationCategory": "UtilitiesApplication", "url": "https://textlore.app/", "offers": [{"@type": "Offer", "name": "Textlore Forever", "price": "79", "priceCurrency": "USD"}]}
+</script>

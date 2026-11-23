@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/guides/keep-text-messages-forever-mac/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Textlore", "item": "https://textlore.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://textlore.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to keep your text messages forever on a Mac", "item": "https://textlore.app/guides/keep-text-messages-forever-mac/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to keep your text messages forever on a Mac", "description": "Stop Messages deleting old texts and photos: set Keep Messages to Forever, understand Messages in iCloud, and keep your own archive of every message on your Mac.", "url": "https://textlore.app/guides/keep-text-messages-forever-mac/", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "The Useful Media Co."}, "publisher": {"@type": "Organization", "name": "The Useful Media Co.", "url": "https://theusefulmedia.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does Messages delete old texts by default?", "acceptedAnswer": {"@type": "Answer", "text": "Keep Messages can be set to 30 days, 1 year or Forever. Check it, because some setups use a shorter time."}}, {"@type": "Question", "name": "Is Messages in iCloud a backup?", "acceptedAnswer": {"@type": "Answer", "text": "Not quite. It syncs. Delete a conversation on 1 device and it goes on all of them."}}, {"@type": "Question", "name": "How much space does Textlore's archive use?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your photos. Textlore shows the archive's size and warns you when your Mac is low on space."}}, {"@type": "Question", "name": "Can I switch the archive off?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in Settings > Archive."}}, {"@type": "Question", "name": "What does Textlore Forever mean?", "acceptedAnswer": {"@type": "Answer", "text": "It is a licence that includes every future major version of Textlore, so your archive app stays current for years."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Textlore", "operatingSystem": "macOS 26 or later", "applicationCategory": "UtilitiesApplication", "url": "https://textlore.app/", "offers": [{"@type": "Offer", "name": "Textlore Forever", "price": "79", "priceCurrency": "USD"}]}
+</script>

@@ -28,6 +28,8 @@ SHOTS = ROOT / "img" / "shots"
 
 DOWNLOAD = "https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"
 BUY = "https://theusefultech.gumroad.com/l/textlore?wanted=true"
+# Textlore Forever ($79, every future major version; approved by Raja 18 Nov 2026). A version of the same Gumroad product, so the app's licence check accepts its keys. Shown only on the painkiller guides.
+FOREVER = "https://theusefultech.gumroad.com/l/textlore?wanted=true&option=XVmMR-en8upZm8x5iCYR2A%3D%3D"
 
 ICONS = {
     "bookmark": '<path d="M7 3h10a1 1 0 0 1 1 1v17l-6-4-6 4V4a1 1 0 0 1 1-1z"/>',
@@ -301,7 +303,7 @@ def build(src):
     body = re.sub(r"\{\{shotdark:([^}]+)\}\}", shotdark, body)
     body = re.sub(r"\{\{lp:(.*?)\|(.*?)\}\}", lambda m: lp(m.group(1), m.group(2)), body)
     body = body.replace("{{LADDER_PRICE}}", str(LADDER["price"])).replace("{{LADDER_NOTE}}", ladder_note())
-    body = body.replace("{{DOWNLOAD}}", DOWNLOAD).replace("{{BUY}}", BUY).replace("{{SOCIALS}}", socials())
+    body = body.replace("{{DOWNLOAD}}", DOWNLOAD).replace("{{BUY}}", BUY).replace("{{FOREVER}}", FOREVER).replace("{{SOCIALS}}", socials())
     path = meta["path"]
     url = "https://textlore.app/" + path.replace("index.html", "")
     canonical = '<meta name="robots" content="noindex">' if path == "404.html" else f'<link rel="canonical" href="{url}">'

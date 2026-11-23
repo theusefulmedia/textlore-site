@@ -74,6 +74,20 @@ The current version is 1.1, released on 22 October 2026. It needs macOS 26 or la
 - [How to search old iMessages on a Mac (3 ways)](https://textlore.app/guides/search-old-imessages-mac/): Find a text from years ago on your Mac: use the search field in Messages, search the Messages database in Terminal for free, or search every year as you type with Textlore.
 - [All guides](https://textlore.app/guides/)
 
+## When your texts really matter
+- [How to save text messages as evidence on a Mac](https://textlore.app/guides/save-text-messages-as-evidence-mac/): Stop deletion first, then a dated PDF with numbers and times.
+- [How to send text messages to your lawyer](https://textlore.app/guides/send-text-messages-to-a-lawyer/): 1 dated file with the range they asked for, plus a CSV to sort.
+- [Saving texts for a divorce or custody case](https://textlore.app/guides/text-messages-for-divorce-custody/): Find pickups, payments and promises, then export a dated timeline.
+- [How to keep a record of harassing texts](https://textlore.app/guides/document-harassing-text-messages/): Block, keep and export the record without reading it again.
+- [Text messages for small claims court](https://textlore.app/guides/text-messages-for-small-claims-court/): Find the deposit, invoice and promise messages and export them.
+- [How to save text messages from someone who died](https://textlore.app/guides/save-text-messages-from-someone-who-died/): The 1 setting to change now, then keep the whole conversation.
+- [Turn a loved one's texts into a keepsake book](https://textlore.app/guides/print-text-messages-as-a-book/): A clean bubble-style PDF with photos, ready to print.
+- [Save the photos and voice messages they sent](https://textlore.app/guides/save-photos-and-voice-messages-from-texts/): Every file from 1 person, kept even after Messages offloads it.
+- [How to keep your text messages forever on a Mac](https://textlore.app/guides/keep-text-messages-forever-mac/): 2 settings, the iCloud catch, and an archive that's yours.
+- [Save your texts before you switch phones](https://textlore.app/guides/save-text-messages-before-switching-phones/): A copy on your Mac, and turning off iMessage before Android.
+
+Textlore Forever: $79 once, the same app with every future major version included, 2 Macs. Offered on these guides. The standard licence includes every 1.x update.
+
 ## Links
 
 - [Home](https://textlore.app/): features, pricing and questions

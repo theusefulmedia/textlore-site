@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/guides/print-text-messages-as-a-book/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Textlore", "item": "https://textlore.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://textlore.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to turn a loved one's text messages into a keepsake book", "item": "https://textlore.app/guides/print-text-messages-as-a-book/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a loved one's text messages into a keepsake book", "description": "Make a printed book or PDF keepsake of text messages from a parent, partner or friend: export the chat with photos from your Mac in a clean bubble style, then print it.", "url": "https://textlore.app/guides/print-text-messages-as-a-book/", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "The Useful Media Co."}, "publisher": {"@type": "Organization", "name": "The Useful Media Co.", "url": "https://theusefulmedia.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I include photos and stickers?", "acceptedAnswer": {"@type": "Answer", "text": "Photos that are on your Mac go in. Textlore keeps its own copy of photos from the day you install it."}}, {"@type": "Question", "name": "Will phone numbers show in the book?", "acceptedAnswer": {"@type": "Answer", "text": "Not unless you switch them on. They are hidden by default."}}, {"@type": "Question", "name": "Can I make a book from a group chat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each person's name shows above their messages."}}, {"@type": "Question", "name": "Can I make a book from WhatsApp messages?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Import the WhatsApp chat export into Textlore and export it the same way."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "A few minutes for the PDF. Printing depends on the service you choose."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Textlore", "operatingSystem": "macOS 26 or later", "applicationCategory": "UtilitiesApplication", "url": "https://textlore.app/", "offers": [{"@type": "Offer", "name": "Textlore Forever", "price": "79", "priceCurrency": "USD"}]}
+</script>

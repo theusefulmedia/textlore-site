@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/guides/send-text-messages-to-a-lawyer/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Textlore", "item": "https://textlore.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://textlore.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to send text messages to your lawyer from a Mac", "item": "https://textlore.app/guides/send-text-messages-to-a-lawyer/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to send text messages to your lawyer from a Mac", "description": "Your lawyer asked for the texts. Send iMessages as a dated PDF with phone numbers and times, plus a CSV they can sort, straight from your Mac.", "url": "https://textlore.app/guides/send-text-messages-to-a-lawyer/", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "The Useful Media Co."}, "publisher": {"@type": "Organization", "name": "The Useful Media Co.", "url": "https://theusefulmedia.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What format do lawyers want for text messages?", "acceptedAnswer": {"@type": "Answer", "text": "Most ask for a PDF that shows who sent each message and when. Some also want a CSV to sort. Ask yours first."}}, {"@type": "Question", "name": "Can I send a group chat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Textlore exports group chats with every sender's name, and their number if you switch numbers on."}}, {"@type": "Question", "name": "Can I leave out other people's numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Phone numbers and emails are hidden by default, so you choose when to show them."}}, {"@type": "Question", "name": "Do I need to send photos too?", "acceptedAnswer": {"@type": "Answer", "text": "Ask your lawyer. Textlore can include photos full size, small, or not at all."}}, {"@type": "Question", "name": "Is Textlore a forensic tool?", "acceptedAnswer": {"@type": "Answer", "text": "No. It makes clear, dated copies from your own Mac. If your lawyer needs a forensic extraction from the phone, they will use a specialist."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Textlore", "operatingSystem": "macOS 26 or later", "applicationCategory": "UtilitiesApplication", "url": "https://textlore.app/", "offers": [{"@type": "Offer", "name": "Textlore Forever", "price": "79", "priceCurrency": "USD"}]}
+</script>

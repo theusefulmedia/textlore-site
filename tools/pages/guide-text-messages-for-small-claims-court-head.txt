@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/guides/text-messages-for-small-claims-court/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Textlore", "item": "https://textlore.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://textlore.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "Text messages for small claims court: landlord, contractor and buyer disputes", "item": "https://textlore.app/guides/text-messages-for-small-claims-court/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Text messages for small claims court: landlord, contractor and buyer disputes", "description": "Use text messages in a small claims or deposit dispute: find the messages about money, dates and promises, and export them as a dated PDF from your Mac.", "url": "https://textlore.app/guides/text-messages-for-small-claims-court/", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "The Useful Media Co."}, "publisher": {"@type": "Organization", "name": "The Useful Media Co.", "url": "https://theusefulmedia.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are text messages enough to win a small claims case?", "acceptedAnswer": {"@type": "Answer", "text": "They can help a lot, but the judge looks at all the evidence. Courts and countries differ, so check your court's guidance."}}, {"@type": "Question", "name": "Can I export only the messages about money?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Search, select the messages with their context, and export the selection."}}, {"@type": "Question", "name": "What if the landlord texted from 2 numbers?", "acceptedAnswer": {"@type": "Answer", "text": "Export each conversation, or search across all chats for the dates you need."}}, {"@type": "Question", "name": "Can I include photos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when they are on your Mac. Textlore includes them in the PDF."}}, {"@type": "Question", "name": "Does Textlore work with WhatsApp?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Import a WhatsApp chat export and search and export it the same way."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Textlore", "operatingSystem": "macOS 26 or later", "applicationCategory": "UtilitiesApplication", "url": "https://textlore.app/", "offers": [{"@type": "Offer", "name": "Textlore Forever", "price": "79", "priceCurrency": "USD"}]}
+</script>

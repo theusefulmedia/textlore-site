@@ -1,0 +1,14 @@
+<meta property="og:url" content="https://textlore.app/guides/text-messages-for-divorce-custody/">
+<meta property="og:image:alt" content="Textlore: your whole texting life, on your Mac. Tree rings, one for every year of texting.">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Textlore", "item": "https://textlore.app/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://textlore.app/guides/"}, {"@type": "ListItem", "position": 3, "name": "How to save text messages for a divorce or custody case", "item": "https://textlore.app/guides/text-messages-for-divorce-custody/"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to save text messages for a divorce or custody case", "description": "Save co-parenting and divorce texts from your Mac: keep every message, export a dated timeline by date range, and find the messages about pickups, payments and promises.", "url": "https://textlore.app/guides/text-messages-for-divorce-custody/", "dateModified": "2026-11-24", "author": {"@type": "Organization", "name": "The Useful Media Co."}, "publisher": {"@type": "Organization", "name": "The Useful Media Co.", "url": "https://theusefulmedia.com/"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How far back can Textlore go?", "acceptedAnswer": {"@type": "Answer", "text": "As far as your Messages history on the Mac goes. With Messages in iCloud, that is usually years."}}, {"@type": "Question", "name": "Can I export only messages about the children?", "acceptedAnswer": {"@type": "Answer", "text": "Search for the words that matter, then select those messages with their context and export them. Your lawyer may still want the full conversation."}}, {"@type": "Question", "name": "Will the other person know I exported the texts?", "acceptedAnswer": {"@type": "Answer", "text": "No. Textlore never sends anything and makes no network calls with your messages."}}, {"@type": "Question", "name": "Can I include photos they sent?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, when the photos are on your Mac. Textlore can include them full size or small."}}, {"@type": "Question", "name": "Is this legal advice?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is practical help. Your lawyer decides what to use and how."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Textlore", "operatingSystem": "macOS 26 or later", "applicationCategory": "UtilitiesApplication", "url": "https://textlore.app/", "offers": [{"@type": "Offer", "name": "Textlore Forever", "price": "79", "priceCurrency": "USD"}]}
+</script>
