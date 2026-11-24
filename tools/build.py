@@ -189,7 +189,6 @@ SOCIALS = [
     ("instagram", "https://www.instagram.com/theusefultech/", "The Useful Tech on Instagram"),
     ("youtube", "https://www.youtube.com/@theusefultech9850", "The Useful Tech on YouTube"),
     ("medium", "https://theusefultech.com", "The Useful Tech on Medium"),
-    ("discord", "https://discord.gg/WjfenUSZp4", "The Useful Tech Club on Discord"),
     ("newsletter", "https://theusefulmedia.com/tech/", "The Useful Tech newsletter"),
 ]
 

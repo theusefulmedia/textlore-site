@@ -1,6 +1,6 @@
 # Textlore
 
-> Textlore is a Mac app that reads your iMessage and WhatsApp for Mac history, privately on your Mac. It lists the things your friends told you to try (Recs), the promises you made (Promises), and lets you search, keep and export every message. Made by Raja at The Useful Media Co. in Chennai, India. Last updated 17 November 2026.
+> Textlore is a Mac app that reads your iMessage and WhatsApp for Mac history, privately on your Mac. It lists the things your friends told you to try (Recs), the promises you made (Promises), and lets you search, keep and export every message. Made by Raja at The Useful Media Co. in Chennai, India. Last updated 24 November 2026.
 
 ## What is Textlore
 
@@ -70,6 +70,7 @@ The current version is 1.1, released on 22 October 2026. It needs macOS 26 or la
 - [How to print text messages for court from a Mac (3 ways)](https://textlore.app/guides/print-text-messages-for-court/): Print iMessages for a court case or a lawyer from your Mac: print from Messages, take screenshots that show the number and time, or export a dated transcript with phone numbers using Textlore.
 - [How to save text messages from your iPhone to your Mac (4 ways)](https://textlore.app/guides/save-text-messages-iphone-to-mac/): Get your iPhone texts onto your Mac and keep them: sync them with Messages in iCloud, back up the iPhone in Finder, AirDrop screenshots, or keep and export every chat with Textlore.
 - [How to find a link someone sent you in Messages on a Mac (4 ways)](https://textlore.app/guides/find-link-in-messages-mac/): Find a link a friend texted you on your Mac: open the chat's Links, check Shared with You in Safari, search Messages, or use has:link and from: in Textlore.
+- [How to find an address someone texted you on a Mac (3 ways)](https://textlore.app/guides/find-address-in-text-messages-mac/): Find an address a friend texted you on your Mac: search Messages for the street name, try Spotlight, or search by person and year in Textlore.
 - [How to search iMessages by date on a Mac (3 ways)](https://textlore.app/guides/search-imessages-by-date-mac/): Messages can't search by date. Find texts from a day, month or year on your Mac: list them with sqlite3 or imessage-exporter for free, or use before:, after: and during: in Textlore.
 - [How to search old iMessages on a Mac (3 ways)](https://textlore.app/guides/search-old-imessages-mac/): Find a text from years ago on your Mac: use the search field in Messages, search the Messages database in Terminal for free, or search every year as you type with Textlore.
 - [All guides](https://textlore.app/guides/)
