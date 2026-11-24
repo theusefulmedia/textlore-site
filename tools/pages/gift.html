@@ -1,0 +1,134 @@
+<!--
+path: gift/index.html
+title: Give Textlore as a gift: a Mac app for the texts that matter
+description: Gift a Textlore licence to someone with a Mac. Gumroad emails them the licence and download, with your message. Print a matching gift card to wrap or hand over.
+nav: about
+-->
+<style>
+.gift-hero .lede { max-width: 560px; }
+.gcard { position: relative; width: min(440px, 100%); aspect-ratio: 1.6; justify-self: center; border-radius: 26px; overflow: hidden; color: #fff; padding: 26px 28px; display: flex; flex-direction: column; justify-content: space-between;
+  background: radial-gradient(120% 90% at 85% 10%, #f4b44a 0%, #d9822b 38%, #7a3b12 100%); box-shadow: 0 30px 60px -20px rgba(122,59,18,.55), inset 0 1px 0 rgba(255,255,255,.35); transform: rotate(-3deg); transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.gcard:hover { transform: rotate(0deg) translateY(-4px); }
+.gcard svg { position: absolute; right: -60px; bottom: -70px; width: 280px; height: 280px; opacity: .35; }
+.gcard .gc-top { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .02em; position: relative; }
+.gcard .gc-top img { width: 34px; height: 34px; border-radius: 9px; }
+.gcard .gc-mid { position: relative; font: italic 400 clamp(26px, 4vw, 34px)/1.1 var(--serif); }
+.gcard .gc-bot { position: relative; font-size: 14px; font-weight: 600; opacity: .9; display: flex; justify-content: space-between; gap: 12px; }
+.gift-for { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+.gift-for > div { border: 1px solid var(--line); border-radius: 22px; padding: 22px; }
+.gift-for .em { font-size: 30px; line-height: 1; }
+.gift-for b { display: block; margin-top: 12px; font: 400 24px/1.15 var(--serif); }
+.gift-for span { display: block; margin-top: 8px; color: var(--ink-2); }
+.maker { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 36px; align-items: center; margin-top: 36px; }
+.maker form { display: grid; gap: 14px; }
+.maker label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+.maker input, .maker textarea { font: inherit; font-weight: 400; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.maker input:focus, .maker textarea:focus { outline: 2px solid var(--amber); outline-offset: 1px; }
+.maker textarea { min-height: 84px; resize: vertical; }
+.maker .gcard { transform: none; }
+.gift-faq { margin-top: 32px; display: grid; gap: 12px; }
+.gift-faq details { border: 1px solid var(--line); border-radius: 18px; padding: 18px 22px; }
+.gift-faq summary { cursor: pointer; font-weight: 600; }
+.gift-faq p { margin-top: 10px; color: var(--ink-2); }
+@media (max-width: 760px) { .gift-for, .maker { grid-template-columns: 1fr; } .gcard { transform: none; } #gc-print { order: -1; } }
+@media print {
+  @page { size: A4; margin: 0; }
+  body > *:not(main) { display: none !important; }
+  main > section:not(#card) { display: none !important; }
+  #card .eyebrow, #card h2, #gc-form { display: none !important; }
+  #card { padding: 0 !important; border: 0 !important; }
+  .maker { display: block; margin: 0; }
+  #gc-print { margin: 40mm auto 0; width: 150mm; transform: none !important; box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+<main id="main">
+
+<section class="about-hero gift-hero">
+  <div class="wrap about-hero__grid">
+    <div>
+      <p class="eyebrow">Give Textlore</p>
+      <h1>Give someone <em>their texts back.</em></h1>
+      <p class="lede">Years of messages from a partner, a parent or a best friend sit in Messages and WhatsApp, impossible to scroll back through. Textlore finds any of them in under a second, lists the recommendations they sent and the promises they made, and keeps a lasting archive on their Mac. It's $20 once until 1 December, then $29.</p>
+      <div class="btns" style="margin-top:32px">
+        <a class="btn btn--amber btn--shine magnet" href="{{BUY}}">{{icon:spark}}Gift Textlore</a>
+        <a class="btn btn--ghost" href="#card">{{icon:doc}}Make a gift card</a>
+      </div>
+    </div>
+    <div class="gcard" aria-hidden="true">
+      <svg data-rings="art" viewBox="0 0 600 600"></svg>
+      <div class="gc-top"><img src="/img/icon-96.webp" alt="" width="34" height="34">Textlore for Mac</div>
+      <div class="gc-mid">Every text you've kept, found in a second.</div>
+      <div class="gc-bot"><span>A gift licence</span><span>textlore.app</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">How gifting works</p>
+    <h2 class="section-title rise" style="margin-top:16px">3 steps, <em>about 1 minute.</em></h2>
+    <div class="rules">
+      <div class="rise"><b>1. Tap Gift Textlore</b><span>The Gumroad checkout opens with Textlore in the cart.</span></div>
+      <div class="rise" style="--rd:.08s"><b>2. Tick "Give as a gift?"</b><span>Enter their email and a message. Tick "Stay anonymous" if you want it to be a surprise from no one.</span></div>
+      <div class="rise" style="--rd:.16s"><b>3. They get it by email</b><span>Gumroad emails them your message, the download and their own licence key. Nothing reaches your Mac.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">Who it's for</p>
+    <h2 class="section-title rise" style="margin-top:16px">For anyone with <em>a chat worth keeping.</em></h2>
+    <div class="gift-for">
+      <div class="rise"><div class="em" aria-hidden="true">💛</div><b>Your partner</b><span>Every "good morning", every inside joke and the first message you ever sent, all in one place they can search.</span></div>
+      <div class="rise" style="--rd:.08s"><div class="em" aria-hidden="true">🏡</div><b>A parent</b><span>Years of family chats and voice notes, kept safe and easy to find, even after a phone upgrade.</span></div>
+      <div class="rise" style="--rd:.16s"><div class="em" aria-hidden="true">📚</div><b>The friend who forgets</b><span>That book, that restaurant, that show someone swore they'd love. Textlore lists every recommendation friends sent.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block" id="card">
+  <div class="wrap">
+    <p class="eyebrow">Gift card</p>
+    <h2 class="section-title rise" style="margin-top:16px">Something to wrap <em>or hand over.</em></h2>
+    <div class="maker">
+      <form id="gc-form" onsubmit="return false">
+        <label for="gc-to">To<input id="gc-to" maxlength="40" placeholder="Mum" autocomplete="off"></label>
+        <label for="gc-from">From<input id="gc-from" maxlength="40" placeholder="Sam" autocomplete="off"></label>
+        <label for="gc-msg">Message<textarea id="gc-msg" maxlength="140" placeholder="So you never lose a single message from us."></textarea></label>
+        <div class="btns"><button class="btn btn--amber magnet" type="button" id="gc-printbtn">{{icon:doc}}Print or save as PDF</button></div>
+        <p style="color:var(--ink-2);font-size:15px">Your card stays on this page. Nothing you type is sent anywhere.</p>
+      </form>
+      <div class="gcard" id="gc-print">
+        <svg data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+        <div class="gc-top"><img src="/img/icon-96.webp" alt="" width="34" height="34">Textlore for Mac</div>
+        <div class="gc-mid" id="gc-out-msg">So you never lose a single message from us.</div>
+        <div class="gc-bot"><span id="gc-out-names">For someone special</span><span>textlore.app</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title rise" style="margin-top:16px">The details.</h2>
+    <div class="gift-faq">
+      <details><summary>What do they need?</summary><p>A Mac with macOS 26 or later, signed in to Messages. WhatsApp chats work too. Textlore only reads messages. It never sends, edits or deletes one, and nothing leaves their Mac.</p></details>
+      <details><summary>When does the gift arrive?</summary><p>Gumroad emails it as soon as you pay. To give it on a set day, buy it that morning, or print the card now and buy on the day.</p></details>
+      <details><summary>Can I gift Textlore Forever?</summary><p>Yes. <a href="{{FOREVER}}" style="color:var(--accent-ink)">Textlore Forever</a> ($79) covers every future major version. Tick "Give as a gift?" at checkout in the same way.</p></details>
+      <details><summary>Can they try it first?</summary><p>Anyone can <a class="download" href="{{DOWNLOAD}}" style="color:var(--accent-ink)">download Textlore</a> and use every feature free for 14 days. Your gift key unlocks it for good.</p></details>
+      <details><summary>Can I give it to several people?</summary><p>Yes. Each gift is its own checkout with its own recipient, and each person gets their own licence key.</p></details>
+    </div>
+    <div class="btns" style="margin-top:32px"><a class="btn btn--amber magnet" href="{{BUY}}">{{icon:spark}}Gift Textlore</a></div>
+  </div>
+</section>
+
+</main>
+<script>
+(function(){var to=document.getElementById('gc-to'),fr=document.getElementById('gc-from'),m=document.getElementById('gc-msg'),om=document.getElementById('gc-out-msg'),on=document.getElementById('gc-out-names');if(!to)return;
+var dm='So you never lose a single message from us.';
+function u(){var t=to.value.trim(),f=fr.value.trim();om.textContent=m.value.trim()||dm;on.textContent=(t||f)?((t?'For '+t:'A gift')+(f?', from '+f:'')):'For someone special';}
+[to,fr,m].forEach(function(e){e.addEventListener('input',u)});u();
+document.getElementById('gc-printbtn').addEventListener('click',function(){window.print()});})();
+</script>

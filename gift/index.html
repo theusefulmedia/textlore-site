@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Give Textlore as a gift: a Mac app for the texts that matter</title>
+<meta name="description" content="Gift a Textlore licence to someone with a Mac. Gumroad emails them the licence and download, with your message. Print a matching gift card to wrap or hand over.">
+<link rel="canonical" href="https://textlore.app/gift/">
+<meta name="theme-color" content="#F6F3EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0A1D" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Textlore">
+<meta property="og:title" content="Give Textlore as a gift: a Mac app for the texts that matter">
+<meta property="og:description" content="Gift a Textlore licence to someone with a Mac. Gumroad emails them the licence and download, with your message. Print a matching gift card to wrap or hand over.">
+<meta property="og:image" content="https://textlore.app/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js');if(Date.now()>Date.parse('2099-01-01T00:00:00Z'))document.documentElement.classList.add('launch-over')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://textlore.app/#organization","name":"The Useful Media Co.","url":"https://theusefulmedia.com","logo":"https://textlore.app/img/icon-384.webp","description":"The Useful Media Co. is a sole proprietorship in Chennai, India, that publishes The Useful Tech and The Useful Life, and makes Textlore, a Mac app for iMessage and WhatsApp history.","founder":{"@type":"Person","name":"Raja","url":"https://textlore.app/about/"},"address":{"@type":"PostalAddress","addressLocality":"Chennai","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"raja@theusefultech.com","url":"https://textlore.app/support/"},"sameAs":["https://www.instagram.com/theusefultech/","https://www.youtube.com/@theusefultech9850","https://theusefultech.com","https://theusefulmedia.com/tech/"]}
+</script>
+<script src="/assets/site.js" defer></script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="15ada41b-1c57-4ce8-a23f-406f5de351a5" data-domains="textlore.app" data-do-not-track="true"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" aria-label="Main">
+  <a class="nav__brand" href="/" aria-label="Textlore home"><img src="/img/icon-96.webp" width="32" height="32" alt=""><span>Textlore</span></a>
+  <ul class="nav__links"><li class="nav__pill" aria-hidden="true"></li><li><a href="/#features">Features</a></li><li><a href="/#relive">Your Lore</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/help/">Help</a></li><li><a href="/about/" aria-current="page">About</a></li></ul>
+  <div class="nav__cta">
+    <a class="btn btn--ghost download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download</a>
+    <a class="btn btn--amber btn--shine buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true">Buy $20</a>
+  </div>
+  <button class="nav__menu" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<style>
+.gift-hero .lede { max-width: 560px; }
+.gcard { position: relative; width: min(440px, 100%); aspect-ratio: 1.6; justify-self: center; border-radius: 26px; overflow: hidden; color: #fff; padding: 26px 28px; display: flex; flex-direction: column; justify-content: space-between;
+  background: radial-gradient(120% 90% at 85% 10%, #f4b44a 0%, #d9822b 38%, #7a3b12 100%); box-shadow: 0 30px 60px -20px rgba(122,59,18,.55), inset 0 1px 0 rgba(255,255,255,.35); transform: rotate(-3deg); transition: transform .5s cubic-bezier(.2,.8,.2,1); }
+.gcard:hover { transform: rotate(0deg) translateY(-4px); }
+.gcard svg { position: absolute; right: -60px; bottom: -70px; width: 280px; height: 280px; opacity: .35; }
+.gcard .gc-top { display: flex; align-items: center; gap: 10px; font-weight: 600; letter-spacing: .02em; position: relative; }
+.gcard .gc-top img { width: 34px; height: 34px; border-radius: 9px; }
+.gcard .gc-mid { position: relative; font: italic 400 clamp(26px, 4vw, 34px)/1.1 var(--serif); }
+.gcard .gc-bot { position: relative; font-size: 14px; font-weight: 600; opacity: .9; display: flex; justify-content: space-between; gap: 12px; }
+.gift-for { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 36px; }
+.gift-for > div { border: 1px solid var(--line); border-radius: 22px; padding: 22px; }
+.gift-for .em { font-size: 30px; line-height: 1; }
+.gift-for b { display: block; margin-top: 12px; font: 400 24px/1.15 var(--serif); }
+.gift-for span { display: block; margin-top: 8px; color: var(--ink-2); }
+.maker { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 36px; align-items: center; margin-top: 36px; }
+.maker form { display: grid; gap: 14px; }
+.maker label { display: grid; gap: 6px; font-weight: 600; font-size: 15px; }
+.maker input, .maker textarea { font: inherit; font-weight: 400; color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.maker input:focus, .maker textarea:focus { outline: 2px solid var(--amber); outline-offset: 1px; }
+.maker textarea { min-height: 84px; resize: vertical; }
+.maker .gcard { transform: none; }
+.gift-faq { margin-top: 32px; display: grid; gap: 12px; }
+.gift-faq details { border: 1px solid var(--line); border-radius: 18px; padding: 18px 22px; }
+.gift-faq summary { cursor: pointer; font-weight: 600; }
+.gift-faq p { margin-top: 10px; color: var(--ink-2); }
+@media (max-width: 760px) { .gift-for, .maker { grid-template-columns: 1fr; } .gcard { transform: none; } #gc-print { order: -1; } }
+@media print {
+  @page { size: A4; margin: 0; }
+  body > *:not(main) { display: none !important; }
+  main > section:not(#card) { display: none !important; }
+  #card .eyebrow, #card h2, #gc-form { display: none !important; }
+  #card { padding: 0 !important; border: 0 !important; }
+  .maker { display: block; margin: 0; }
+  #gc-print { margin: 40mm auto 0; width: 150mm; transform: none !important; box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+<main id="main">
+
+<section class="about-hero gift-hero">
+  <div class="wrap about-hero__grid">
+    <div>
+      <p class="eyebrow">Give Textlore</p>
+      <h1>Give someone <em>their texts back.</em></h1>
+      <p class="lede">Years of messages from a partner, a parent or a best friend sit in Messages and WhatsApp, impossible to scroll back through. Textlore finds any of them in under a second, lists the recommendations they sent and the promises they made, and keeps a lasting archive on their Mac. It's $20 once until 1 December, then $29.</p>
+      <div class="btns" style="margin-top:32px">
+        <a class="btn btn--amber btn--shine magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg>Gift Textlore</a>
+        <a class="btn btn--ghost" href="#card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>Make a gift card</a>
+      </div>
+    </div>
+    <div class="gcard" aria-hidden="true">
+      <svg data-rings="art" viewBox="0 0 600 600"></svg>
+      <div class="gc-top"><img src="/img/icon-96.webp" alt="" width="34" height="34">Textlore for Mac</div>
+      <div class="gc-mid">Every text you've kept, found in a second.</div>
+      <div class="gc-bot"><span>A gift licence</span><span>textlore.app</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">How gifting works</p>
+    <h2 class="section-title rise" style="margin-top:16px">3 steps, <em>about 1 minute.</em></h2>
+    <div class="rules">
+      <div class="rise"><b>1. Tap Gift Textlore</b><span>The Gumroad checkout opens with Textlore in the cart.</span></div>
+      <div class="rise" style="--rd:.08s"><b>2. Tick "Give as a gift?"</b><span>Enter their email and a message. Tick "Stay anonymous" if you want it to be a surprise from no one.</span></div>
+      <div class="rise" style="--rd:.16s"><b>3. They get it by email</b><span>Gumroad emails them your message, the download and their own licence key. Nothing reaches your Mac.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">Who it's for</p>
+    <h2 class="section-title rise" style="margin-top:16px">For anyone with <em>a chat worth keeping.</em></h2>
+    <div class="gift-for">
+      <div class="rise"><div class="em" aria-hidden="true">💛</div><b>Your partner</b><span>Every "good morning", every inside joke and the first message you ever sent, all in one place they can search.</span></div>
+      <div class="rise" style="--rd:.08s"><div class="em" aria-hidden="true">🏡</div><b>A parent</b><span>Years of family chats and voice notes, kept safe and easy to find, even after a phone upgrade.</span></div>
+      <div class="rise" style="--rd:.16s"><div class="em" aria-hidden="true">📚</div><b>The friend who forgets</b><span>That book, that restaurant, that show someone swore they'd love. Textlore lists every recommendation friends sent.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block" id="card">
+  <div class="wrap">
+    <p class="eyebrow">Gift card</p>
+    <h2 class="section-title rise" style="margin-top:16px">Something to wrap <em>or hand over.</em></h2>
+    <div class="maker">
+      <form id="gc-form" onsubmit="return false">
+        <label for="gc-to">To<input id="gc-to" maxlength="40" placeholder="Mum" autocomplete="off"></label>
+        <label for="gc-from">From<input id="gc-from" maxlength="40" placeholder="Sam" autocomplete="off"></label>
+        <label for="gc-msg">Message<textarea id="gc-msg" maxlength="140" placeholder="So you never lose a single message from us."></textarea></label>
+        <div class="btns"><button class="btn btn--amber magnet" type="button" id="gc-printbtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>Print or save as PDF</button></div>
+        <p style="color:var(--ink-2);font-size:15px">Your card stays on this page. Nothing you type is sent anywhere.</p>
+      </form>
+      <div class="gcard" id="gc-print">
+        <svg data-rings="art" viewBox="0 0 600 600" aria-hidden="true"></svg>
+        <div class="gc-top"><img src="/img/icon-96.webp" alt="" width="34" height="34">Textlore for Mac</div>
+        <div class="gc-mid" id="gc-out-msg">So you never lose a single message from us.</div>
+        <div class="gc-bot"><span id="gc-out-names">For someone special</span><span>textlore.app</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-block">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2 class="section-title rise" style="margin-top:16px">The details.</h2>
+    <div class="gift-faq">
+      <details><summary>What do they need?</summary><p>A Mac with macOS 26 or later, signed in to Messages. WhatsApp chats work too. Textlore only reads messages. It never sends, edits or deletes one, and nothing leaves their Mac.</p></details>
+      <details><summary>When does the gift arrive?</summary><p>Gumroad emails it as soon as you pay. To give it on a set day, buy it that morning, or print the card now and buy on the day.</p></details>
+      <details><summary>Can I gift Textlore Forever?</summary><p>Yes. <a href="https://theusefultech.gumroad.com/l/textlore?wanted=true&option=XVmMR-en8upZm8x5iCYR2A%3D%3D" style="color:var(--accent-ink)">Textlore Forever</a> ($79) covers every future major version. Tick "Give as a gift?" at checkout in the same way.</p></details>
+      <details><summary>Can they try it first?</summary><p>Anyone can <a class="download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg" style="color:var(--accent-ink)">download Textlore</a> and use every feature free for 14 days. Your gift key unlocks it for good.</p></details>
+      <details><summary>Can I give it to several people?</summary><p>Yes. Each gift is its own checkout with its own recipient, and each person gets their own licence key.</p></details>
+    </div>
+    <div class="btns" style="margin-top:32px"><a class="btn btn--amber magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></svg>Gift Textlore</a></div>
+  </div>
+</section>
+
+</main>
+<script>
+(function(){var to=document.getElementById('gc-to'),fr=document.getElementById('gc-from'),m=document.getElementById('gc-msg'),om=document.getElementById('gc-out-msg'),on=document.getElementById('gc-out-names');if(!to)return;
+var dm='So you never lose a single message from us.';
+function u(){var t=to.value.trim(),f=fr.value.trim();om.textContent=m.value.trim()||dm;on.textContent=(t||f)?((t?'For '+t:'A gift')+(f?', from '+f:'')):'For someone special';}
+[to,fr,m].forEach(function(e){e.addEventListener('input',u)});u();
+document.getElementById('gc-printbtn').addEventListener('click',function(){window.print()});})();
+</script>
+
+<footer class="footer">
+  <svg class="footer__rings" data-rings="footer" viewBox="0 0 600 600" aria-hidden="true"></svg>
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a class="logo" href="/"><img src="/img/icon-96.webp" width="44" height="44" alt="" loading="lazy">Textlore</a>
+        <p>Recs, Promises, search and a lasting archive for your iMessage and WhatsApp history, privately on your Mac. Made in Chennai, India, by Raja at The Useful Media Co.</p>
+        <div class="socials"><a href="https://www.instagram.com/theusefultech/" rel="noopener" aria-label="The Useful Tech on Instagram" title="The Useful Tech on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.youtube.com/@theusefultech9850" rel="noopener" aria-label="The Useful Tech on YouTube" title="The Useful Tech on YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg></a><a href="https://theusefultech.com" rel="noopener" aria-label="The Useful Tech on Medium" title="The Useful Tech on Medium"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="7.5" cy="12" rx="5" ry="5.2" fill="currentColor" stroke="none"/><ellipse cx="16" cy="12" rx="2.4" ry="4.9" fill="currentColor" stroke="none"/><ellipse cx="20.3" cy="12" rx=".9" ry="4.4" fill="currentColor" stroke="none"/></svg></a><a href="https://theusefulmedia.com/tech/" rel="noopener" aria-label="The Useful Tech newsletter" title="The Useful Tech newsletter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3z"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg></a></div>
+      </div>
+      <div><h2 class="footer__h">Textlore</h2><ul>
+        <li><a href="/#features">Features</a></li>
+        <li><a href="/#relive">Your Lore</a></li>
+        <li><a href="/#pricing">Pricing</a></li>
+        <li><a class="download" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg">Download</a></li>
+        <li><a href="/gift/">Give as a gift</a></li>
+      </ul></div>
+      <div><h2 class="footer__h">Help</h2><ul>
+        <li><a href="/help/">Help</a></li>
+        <li><a href="/pricing/">Pricing</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/compare/">Compare</a></li>
+        <li><a href="/support/">Support</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+      <div><h2 class="footer__h">Company</h2><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="https://theusefulmedia.com" rel="noopener">The Useful Media Co.</a></li>
+        <li><a href="https://theusefulmedia.com/tech/" rel="noopener">Newsletter</a></li>
+        <li><a href="/affiliates/">Affiliates: earn 30%</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__cta">
+      <div><b>Try every feature free for 14 days.</b><span>No account, no email. $20 for the next 15 licences, then $25 if you keep it.</span></div>
+      <div class="btns"><a class="btn download magnet" href="https://github.com/theusefulmedia/textlore-site/releases/latest/download/Textlore.dmg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10.5l5 5 5-5M5 20h14"/></svg>Download free</a><a class="btn btn--amber buy magnet" href="https://theusefultech.gumroad.com/l/textlore?wanted=true">Buy $20</a></div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; 2026 The Useful Media Co. Chennai, India.</span>
+      <button class="copy-mail" type="button" data-mail="raja@theusefultech.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>raja@theusefultech.com</button>
+      <span>Textlore never sends, edits or deletes a message.</span>
+    </div>
+  </div>
+</footer>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b8aff8dc443a40ce9c0458d588e5ee1b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

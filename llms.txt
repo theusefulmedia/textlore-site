@@ -15,6 +15,7 @@ The current version is 1.1, released on 22 October 2026. It needs macOS 26 or la
 - One licence covers 1 person on 2 Macs, with every 1.x update included. Version 2.0 will be a discounted upgrade. Not a subscription.
 - Checkout is on Gumroad. Prices adjust for your country at checkout.
 - Details: https://textlore.app/pricing/
+- Gifting: buy Textlore as a gift on Gumroad (tick "Give as a gift?" at checkout). The recipient gets the download and their own licence key by email. Gift card and steps: https://textlore.app/gift/
 
 ## Features
 

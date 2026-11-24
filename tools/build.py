@@ -214,6 +214,7 @@ def footer(home):
         <li><a href="{pre}#relive">Your Lore</a></li>
         <li><a href="{pre}#pricing">Pricing</a></li>
         <li><a class="download" href="{DOWNLOAD}">Download</a></li>
+        <li><a href="/gift/">Give as a gift</a></li>
       </ul></div>
       <div><h2 class="footer__h">Help</h2><ul>
         <li><a href="/help/">Help</a></li>
