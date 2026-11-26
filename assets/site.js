@@ -194,6 +194,8 @@
         if (host && host !== location.hostname) src = { utm_source: host, utm_medium: 'referral' };
       }
     }
+    if (src && !src.l) src.l = location.pathname.slice(0, 120);
+    if (!src && !sessionStorage.getItem('tl_land')) sessionStorage.setItem('tl_land', location.pathname.slice(0, 120));
     if (src) sessionStorage.setItem('tl_src', JSON.stringify(src));
   } catch (err) { src = null; }
 
@@ -209,18 +211,28 @@
     try { if (window.umami && umami.track) umami.track(name, { placement: placement(a) }); } catch (err) {}
   }
 
+  // 26 Nov 2026: each Buy click is also recorded on our side, so a sale is matched to its source even when Gumroad drops the tags
+  function beacon(a) {
+    try {
+      var s3 = src || {};
+      var d = JSON.stringify({ s: s3.utm_source || 'direct', m: s3.utm_medium || '', c: s3.utm_campaign || '', ct: placement(a),
+        l: s3.l || sessionStorage.getItem('tl_land') || location.pathname, pg: location.pathname, r: s3.utm_medium === 'referral' ? s3.utm_source : '' });
+      navigator.sendBeacon('https://theusefulmedia.com/apps/api/tl/click', new Blob([d], { type: 'text/plain' }));
+    } catch (err) {}
+  }
   $$('a.buy').forEach(function (a) {
     try {
       var url = new URL(a.href);
       var s2 = src || { utm_source: 'textlore.app', utm_medium: 'direct' };
-      Object.keys(s2).forEach(function (k) { url.searchParams.set(k, s2[k]); });
+      Object.keys(s2).forEach(function (k) { if (k.indexOf('utm_') === 0) url.searchParams.set(k, s2[k]); });
       url.searchParams.set('utm_content', placement(a));
       a.href = url.toString();
     } catch (err) {}
     a.addEventListener('click', function (e) {
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) { track('buy_click', a); return; }
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) { track('buy_click', a); beacon(a); return; }
       e.preventDefault();
       track('buy_click', a);
+      beacon(a);
       setTimeout(function () { window.location.href = a.href; }, 200);
     });
   });
